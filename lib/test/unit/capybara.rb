@@ -20,6 +20,7 @@ module Test::Unit
             setup :before => :prepend
             def setup_capybara
               return unless self.class.include?(::Capybara)
+              extend(Assertions)
               if self[:js]
                 ::Capybara.current_driver = ::Capybara.javascript_driver
               end
@@ -33,6 +34,31 @@ module Test::Unit
               ::Capybara.reset_sessions!
               ::Capybara.use_default_driver
             end
+          end
+        end
+      end
+    end
+
+    module Assertions
+      def assert_body(expected, options={})
+        content_type = options[:content_type]
+        case content_type
+        when :json
+          assert_equal({
+                         :content_type => "application/json",
+                         :body => expected,
+                       },
+                       {
+                         :content_type => page.response_headers["Content-Type"],
+                         :body => JSON.parse(body),
+                       })
+        else
+          format = "unsupported content type: <?>\n" +
+            "expected: <?>\n" +
+            " options: <?>"
+          arguments = [content_type, expected, options]
+          assert_block(build_message(nil, format, *arguments)) do
+            false
           end
         end
       end
