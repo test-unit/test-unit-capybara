@@ -21,7 +21,7 @@ module Test::Unit
             def setup_capybara
               return unless self.class.include?(::Capybara)
               if self[:js]
-                ::Capybara.current_driver =  ::Capybara.javascript_driver
+                ::Capybara.current_driver = ::Capybara.javascript_driver
               end
               driver = self[:driver]
               ::Capybara.current_driver = driver if driver
