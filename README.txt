@@ -4,7 +4,7 @@
 
 == DESCRIPTION:
 
-Test::Unit::Capybara - Capybara adapter for Test::Unit.
+test-unit-capybara - Capybara adapter for Test::Unit.
 
 == FEATURES/PROBLEMS:
 
