@@ -29,10 +29,10 @@ Hoe.spec('test-unit-capybara') do
   extra_deps << ["capybara"]
 end
 
+desc "Tag the current revision."
 task :tag do
-  message = "Released Test::Unit::Capybara #{version}!"
-  base = "svn+ssh://#{ENV['USER']}@rubyforge.org/var/svn/test-unit/extensions/test-unit-capybara/"
-  sh 'svn', 'copy', '-m', message, "#{base}trunk", "#{base}tags/#{version}"
+  message = "Released test-unit-capybara #{version}!"
+  sh 'git', 'tag', '-a', version, '-m', message
 end
 
 # vim: syntax=Ruby
