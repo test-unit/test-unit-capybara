@@ -50,7 +50,7 @@ module Test::Unit
                        },
                        {
                          :content_type => page.response_headers["Content-Type"],
-                         :body => JSON.parse(body),
+                         :body => JSON.parse(source),
                        })
         else
           format = "unsupported content type: <?>\n" +
