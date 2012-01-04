@@ -1,4 +1,4 @@
-# -*- coding: utf-8; mode: ruby -*-
+# -*- ruby -*-
 #
 # Copyright (C) 2012  Kouhei Sutou <kou@clear-code.com>
 #
@@ -16,14 +16,13 @@
 # License along with this library; if not, write to the Free Software
 # Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301  USA
 
-gem "test-unit"
-gem "capybara"
-gem "json"
+require "bundler/setup"
 
-group :development, :test do
-  gem "rake"
-  gem "jeweler"
-  gem "yard"
-  gem "packnga"
-  gem "test-unit-notify"
-end
+require "test/unit"
+require "test/unit/notify"
+require "test/unit/capybara"
+
+tmp_path = File.expand_path(File.join("tmp", "capybara"), __FILE__)
+Capybara.save_and_open_page_path = tmp_path
+Capybara.default_driver = nil
+Capybara.current_driver = nil

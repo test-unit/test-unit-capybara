@@ -1,4 +1,4 @@
-# -*- coding: utf-8; mode: ruby -*-
+# -*- ruby -*-
 #
 # Copyright (C) 2012  Kouhei Sutou <kou@clear-code.com>
 #
@@ -16,14 +16,30 @@
 # License along with this library; if not, write to the Free Software
 # Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301  USA
 
-gem "test-unit"
-gem "capybara"
-gem "json"
+require "test-unit-capybara-test-utils"
 
-group :development, :test do
-  gem "rake"
-  gem "jeweler"
-  gem "yard"
-  gem "packnga"
-  gem "test-unit-notify"
+class AssertionsTest < Test::Unit::TestCase
+  include Capybara::DSL
+
+  class BodyTest < self
+    setup do
+      Capybara.app = lambda do |environment|
+        [
+          200,
+          {"Content-Type" => "application/json"},
+          [JSON.generate({"status" => true})],
+        ]
+      end
+    end
+
+    def test_with_shortcut_content_type
+      visit("/")
+      assert_body({"status" => true}, :content_type => :json)
+    end
+
+    def test_without_content_type
+      visit("/")
+      assert_body({"status" => true})
+    end
+  end
 end

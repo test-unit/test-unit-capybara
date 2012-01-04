@@ -20,6 +20,7 @@ require "test/unit/capybara/version"
 
 require 'capybara'
 require 'capybara/dsl'
+require "json"
 require 'test/unit'
 
 module Test::Unit
@@ -51,27 +52,84 @@ module Test::Unit
     end
 
     module Assertions
-      def assert_body(expected, options={})
+      # Passes if @expected@ == @source@. @source@ is a
+      # method provided by Capybara::DSL.
+      #
+      # @source@ may be parsed depended on response
+      # Content-Type before comparing. Here are parsed
+      # Content-Types:
+      #
+      # - @"application/json"@ := It's parsed by @JSON.parse@.
+      #
+      # @param [Object] expected the expected body
+      #   content. The actual body may be parsed. It
+      #   depends on @:content_type@ option.
+      #
+      # @option options [String] :content_type (nil)
+      #   the expected Content-Type. If this value is @nil@,
+      #   Content-Type will not be compared.
+      #
+      #   This value can be specified by abbreviated. Here
+      #   are abbreviations:
+      #
+      #   - @:json@ := @"application/json"@
+      #
+      # @yield [expected_response, actual_response] the
+      #   optional compared responses normalizer.
+      # @yieldparam [Hash] expected_response the expected
+      #   response constructed in the method.
+      # @yieldparam [Hash] actual_response the actual
+      #   response constructed in the method.
+      # @yieldreturn [expected_response, actual_response] the
+      #   normalized compared responses.
+      #
+      # @example Pass case
+      #   # Actual response:
+      #   #   Content-Type: application/json
+      #   #   Body: {"status": true}
+      #   assert_body({"status" => true}, :content_type => :json)
+      #
+      # @example Failure case
+      #   # Actual response:
+      #   #   Content-Type: text/html
+      #   #   Body: <html><body>Hello</body></html>
+      #   assert_body("<html><body>World</body></html>")
+      def assert_body(expected, options={}, &block)
         content_type = options[:content_type]
-        case content_type
-        when :json
-          assert_equal({
-                         :content_type => "application/json",
-                         :body => expected,
-                       },
-                       {
-                         :content_type => page.response_headers["Content-Type"],
-                         :body => JSON.parse(source),
-                       })
+        actual_response = {
+          :content_type => page.response_headers["Content-Type"],
+        }
+        actual_response[:body] = parse_body(source,
+                                            actual_response[:content_type])
+        expected_response = {:body => expected}
+        if content_type
+          expected_response[:content_type] = normalize_content_type(content_type)
         else
-          format = "unsupported content type: <?>\n" +
-            "expected: <?>\n" +
-            " options: <?>"
-          arguments = [content_type, expected, options]
-          assert_block(build_message(nil, format, *arguments)) do
-            false
-          end
+          actual_response.delete(:content_type)
         end
+        if block_given?
+          expected_response, actual_response = yield(expected_response,
+                                                     actual_response)
+	end
+        assert_equal(expected_response, actual_response)
+      end
+
+      private
+      def parse_body(source, content_type)
+        case content_type
+        when "application/json"
+          ::JSON.parse(source)
+        else
+          source
+        end
+      end
+
+      # @private
+      CONTENT_TYPE_SHORTCUTS = {
+        :json => "application/json",
+      }
+      def normalize_content_type(content_type)
+        CONTENT_TYPE_SHORTCUTS[content_type] || content_type
       end
     end
   end
