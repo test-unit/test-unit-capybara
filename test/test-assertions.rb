@@ -34,12 +34,12 @@ class AssertionsTest < Test::Unit::TestCase
 
     def test_with_shortcut_content_type
       visit("/")
-      assert_body({"status" => true}, :content_type => :json)
+      assert_page_body({"status" => true}, :content_type => :json)
     end
 
     def test_without_content_type
       visit("/")
-      assert_body({"status" => true})
+      assert_page_body({"status" => true})
     end
   end
 end
