@@ -41,7 +41,7 @@ module Test::Unit
 
             teardown :after => :append
             def teardown_capybara
-              return unless self.class.include?(::Capybara)
+              return unless self.class.include?(::Capybara::DSL)
               ::Capybara.reset_sessions!
               ::Capybara.use_default_driver
             end
