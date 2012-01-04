@@ -16,14 +16,14 @@
 # License along with this library; if not, write to the Free Software
 # Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301  USA
 
+require "test/unit/capybara/version"
+
 require 'capybara'
 require 'capybara/dsl'
 require 'test/unit'
 
 module Test::Unit
   module Capybara
-    VERSION = "1.0.1"
-
     module Adapter
       class << self
         def included(mod)

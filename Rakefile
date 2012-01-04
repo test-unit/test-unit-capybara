@@ -16,33 +16,55 @@
 # License along with this library; if not, write to the Free Software
 # Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301  USA
 
-require 'pathname'
-
-base_dir = Pathname(__FILE__).dirname.expand_path
-test_unit_dir = (base_dir.parent + "test-unit").expand_path
-test_unit_lib_dir = test_unit_dir + "lib"
-lib_dir = base_dir + "lib"
-
-$LOAD_PATH.unshift(test_unit_lib_dir.to_s)
-$LOAD_PATH.unshift(lib_dir.to_s)
-
-require 'test/unit/capybara'
+require './lib/test/unit/capybara/version'
 
 require 'rubygems'
-require 'hoe'
+require 'rubygems/package_task'
+require 'yard'
+require 'jeweler'
+require 'packnga'
 
-Test::Unit.run = true
+def cleanup_white_space(entry)
+  entry.gsub(/(\A\n+|\n+\z)/, '') + "\n"
+end
 
-version = Test::Unit::Capybara::VERSION
-ENV["VERSION"] = version
-Hoe.spec('test-unit-capybara') do
-  self.version = version
-  self.rubyforge_name = "test-unit"
+ENV["VERSION"] ||= Test::Unit::Capybara::VERSION
+version = ENV["VERSION"].dup
+spec = nil
+Jeweler::Tasks.new do |_spec|
+  spec = _spec
+  spec.name = "test-unit-capybara"
+  spec.version = version
+  spec.rubyforge_project = "test-unit"
+  spec.homepage = "http://test-unit.rubyforge.org/#test-unit-capybara"
+  spec.authors = ["Kouhei Sutou"]
+  spec.email = ["kou@clear-code.com"]
+  entries = File.read("README.textile").split(/^h2\.\s(.*)$/)
+  description = cleanup_white_space(entries[entries.index("Description") + 1])
+  spec.summary, spec.description, = description.split(/\n\n+/, 3)
+  spec.license = "LGPLv2 or later"
+  spec.files = FileList["lib/**/*.rb",
+                        "bin/*",
+                        "doc/text/*",
+                        "README",
+                        "COPYING",
+                        "Rakefile",
+                        "Gemfile"]
+  spec.test_files = FileList["test/**/*.rb"]
+end
 
-  developer('Kouhei Sutou', 'kou@clear-code.com')
+Rake::Task["release"].prerequisites.clear
+Jeweler::RubygemsDotOrgTasks.new do
+end
 
-  extra_deps << ["test-unit", ">= 2.1.2"]
-  extra_deps << ["capybara"]
+Gem::PackageTask.new(spec) do |pkg|
+  pkg.need_tar_gz = true
+end
+
+document_task = Packnga::DocumentTask.new(spec) do
+end
+
+Packnga::ReleaseTask.new(spec) do |task|
 end
 
 desc "Tag the current revision."

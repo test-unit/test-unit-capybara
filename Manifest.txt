@@ -1,6 +1,0 @@
-COPYING
-History.txt
-Manifest.txt
-README.txt
-Rakefile
-lib/test/unit/capybara.rb
