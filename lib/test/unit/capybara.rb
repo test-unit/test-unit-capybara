@@ -30,7 +30,7 @@ module Test::Unit
           mod.module_eval do
             setup :before => :prepend
             def setup_capybara
-              return unless self.class.include?(::Capybara)
+              return unless self.class.include?(::Capybara::DSL)
               extend(Assertions)
               if self[:js]
                 ::Capybara.current_driver = ::Capybara.javascript_driver
