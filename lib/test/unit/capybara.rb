@@ -153,31 +153,69 @@ module Test::Unit
       #   #   </html>
       #   assert_page_all("h3")
       def assert_page_all(*args)
-        options = {}
-        options = args.pop if args.last.is_a?(Hash)
-        if args.size == 1
-          locator = args[0]
-          if locator[0, 1] == "/"
-            kind = :xpath
-            args.unshift(kind)
-          else
-            kind = ::Capybara.default_selector
-          end
-        else
-          kind, locator, = args
-        end
-        args << options
-        message = options.delete(:message)
+        args = normalize_page_finder_arguments(args)
         format = <<-EOT
 <?>(?) expected to be match one or more elements in
 <?>
 EOT
-        full_message = build_message(message, format, locator, kind, source)
-        elements = page.all(*args)
+        full_message = build_message(args[:message],
+                                     format,
+                                     args[:locator],
+                                     args[:kind],
+                                     source)
+        elements = page.all(*args[:finder_arguments])
         assert_block(full_message) do
           not elements.empty?
         end
         elements
+      end
+
+      # Passes if the selector finds a element.
+      # Arguments are the same as {Capybara::Node::Finders#find}.
+      #
+      # @return [Capybara::Element] the found element.
+      #
+      # @see Capybara::Node::Finders#find
+      #
+      # @example Pass case
+      #   # Actual response:
+      #   #   <html>
+      #   #     <body>
+      #   #       <h1>Hello</h1>
+      #   #       <h2>World</h2>
+      #   #       <h2>Yay!</h2>
+      #   #     </body>
+      #   #   </html>
+      #   h2_element = assert_page_find("h2")
+      #   p h2_element
+      #     # => [#<Capybara::Element tag="h2" path="/html/body/h2[1]">]
+      #
+      # @example Failure case
+      #   # Actual response:
+      #   #   <html>
+      #   #     <body>
+      #   #       <h1>Hello</h1>
+      #   #       <h2>World</h2>
+      #   #       <h2>Yay!</h2>
+      #   #     </body>
+      #   #   </html>
+      #   assert_page_find("h3")
+      def assert_page_find(*args)
+        args = normalize_page_finder_arguments(args)
+        format = <<-EOT
+<?>(?) expected to be match a element in
+<?>
+EOT
+        full_message = build_message(args[:message],
+                                     format,
+                                     args[:locator],
+                                     args[:kind],
+                                     source)
+        element = page.first(*args[:finder_arguments])
+        assert_block(full_message) do
+          not element.nil?
+        end
+        element
       end
 
       private
@@ -192,6 +230,31 @@ EOT
         else
           source
         end
+      end
+
+      def normalize_page_finder_arguments(args)
+        args = args.dup
+        options = {}
+        options = args.pop if args.last.is_a?(Hash)
+        if args.size == 1
+          locator = args[0]
+          if locator[0, 1] == "/"
+            kind = :xpath
+            args.unshift(kind)
+          else
+            kind = ::Capybara.default_selector
+          end
+        else
+          kind, locator, = args
+        end
+        args << options
+
+        {
+          :kind => kind,
+          :locator => locator,
+          :message => options.delete(:message),
+          :finder_arguments => args,
+        }
       end
 
       # @private
