@@ -42,4 +42,55 @@ class AssertionsTest < Test::Unit::TestCase
       assert_page_body({"status" => true})
     end
   end
+
+  class AllTest < self
+    setup do
+      @html = <<-HTML
+<html>
+  <body>
+    <h1>Hello</h1>
+    <h2>World</h2>
+    <h2>Yay!</h2>
+  </body>
+</html>
+HTML
+      Capybara.app = lambda do |environment|
+        [
+          200,
+          {"Content-Type" => "text/html"},
+          [@html],
+        ]
+      end
+    end
+
+    def test_no_kind
+      visit("/")
+      h2s = assert_page_all("h2")
+      assert_equal(["World", "Yay!"], h2s.collect(&:text))
+    end
+
+    def test_css
+      visit("/")
+      h2s = assert_page_all(:css, "h2")
+      assert_equal(["World", "Yay!"], h2s.collect(&:text))
+    end
+
+    def test_xpath
+      visit("/")
+      h2s = assert_page_all(:xpath, "//h2")
+      assert_equal(["World", "Yay!"], h2s.collect(&:text))
+    end
+
+    def test_fail
+      visit("/")
+      message = <<-EOM.strip
+<"h3">(:css) expected to be match one or more elements in
+<#{PP.pp(@html, "").chomp}>
+EOM
+      exception = Test::Unit::AssertionFailedError.new(message)
+      assert_raise(exception) do
+        assert_page_all("h3")
+      end
+    end
+  end
 end

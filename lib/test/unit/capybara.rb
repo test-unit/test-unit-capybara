@@ -122,6 +122,65 @@ module Test::Unit
         assert_equal(expected_response, actual_response)
       end
 
+      # Passes if the selector finds one or more elements.
+      # Arguments are the same as {Capybara::Node::Finders#all}.
+      #
+      # @return [Capybara::Element] the found elements.
+      #
+      # @see Capybara::Node::Finders#all
+      #
+      # @example Pass case
+      #   # Actual response:
+      #   #   <html>
+      #   #     <body>
+      #   #       <h1>Hello</h1>
+      #   #       <h2>World</h2>
+      #   #       <h2>Yay!</h2>
+      #   #     </body>
+      #   #   </html>
+      #   h2_elements = assert_page_all("h2")
+      #   p h2_elements
+      #     # => [#<Capybara::Element tag="h2" path="/html/body/h2[1]">,
+      #     #     #<Capybara::Element tag="h2" path="/html/body/h2[2]">]
+      #
+      # @example Failure case
+      #   # Actual response:
+      #   #   <html>
+      #   #     <body>
+      #   #       <h1>Hello</h1>
+      #   #       <h2>World</h2>
+      #   #       <h2>Yay!</h2>
+      #   #     </body>
+      #   #   </html>
+      #   assert_page_all("h3")
+      def assert_page_all(*args)
+        options = {}
+        options = args.pop if args.last.is_a?(Hash)
+        if args.size == 1
+          locator = args[0]
+          if locator[0, 1] == "/"
+            kind = :xpath
+            args.unshift(kind)
+          else
+            kind = ::Capybara.default_selector
+          end
+        else
+          kind, locator, = args
+        end
+        args << options
+        message = options.delete(:message)
+        format = <<-EOT
+<?>(?) expected to be match one or more elements in
+<?>
+EOT
+        full_message = build_message(message, format, locator, kind, source)
+        elements = page.all(*args)
+        assert_block(full_message) do
+          not elements.empty?
+        end
+        elements
+      end
+
       private
       def parse_body(source, content_type)
         case content_type
