@@ -105,10 +105,9 @@ module Test::Unit
       def assert_page_body(expected, options={}, &block)
         content_type = options[:content_type]
         actual_response = {
-          :content_type => page.response_headers["Content-Type"],
+          :content_type => page_content_type,
+          :body => parsed_page_body,
         }
-        actual_response[:body] = parse_body(source,
-                                            actual_response[:content_type])
         expected_response = {:body => expected}
         if content_type
           expected_response[:content_type] = normalize_content_type(content_type)
@@ -182,8 +181,12 @@ EOT
       end
 
       private
-      def parse_body(source, content_type)
-        case content_type
+      def page_content_type
+        page.response_headers["Content-Type"]
+      end
+
+      def parsed_page_body
+        case page_content_type
         when "application/json"
           ::JSON.parse(source)
         else
