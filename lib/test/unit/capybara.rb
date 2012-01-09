@@ -52,14 +52,6 @@ module Test::Unit
     end
 
     module Assertions
-      # @see #assert_page_body
-      # @deprecated since 1.0.0. Use {#assert_page_body} instead.
-      def assert_body(expected, options={}, &block)
-        warn(["deprecated. use assert_page_body instead.",
-              *caller].join("\n"))
-        assert_page_body(*args, &block)
-      end
-
       # Passes if @expected@ == @source@. @source@ is a
       # method provided by Capybara::DSL.
       #
@@ -95,14 +87,14 @@ module Test::Unit
       #   # Actual response:
       #   #   Content-Type: application/json
       #   #   Body: {"status": true}
-      #   assert_page_body({"status" => true}, :content_type => :json)
+      #   assert_body({"status" => true}, :content_type => :json)
       #
       # @example Failure case
       #   # Actual response:
       #   #   Content-Type: text/html
       #   #   Body: <html><body>Hello</body></html>
-      #   assert_page_body("<html><body>World</body></html>")
-      def assert_page_body(expected, options={}, &block)
+      #   assert_body("<html><body>World</body></html>")
+      def assert_body(expected, options={}, &block)
         content_type = options[:content_type]
         actual_response = {
           :content_type => page_content_type,
