@@ -293,12 +293,28 @@ EOT
       #     h2 = assert_find(section, "h2")
       #     p h2.text
       #       # => "World"
+      #
+      #   @example Failure case
+      #     # Actual response:
+      #     #   <html>
+      #     #     <body>
+      #     #       <h1>Hello</h1>
+      #     #       <h2>Yay!</h2>
+      #     #       <div class="section">
+      #     #         <h2>World</h2>
+      #     #       </div>
+      #     #     </body>
+      #     #   </html>
+      #     section = assert_find("section")
+      #     p section
+      #       # => #<Capybara::Element tag="h2" path="/html/body/div">
+      #     assert_find(section, "h1")
       def assert_find(*args, &block)
         node = nil
         node = args.shift if args[0].is_a?(::Capybara::Node::Base)
         args = normalize_page_finder_arguments(args)
         format = <<-EOT
-<?>(?) expected to be match a element in
+<?>(?) expected to be found a element in
 <?>
 EOT
         full_message = build_message(args[:message],

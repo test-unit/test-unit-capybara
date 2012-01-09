@@ -155,7 +155,7 @@ HTML
       def test_fail
         visit("/")
         message = <<-EOM.strip
-<"h3">(:css) expected to be match a element in
+<"h3">(:css) expected to be found a element in
 <#{PP.pp(@html, "").chomp}>
 EOM
         exception = Test::Unit::AssertionFailedError.new(message)
@@ -200,7 +200,7 @@ EOM
         section = assert_find("div.section")
         section_html = @html.scan(/<div class="section">.*?<\/div>/m)[0]
         message = <<-EOM.strip
-<"h3">(:css) expected to be match a element in
+<"h3">(:css) expected to be found a element in
 <#{PP.pp(section_html, "").chomp}>
 EOM
         exception = Test::Unit::AssertionFailedError.new(message)
