@@ -46,7 +46,7 @@ Jeweler::Tasks.new do |_spec|
   spec.files = FileList["lib/**/*.rb",
                         "bin/*",
                         "doc/text/*",
-                        "README",
+                        "README.textile",
                         "COPYING",
                         "Rakefile",
                         "Gemfile"]
