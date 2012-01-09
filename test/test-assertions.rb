@@ -49,8 +49,10 @@ class AssertionsTest < Test::Unit::TestCase
 <html>
   <body>
     <h1>Hello</h1>
-    <h2>World</h2>
     <h2>Yay!</h2>
+    <div class="section">
+      <h2>World</h2>
+    </div>
   </body>
 </html>
 HTML
@@ -65,20 +67,27 @@ HTML
 
     def test_no_kind
       visit("/")
-      h2s = assert_page_all("h2")
-      assert_equal(["World", "Yay!"], h2s.collect(&:text))
+      h2s = assert_all("h2")
+      assert_equal(["Yay!", "World"], h2s.collect(&:text))
     end
 
     def test_css
       visit("/")
-      h2s = assert_page_all(:css, "h2")
-      assert_equal(["World", "Yay!"], h2s.collect(&:text))
+      h2s = assert_all(:css, "h2")
+      assert_equal(["Yay!", "World"], h2s.collect(&:text))
     end
 
     def test_xpath
       visit("/")
-      h2s = assert_page_all(:xpath, "//h2")
-      assert_equal(["World", "Yay!"], h2s.collect(&:text))
+      h2s = assert_all(:xpath, "//h2")
+      assert_equal(["Yay!", "World"], h2s.collect(&:text))
+    end
+
+    def test_node
+      visit("/")
+      section = assert_find("div.section")
+      h2s = assert_all(section, "h2")
+      assert_equal(["World"], h2s.collect(&:text))
     end
 
     def test_fail
@@ -89,7 +98,7 @@ HTML
 EOM
       exception = Test::Unit::AssertionFailedError.new(message)
       assert_raise(exception) do
-        assert_page_all("h3")
+        assert_all("h3")
       end
     end
   end

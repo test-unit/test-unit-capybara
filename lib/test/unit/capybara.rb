@@ -121,38 +121,70 @@ module Test::Unit
         assert_equal(expected_response, actual_response)
       end
 
-      # Passes if the selector finds one or more elements.
-      # Arguments are the same as {Capybara::Node::Finders#all}.
-      #
-      # @return [Capybara::Element] the found elements.
+      # @param [...] args (see {::Capybara::Node::Finders#all})
+      # @return [Array<::Capybara::Element>] The found elements.
       #
       # @see Capybara::Node::Finders#all
       #
-      # @example Pass case
-      #   # Actual response:
-      #   #   <html>
-      #   #     <body>
-      #   #       <h1>Hello</h1>
-      #   #       <h2>World</h2>
-      #   #       <h2>Yay!</h2>
-      #   #     </body>
-      #   #   </html>
-      #   h2_elements = assert_page_all("h2")
-      #   p h2_elements
-      #     # => [#<Capybara::Element tag="h2" path="/html/body/h2[1]">,
-      #     #     #<Capybara::Element tag="h2" path="/html/body/h2[2]">]
+      # @overload assert_all(*args)
+      #   Passes if the selector finds one or more elements
+      #   from the current node.
       #
-      # @example Failure case
-      #   # Actual response:
-      #   #   <html>
-      #   #     <body>
-      #   #       <h1>Hello</h1>
-      #   #       <h2>World</h2>
-      #   #       <h2>Yay!</h2>
-      #   #     </body>
-      #   #   </html>
-      #   assert_page_all("h3")
-      def assert_page_all(*args)
+      #   @example Pass case
+      #     # Actual response:
+      #     #   <html>
+      #     #     <body>
+      #     #       <h1>Hello</h1>
+      #     #       <h2>Yay!</h2>
+      #     #       <div class="section">
+      #     #         <h2>World</h2>
+      #     #       </div>
+      #     #     </body>
+      #     #   </html>
+      #     h2_elements = assert_page_all("h2")
+      #     p h2_elements
+      #       # => [#<Capybara::Element tag="h2" path="/html/body/h2">,
+      #       #     #<Capybara::Element tag="h2" path="/html/body/div/h2">]
+      #
+      #   @example Failure case
+      #     # Actual response:
+      #     #   <html>
+      #     #     <body>
+      #     #       <h1>Hello</h1>
+      #     #       <h2>Yay!</h2>
+      #     #       <div class="section">
+      #     #         <h2>World</h2>
+      #     #       </div>
+      #     #     </body>
+      #     #   </html>
+      #     assert_page_all("h3")
+      #
+      # @overload assert_all(node, *args)
+      #   Passes if the selector finds one or more elements
+      #   from @node@.
+      #
+      #   @param [::Capybara::Node::Base] node The target node.
+      #
+      #   @example Pass case (simple)
+      #     # Actual response:
+      #     #   <html>
+      #     #     <body>
+      #     #       <h1>Hello</h1>
+      #     #       <h2>Yay!</h2>
+      #     #       <div class="section">
+      #     #         <h2>World</h2>
+      #     #       </div>
+      #     #     </body>
+      #     #   </html>
+      #     section = assert_find("div.section")
+      #     p section
+      #       # => #<Capybara::Element tag="h2" path="/html/body/div">
+      #     h2_elements = assert_all(section, "h2")
+      #     p h2_elements
+      #       # => [#<Capybara::Element tag="h2" path="/html/body/div/h2">]
+      def assert_all(*args)
+        node = nil
+        node = args.shift if args[0].is_a?(::Capybara::Node::Base)
         args = normalize_page_finder_arguments(args)
         format = <<-EOT
 <?>(?) expected to be match one or more elements in
@@ -162,8 +194,12 @@ EOT
                                      format,
                                      args[:locator],
                                      args[:kind],
-                                     source)
-        elements = page.all(*args[:finder_arguments])
+                                     node_source(node))
+        if node
+          elements = node.all(*args[:finder_arguments])
+        else
+          elements = all(*args[:finder_arguments])
+        end
         assert_block(full_message) do
           not elements.empty?
         end
@@ -181,7 +217,6 @@ EOT
       # @see ::Capybara::Node::Finders#find
       #
       # @overload assert_find(*args, &block)
-      #
       #   Passes if the selector finds a element from the current node.
       #
       #   @example Pass case (simple)
@@ -245,10 +280,9 @@ EOT
       #     end
       #
       # @overload assert_find(node, *args, &block)
-      #
       #   Passes if the selector finds a element from @node@.
       #
-      #   @param [::Capybara::Node::Base] node the node.
+      #   @param [::Capybara::Node::Base] node The target node.
       #
       #   @example Pass case (simple)
       #     # Actual response:
@@ -263,7 +297,7 @@ EOT
       #     #   </html>
       #     section = assert_find("section")
       #     p section
-      #       # => #<Capybara::Element tag="h2" path="/html/body/div[1]">
+      #       # => #<Capybara::Element tag="h2" path="/html/body/div">
       #     h2 = assert_find(section, "h2")
       #     p h2.text
       #       # => "World"
@@ -275,20 +309,11 @@ EOT
 <?>(?) expected to be match a element in
 <?>
 EOT
-        if node
-          if node.base.respond_to?(:source)
-            node_source = node.base.source
-          else
-            node_source = node.base.native.to_s
-          end
-        else
-          node_source = source
-        end
         full_message = build_message(args[:message],
                                      format,
                                      args[:locator],
                                      args[:kind],
-                                     node_source)
+                                     node_source(node))
         if node
           element = node.first(*args[:finder_arguments])
         else
@@ -341,6 +366,18 @@ EOT
           :message => options.delete(:message),
           :finder_arguments => args,
         }
+      end
+
+      def node_source(node)
+        if node
+          if node.base.respond_to?(:source)
+            node.base.source
+          else
+            node.base.native.to_s
+          end
+        else
+          source
+        end
       end
 
       # @private
