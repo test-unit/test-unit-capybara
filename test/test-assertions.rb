@@ -210,4 +210,101 @@ EOM
       end
     end
   end
+
+  class NotFindTest < self
+    setup do
+      @html = <<-HTML
+<html>
+  <body>
+    <h1>Hello</h1>
+    <h2>Yay!</h2>
+    <div class="section">
+      <h2>World</h2>
+    </div>
+  </body>
+</html>
+HTML
+      Capybara.app = lambda do |environment|
+        [
+          200,
+          {"Content-Type" => "text/html"},
+          [@html],
+        ]
+      end
+    end
+
+    class WithoutNodeTest < self
+      def test_no_kind
+        visit("/")
+        assert_not_find("h3")
+      end
+
+      def test_css
+        visit("/")
+        assert_not_find(:css, "h3")
+      end
+
+      def test_xpath
+        visit("/")
+        assert_not_find(:xpath, "//h3")
+      end
+
+      def test_block
+        visit("/")
+        assert_find("div.section") do
+          assert_not_find("h3")
+        end
+      end
+
+      def test_fail
+        visit("/")
+        h1_html = @html.scan(/<h1>.*?<\/h1>/m)[0]
+        message = <<-EOM.strip
+<"h1">(:css) expected to not be found a element but was
+<#{PP.pp(h1_html, "").chomp}> in
+<#{PP.pp(@html, "").chomp}>
+EOM
+        exception = Test::Unit::AssertionFailedError.new(message)
+        assert_raise(exception) do
+          assert_not_find("h1")
+        end
+      end
+    end
+
+    class WithNodeTest < self
+      def test_no_kind
+        visit("/")
+        section = assert_find("div.section")
+        assert_not_find(section, "h1")
+      end
+
+      def test_css
+        visit("/")
+        section = assert_find("div.section")
+        assert_not_find(section, :css, "h1")
+      end
+
+      def test_xpath
+        visit("/")
+        section = assert_find("div.section")
+        assert_not_find(section, :xpath, ".//h1")
+      end
+
+      def test_fail
+        visit("/")
+        section = assert_find("div.section")
+        section_html = @html.scan(/<div class="section">.*?<\/div>/m)[0]
+        h2_html = section_html.scan(/<h2>.*?<\/h2>/m)[0]
+        message = <<-EOM.strip
+<"h2">(:css) expected to not be found a element but was
+<#{PP.pp(h2_html, "").chomp}> in
+<#{PP.pp(section_html, "").chomp}>
+EOM
+        exception = Test::Unit::AssertionFailedError.new(message)
+        assert_raise(exception) do
+          assert_not_find(section, "h2")
+        end
+      end
+    end
+  end
 end

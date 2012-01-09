@@ -321,6 +321,103 @@ EOT
         end
       end
 
+      # @param [...] args (see {::Capybara::Node::Finders#find})
+      #
+      # @see ::Capybara::Node::Finders#find
+      #
+      # @overload assert_not_find(*args, &block)
+      #   Passes if the selector doesn't find any elements
+      #   from the current node.
+      #
+      #   @example Pass case
+      #     # Actual response:
+      #     #   <html>
+      #     #     <body>
+      #     #       <h1>Hello</h1>
+      #     #       <h2>Yay!</h2>
+      #     #       <div class="section">
+      #     #         <h2>World</h2>
+      #     #       </div>
+      #     #     </body>
+      #     #   </html>
+      #     assert_not_find("h3")
+      #
+      #   @example Failure case
+      #     # Actual response:
+      #     #   <html>
+      #     #     <body>
+      #     #       <h1>Hello</h1>
+      #     #       <h2>Yay!</h2>
+      #     #       <div class="section">
+      #     #         <h2>World</h2>
+      #     #       </div>
+      #     #     </body>
+      #     #   </html>
+      #     assert_not_find("h1")
+      #
+      # @overload assert_not_find(node, *args, &block)
+      #   Passes if the selector doesn't find any element from @node@.
+      #
+      #   @param [::Capybara::Node::Base] node The target node.
+      #
+      #   @example Pass case
+      #     # Actual response:
+      #     #   <html>
+      #     #     <body>
+      #     #       <h1>Hello</h1>
+      #     #       <h2>Yay!</h2>
+      #     #       <div class="section">
+      #     #         <h2>World</h2>
+      #     #       </div>
+      #     #     </body>
+      #     #   </html>
+      #     section = assert_find("section")
+      #     p section
+      #       # => #<Capybara::Element tag="h2" path="/html/body/div">
+      #     assert_not_find(section, "h1")
+      #
+      #   @example Failure case
+      #     # Actual response:
+      #     #   <html>
+      #     #     <body>
+      #     #       <h1>Hello</h1>
+      #     #       <h2>Yay!</h2>
+      #     #       <div class="section">
+      #     #         <h2>World</h2>
+      #     #       </div>
+      #     #     </body>
+      #     #   </html>
+      #     section = assert_find("section")
+      #     p section
+      #       # => #<Capybara::Element tag="h2" path="/html/body/div">
+      #     assert_not_find(section, "h2")
+      def assert_not_find(*args, &block)
+        node = nil
+        node = args.shift if args[0].is_a?(::Capybara::Node::Base)
+        args = normalize_page_finder_arguments(args)
+        if node
+          element = node.first(*args[:finder_arguments])
+        else
+          element = first(*args[:finder_arguments])
+        end
+        format = <<-EOT
+<?>(?) expected to not be found a element but was
+<?> in
+<?>
+EOT
+        element_source = nil
+        element_source = node_source(element) if element
+        full_message = build_message(args[:message],
+                                     format,
+                                     args[:locator],
+                                     args[:kind],
+                                     element_source,
+                                     node_source(node))
+        assert_block(full_message) do
+          element.nil?
+        end
+      end
+
       private
       def page_content_type
         page.response_headers["Content-Type"]
