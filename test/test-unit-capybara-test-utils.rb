@@ -26,5 +26,3 @@ require "pp"
 
 tmp_path = File.expand_path(File.join("tmp", "capybara"), __FILE__)
 Capybara.save_and_open_page_path = tmp_path
-Capybara.default_driver = nil
-Capybara.current_driver = nil
