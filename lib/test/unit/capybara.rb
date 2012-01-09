@@ -51,6 +51,61 @@ module Test::Unit
       end
     end
 
+    # @private
+    class ElementNotFound < ::Capybara::ElementNotFound
+      attr_reader :node, :query
+      def initialize(node, query)
+        @node = node
+        @query = query
+        super(@query.failure_message(:find, @node))
+      end
+    end
+
+    # @private
+    module FindError
+      class << self
+        def included(base)
+          base.module_eval do
+            alias_method :raise_find_error_original, :raise_find_error
+            alias_method :raise_find_error, :raise_find_error_for_test_unit
+          end
+        end
+      end
+
+      def raise_find_error_for_test_unit(*args)
+        query = ::Capybara::Query.new(*args)
+        raise ElementNotFound.new(self, query)
+      end
+    end
+
+    # @private
+    class ::Capybara::Node::Base
+      include FindError
+    end
+
+    # @private
+    module ElementNotFoundHandler
+      class << self
+        def included(base)
+          base.exception_handler(:handle_capybara_element_not_found)
+        end
+      end
+
+      private
+      def handle_capybara_element_not_found(exception)
+        return false unless exception.is_a?(ElementNotFound)
+        return false unless respond_to?(:assert_find_internal, true)
+        query = exception.query
+        begin
+          assert_find_internal(nil, exception.node, nil,
+                               query.selector.name, query.locator)
+        rescue AssertionFailedError => assertion_failed_error
+          assertion_failed_error.backtrace.replace(exception.backtrace)
+          handle_assertion_failed_error(assertion_failed_error)
+        end
+      end
+    end
+
     module Assertions
       # Passes if @expected@ == @source@. @source@ is a
       # method provided by Capybara::DSL.
@@ -313,23 +368,13 @@ EOT
         node = nil
         node = args.shift if args[0].is_a?(::Capybara::Node::Base)
         args = normalize_page_finder_arguments(args)
-        format = <<-EOT
-<?>(?) expected to find a element in
-<?>
-EOT
-        full_message = build_message(args[:message],
-                                     format,
-                                     args[:locator],
-                                     args[:kind],
-                                     node_source(node))
         if node
           element = node.first(*args[:finder_arguments])
         else
           element = first(*args[:finder_arguments])
         end
-        assert_block(full_message) do
-          not element.nil?
-        end
+        assert_find_internal(element, node,
+                             args[:message], args[:kind], args[:locator])
         if block_given?
           within(element, &block)
         else
@@ -485,6 +530,21 @@ EOT
         end
       end
 
+      def assert_find_internal(element, base_node, message, kind, locator)
+        format = <<-EOT
+<?>(?) expected to find a element in
+<?>
+EOT
+        full_message = build_message(message,
+                                     format,
+                                     locator,
+                                     kind,
+                                     node_source(base_node))
+        assert_block(full_message) do
+          not element.nil?
+        end
+      end
+
       # @private
       CONTENT_TYPE_SHORTCUTS = {
         :json => "application/json",
@@ -497,5 +557,6 @@ EOT
 
   class TestCase
     include Capybara::Adapter
+    include Capybara::ElementNotFoundHandler
   end
 end
