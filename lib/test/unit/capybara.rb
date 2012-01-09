@@ -170,52 +170,138 @@ EOT
         elements
       end
 
-      # Passes if the selector finds a element.
-      # Arguments are the same as {Capybara::Node::Finders#find}.
+      # @param [...] args (see {::Capybara::Node::Finders#find})
+      # @return [::Capybara::Element or returned object by block]
+      #   If @block@ isn't specified, the found element is returned.
+      #   Otherwise returned object by @block@ is returned.
       #
-      # @return [Capybara::Element] the found element.
+      # @yield [] The found element is the current element
+      #   in the @block@ by {::Capybara::Session#within}.
       #
-      # @see Capybara::Node::Finders#find
+      # @see ::Capybara::Node::Finders#find
       #
-      # @example Pass case
-      #   # Actual response:
-      #   #   <html>
-      #   #     <body>
-      #   #       <h1>Hello</h1>
-      #   #       <h2>World</h2>
-      #   #       <h2>Yay!</h2>
-      #   #     </body>
-      #   #   </html>
-      #   h2_element = assert_page_find("h2")
-      #   p h2_element
-      #     # => [#<Capybara::Element tag="h2" path="/html/body/h2[1]">]
+      # @overload assert_find(*args, &block)
       #
-      # @example Failure case
-      #   # Actual response:
-      #   #   <html>
-      #   #     <body>
-      #   #       <h1>Hello</h1>
-      #   #       <h2>World</h2>
-      #   #       <h2>Yay!</h2>
-      #   #     </body>
-      #   #   </html>
-      #   assert_page_find("h3")
-      def assert_page_find(*args)
+      #   Passes if the selector finds a element from the current node.
+      #
+      #   @example Pass case (simple)
+      #     # Actual response:
+      #     #   <html>
+      #     #     <body>
+      #     #       <h1>Hello</h1>
+      #     #       <h2>Yay!</h2>
+      #     #       <div class="section">
+      #     #         <h2>World</h2>
+      #     #       </div>
+      #     #     </body>
+      #     #   </html>
+      #     h2 = assert_find("h2")
+      #     p h2.text
+      #       # => "Yay!"
+      #
+      #   @example Pass case (with block)
+      #     # Actual response:
+      #     #   <html>
+      #     #     <body>
+      #     #       <h1>Hello</h1>
+      #     #       <h2>Yay!</h2>
+      #     #       <div class="section">
+      #     #         <h2>World</h2>
+      #     #       </div>
+      #     #     </body>
+      #     #   </html>
+      #     assert_find("section") do
+      #       h2 = assert_find("h2")
+      #       p h2.text
+      #         # => "World"
+      #     end
+      #
+      #   @example Failure case (simple)
+      #     # Actual response:
+      #     #   <html>
+      #     #     <body>
+      #     #       <h1>Hello</h1>
+      #     #       <h2>Yay!</h2>
+      #     #       <div class="section">
+      #     #         <h2>World</h2>
+      #     #       </div>
+      #     #     </body>
+      #     #   </html>
+      #     assert_find("h3")
+      #
+      #   @example Failure case (with block)
+      #     # Actual response:
+      #     #   <html>
+      #     #     <body>
+      #     #       <h1>Hello</h1>
+      #     #       <h2>Yay!</h2>
+      #     #       <div class="section">
+      #     #         <h2>World</h2>
+      #     #       </div>
+      #     #     </body>
+      #     #   </html>
+      #     assert_find("section") do |section|
+      #       assert_find("h3") # -> fail
+      #     end
+      #
+      # @overload assert_find(node, *args, &block)
+      #
+      #   Passes if the selector finds a element from @node@.
+      #
+      #   @param [::Capybara::Node::Base] node the node.
+      #
+      #   @example Pass case (simple)
+      #     # Actual response:
+      #     #   <html>
+      #     #     <body>
+      #     #       <h1>Hello</h1>
+      #     #       <h2>Yay!</h2>
+      #     #       <div class="section">
+      #     #         <h2>World</h2>
+      #     #       </div>
+      #     #     </body>
+      #     #   </html>
+      #     section = assert_find("section")
+      #     p section
+      #       # => #<Capybara::Element tag="h2" path="/html/body/div[1]">
+      #     h2 = assert_find(section, "h2")
+      #     p h2.text
+      #       # => "World"
+      def assert_find(*args, &block)
+        node = nil
+        node = args.shift if args[0].is_a?(::Capybara::Node::Base)
         args = normalize_page_finder_arguments(args)
         format = <<-EOT
 <?>(?) expected to be match a element in
 <?>
 EOT
+        if node
+          if node.base.respond_to?(:source)
+            node_source = node.base.source
+          else
+            node_source = node.base.native.to_s
+          end
+        else
+          node_source = source
+        end
         full_message = build_message(args[:message],
                                      format,
                                      args[:locator],
                                      args[:kind],
-                                     source)
-        element = page.first(*args[:finder_arguments])
+                                     node_source)
+        if node
+          element = node.first(*args[:finder_arguments])
+        else
+          element = first(*args[:finder_arguments])
+        end
         assert_block(full_message) do
           not element.nil?
         end
-        element
+        if block_given?
+          within(element, &block)
+        else
+          element
+        end
       end
 
       private

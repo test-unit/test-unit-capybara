@@ -100,8 +100,10 @@ EOM
 <html>
   <body>
     <h1>Hello</h1>
-    <h2>World</h2>
     <h2>Yay!</h2>
+    <div class="section">
+      <h2>World</h2>
+    </div>
   </body>
 </html>
 HTML
@@ -114,33 +116,88 @@ HTML
       end
     end
 
-    def test_no_kind
-      visit("/")
-      h2 = assert_page_find("h2")
-      assert_equal("World", h2.text)
-    end
+    class WithoutNodeTest < self
+      def test_no_kind
+        visit("/")
+        h2 = assert_find("h2")
+        assert_equal("Yay!", h2.text)
+      end
 
-    def test_css
-      visit("/")
-      h2 = assert_page_find(:css, "h2")
-      assert_equal("World", h2.text)
-    end
+      def test_css
+        visit("/")
+        h2 = assert_find(:css, "h2")
+        assert_equal("Yay!", h2.text)
+      end
 
-    def test_xpath
-      visit("/")
-      h2 = assert_page_find(:xpath, "//h2")
-      assert_equal("World", h2.text)
-    end
+      def test_xpath
+        visit("/")
+        h2 = assert_find(:xpath, "//h2")
+        assert_equal("Yay!", h2.text)
+      end
 
-    def test_fail
-      visit("/")
-      message = <<-EOM.strip
+      def test_block
+        visit("/")
+        assert_find("div.section") do
+          h2 = assert_find("h2")
+          assert_equal("World", h2.text)
+        end
+      end
+
+      def test_fail
+        visit("/")
+        message = <<-EOM.strip
 <"h3">(:css) expected to be match a element in
 <#{PP.pp(@html, "").chomp}>
 EOM
-      exception = Test::Unit::AssertionFailedError.new(message)
-      assert_raise(exception) do
-        assert_page_find("h3")
+        exception = Test::Unit::AssertionFailedError.new(message)
+        assert_raise(exception) do
+          assert_find("h3")
+        end
+      end
+    end
+
+    class WithNodeTest < self
+      def test_no_kind
+        visit("/")
+        section = assert_find("div.section")
+        h2 = assert_find(section, "h2")
+        assert_equal("World", h2.text)
+      end
+
+      def test_css
+        visit("/")
+        section = assert_find("div.section")
+        h2 = assert_find(section, :css, "h2")
+        assert_equal("World", h2.text)
+      end
+
+      def test_xpath
+        visit("/")
+        section = assert_find("div.section")
+        h2 = assert_find(section, :xpath, "//h2")
+        assert_equal("Yay!", h2.text)
+      end
+
+      def test_block
+        visit("/")
+        section = assert_find("div.section")
+        assert_find(section, "h2") do
+          assert_equal("World", text)
+        end
+      end
+
+      def test_fail
+        visit("/")
+        section = assert_find("div.section")
+        section_html = @html.scan(/<div class="section">.*?<\/div>/m)[0]
+        message = <<-EOM.strip
+<"h3">(:css) expected to be match a element in
+<#{PP.pp(section_html, "").chomp}>
+EOM
+        exception = Test::Unit::AssertionFailedError.new(message)
+        assert_raise(exception) do
+          assert_find(section, "h3")
+        end
       end
     end
   end
