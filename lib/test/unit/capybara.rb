@@ -179,7 +179,7 @@ module Test::Unit
         node = args.shift if args[0].is_a?(::Capybara::Node::Base)
         args = normalize_page_finder_arguments(args)
         format = <<-EOT
-<?>(?) expected to be match one or more elements in
+<?>(?) expected to find one or more elements in
 <?>
 EOT
         full_message = build_message(args[:message],
@@ -314,7 +314,7 @@ EOT
         node = args.shift if args[0].is_a?(::Capybara::Node::Base)
         args = normalize_page_finder_arguments(args)
         format = <<-EOT
-<?>(?) expected to be found a element in
+<?>(?) expected to find a element in
 <?>
 EOT
         full_message = build_message(args[:message],
@@ -417,7 +417,7 @@ EOT
           element = first(*args[:finder_arguments])
         end
         format = <<-EOT
-<?>(?) expected to not be found a element but was
+<?>(?) expected to not find a element but was
 <?> in
 <?>
 EOT

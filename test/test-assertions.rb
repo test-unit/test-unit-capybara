@@ -93,7 +93,7 @@ HTML
     def test_fail
       visit("/")
       message = <<-EOM.strip
-<"h3">(:css) expected to be match one or more elements in
+<"h3">(:css) expected to find one or more elements in
 <#{PP.pp(@html, "").chomp}>
 EOM
       exception = Test::Unit::AssertionFailedError.new(message)
@@ -155,7 +155,7 @@ HTML
       def test_fail
         visit("/")
         message = <<-EOM.strip
-<"h3">(:css) expected to be found a element in
+<"h3">(:css) expected to find a element in
 <#{PP.pp(@html, "").chomp}>
 EOM
         exception = Test::Unit::AssertionFailedError.new(message)
@@ -200,7 +200,7 @@ EOM
         section = assert_find("div.section")
         section_html = @html.scan(/<div class="section">.*?<\/div>/m)[0]
         message = <<-EOM.strip
-<"h3">(:css) expected to be found a element in
+<"h3">(:css) expected to find a element in
 <#{PP.pp(section_html, "").chomp}>
 EOM
         exception = Test::Unit::AssertionFailedError.new(message)
@@ -260,7 +260,7 @@ HTML
         visit("/")
         h1_html = @html.scan(/<h1>.*?<\/h1>/m)[0]
         message = <<-EOM.strip
-<"h1">(:css) expected to not be found a element but was
+<"h1">(:css) expected to not find a element but was
 <#{PP.pp(h1_html, "").chomp}> in
 <#{PP.pp(@html, "").chomp}>
 EOM
@@ -296,7 +296,7 @@ EOM
         section_html = @html.scan(/<div class="section">.*?<\/div>/m)[0]
         h2_html = section_html.scan(/<h2>.*?<\/h2>/m)[0]
         message = <<-EOM.strip
-<"h2">(:css) expected to not be found a element but was
+<"h2">(:css) expected to not find a element but was
 <#{PP.pp(h2_html, "").chomp}> in
 <#{PP.pp(section_html, "").chomp}>
 EOM
