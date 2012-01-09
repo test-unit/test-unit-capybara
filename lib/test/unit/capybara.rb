@@ -107,6 +107,9 @@ module Test::Unit
     end
 
     module Assertions
+      # @private
+      AssertionMessage = ::Test::Unit::Assertions::AssertionMessage
+
       # Passes if @expected@ == @source@. @source@ is a
       # method provided by Capybara::DSL.
       #
@@ -241,7 +244,7 @@ EOT
                                      format,
                                      args[:locator],
                                      args[:kind],
-                                     node_source(node))
+                                     AssertionMessage.literal(node_source(node)))
         if node
           elements = node.all(*args[:finder_arguments])
         else
@@ -472,8 +475,8 @@ EOT
                                      format,
                                      args[:locator],
                                      args[:kind],
-                                     element_source,
-                                     node_source(node))
+                                     AssertionMessage.literal(element_source),
+                                     AssertionMessage.literal(node_source(node)))
         assert_block(full_message) do
           element.nil?
         end
@@ -535,11 +538,12 @@ EOT
 <?>(?) expected to find a element in
 <?>
 EOT
+        base_html = AssertionMessage.literal(node_source(base_node))
         full_message = build_message(message,
                                      format,
                                      locator,
                                      kind,
-                                     node_source(base_node))
+                                     base_html)
         assert_block(full_message) do
           not element.nil?
         end

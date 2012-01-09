@@ -58,17 +58,7 @@ HTML
     def test_find_fail
       visit("/")
       within("div.section") do
-        section_html = @html.scan(/<div class="section">.*?<\/div>/m)[0]
-        h2_html = section_html.scan(/<h2>.*?<\/h2>/m)[0]
-        message = <<-EOM.strip
-<"h2">(:css) expected to not find a element but was
-<#{PP.pp(h2_html, "").chomp}> in
-<#{PP.pp(section_html, "").chomp}>
-EOM
-        exception = Test::Unit::AssertionFailedError.new(message)
-        assert_raise(exception) do
-          find("h3")
-        end
+        find("h3")
       end
     end
   end
@@ -84,23 +74,10 @@ EOM
   def test_find
     result = _run_test
     message = <<-EOM.chomp
-<Test::Unit::AssertionFailedError(<<"h2">(:css) expected to not find a element but was
-<"<h2>World</h2>"> in
-<"<div class=\\"section\\">\\n      <h2>World</h2>\\n    </div>">>)> exception expected but was
-<Test::Unit::Capybara::ElementNotFound(<Unable to find css "h3">)>.
-
-diff:
-+ Test::Unit::Capybara::ElementNotFound(<Unable to find css "h3">)
-- Test::Unit::AssertionFailedError(<<"h2">(:css) expected to not find a element but was
-- <"<h2>World</h2>"> in
-- <"<div class=\\"section\\">\\n      <h2>World</h2>\\n    </div>">>)
-
-folded diff:
-+ Test::Unit::Capybara::ElementNotFound(<Unable to find css "h3">)
-- Test::Unit::AssertionFailedError(<<"h2">(:css) expected to not find a element 
-- but was
-- <"<h2>World</h2>"> in
-- <"<div class=\\"section\\">\\n      <h2>World</h2>\\n    </div>">>)
+<"h3">(:css) expected to find a element in
+<<div class="section">
+      <h2>World</h2>
+    </div>>
 EOM
     assert_equal([message],
                  result.failures.collect {|failure| failure.message})
