@@ -106,6 +106,41 @@ module Test::Unit
       end
     end
 
+    # @private
+    class NodeInspector
+      Inspector = ::Test::Unit::Assertions::AssertionMessage::Inspector
+      Inspector.register_inspector_class(self)
+
+      class << self
+        def target?(object)
+          object.is_a?(::Capybara::Node::Base)
+        end
+
+        def source(node)
+          if node.base.respond_to?(:source)
+            node.base.source
+          else
+            node.base.native.to_s
+          end
+        end
+      end
+
+      def initialize(node, inspected_objects)
+        @node = node
+        @inspected_objects = inspected_objects
+      end
+
+      def inspect
+        @node.inspect.gsub(/>\z/, " #{self.class.source(@node)}>")
+      end
+
+      def pretty_print(q)
+        q.text(@node.inspect.gsub(/>\z/, ""))
+        q.breakable
+        q.text("#{self.class.source(@node)}>")
+      end
+    end
+
     module Assertions
       # @private
       AssertionMessage = ::Test::Unit::Assertions::AssertionMessage

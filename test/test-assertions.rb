@@ -307,4 +307,48 @@ EOM
       end
     end
   end
+
+  class InspectorTest < self
+    setup do
+      @html = <<-HTML
+<html>
+  <body>
+    <h1>Hello</h1>
+    <h2>Yay!</h2>
+    <div class="section">
+      <h2>World</h2>
+    </div>
+  </body>
+</html>
+HTML
+      Capybara.app = lambda do |environment|
+        [
+          200,
+          {"Content-Type" => "text/html"},
+          [@html],
+        ]
+      end
+    end
+
+    def test_pretty_print
+      visit("/")
+      section_html = @html.scan(/<div class="section">.*?<\/div>/m)[0]
+      message = <<-EOM.strip
+<"XXX"> expected but was
+<\#<Capybara::Element tag="div" path="/html/body/div"
+#{section_html}>>.
+
+diff:
+- "XXX"
++ \#<Capybara::Element tag="div" path="/html/body/div"
++ <div class="section">
++       <h2>World</h2>
++     </div>>
+EOM
+      exception = Test::Unit::AssertionFailedError.new(message)
+      assert_raise(exception) do
+        assert_equal("XXX", find("div.section"))
+      end
+    end
+  end
 end

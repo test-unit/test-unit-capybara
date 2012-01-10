@@ -16,7 +16,7 @@
 # License along with this library; if not, write to the Free Software
 # Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301  USA
 
-gem "test-unit"
+gem "test-unit", ">= 2.4.4"
 gem "capybara"
 gem "json"
 
