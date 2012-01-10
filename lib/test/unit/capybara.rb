@@ -101,7 +101,7 @@ module Test::Unit
                                query.selector.name, query.locator)
         rescue AssertionFailedError => assertion_failed_error
           assertion_failed_error.backtrace.replace(exception.backtrace)
-          handle_assertion_failed_error(assertion_failed_error)
+          handle_exception(assertion_failed_error)
         end
       end
     end
