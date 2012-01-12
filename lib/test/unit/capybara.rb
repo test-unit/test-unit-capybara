@@ -94,11 +94,12 @@ module Test::Unit
       private
       def handle_capybara_element_not_found(exception)
         return false unless exception.is_a?(ElementNotFound)
-        return false unless respond_to?(:assert_find_internal, true)
+        return false unless respond_to?(:flunk_find)
         query = exception.query
         begin
-          assert_find_internal(nil, exception.node, nil,
-                               query.selector.name, query.locator)
+          flunk_find(exception.node,
+                     :kind => query.selector.name,
+                     :locator => query.locator)
         rescue AssertionFailedError => assertion_failed_error
           assertion_failed_error.backtrace.replace(exception.backtrace)
           handle_exception(assertion_failed_error)
@@ -292,135 +293,6 @@ EOT
       end
 
       # @param [...] args (see {::Capybara::Node::Finders#find})
-      # @return [::Capybara::Element or returned object by block]
-      #   If @block@ isn't specified, the found element is returned.
-      #   Otherwise returned object by @block@ is returned.
-      #
-      # @yield [] The found element is the current element
-      #   in the @block@ by {::Capybara::Session#within}.
-      #
-      # @see ::Capybara::Node::Finders#find
-      #
-      # @overload assert_find(*args, &block)
-      #   Passes if the selector finds a element from the current node.
-      #
-      #   @example Pass case (simple)
-      #     # Actual response:
-      #     #   <html>
-      #     #     <body>
-      #     #       <h1>Hello</h1>
-      #     #       <h2>Yay!</h2>
-      #     #       <div class="section">
-      #     #         <h2>World</h2>
-      #     #       </div>
-      #     #     </body>
-      #     #   </html>
-      #     h2 = assert_find("h2")
-      #     p h2.text
-      #       # => "Yay!"
-      #
-      #   @example Pass case (with block)
-      #     # Actual response:
-      #     #   <html>
-      #     #     <body>
-      #     #       <h1>Hello</h1>
-      #     #       <h2>Yay!</h2>
-      #     #       <div class="section">
-      #     #         <h2>World</h2>
-      #     #       </div>
-      #     #     </body>
-      #     #   </html>
-      #     assert_find("section") do
-      #       h2 = assert_find("h2")
-      #       p h2.text
-      #         # => "World"
-      #     end
-      #
-      #   @example Failure case (simple)
-      #     # Actual response:
-      #     #   <html>
-      #     #     <body>
-      #     #       <h1>Hello</h1>
-      #     #       <h2>Yay!</h2>
-      #     #       <div class="section">
-      #     #         <h2>World</h2>
-      #     #       </div>
-      #     #     </body>
-      #     #   </html>
-      #     assert_find("h3")
-      #
-      #   @example Failure case (with block)
-      #     # Actual response:
-      #     #   <html>
-      #     #     <body>
-      #     #       <h1>Hello</h1>
-      #     #       <h2>Yay!</h2>
-      #     #       <div class="section">
-      #     #         <h2>World</h2>
-      #     #       </div>
-      #     #     </body>
-      #     #   </html>
-      #     assert_find("section") do |section|
-      #       assert_find("h3") # -> fail
-      #     end
-      #
-      # @overload assert_find(node, *args, &block)
-      #   Passes if the selector finds a element from @node@.
-      #
-      #   @param [::Capybara::Node::Base] node The target node.
-      #
-      #   @example Pass case (simple)
-      #     # Actual response:
-      #     #   <html>
-      #     #     <body>
-      #     #       <h1>Hello</h1>
-      #     #       <h2>Yay!</h2>
-      #     #       <div class="section">
-      #     #         <h2>World</h2>
-      #     #       </div>
-      #     #     </body>
-      #     #   </html>
-      #     section = assert_find("section")
-      #     p section
-      #       # => #<Capybara::Element tag="h2" path="/html/body/div">
-      #     h2 = assert_find(section, "h2")
-      #     p h2.text
-      #       # => "World"
-      #
-      #   @example Failure case
-      #     # Actual response:
-      #     #   <html>
-      #     #     <body>
-      #     #       <h1>Hello</h1>
-      #     #       <h2>Yay!</h2>
-      #     #       <div class="section">
-      #     #         <h2>World</h2>
-      #     #       </div>
-      #     #     </body>
-      #     #   </html>
-      #     section = assert_find("section")
-      #     p section
-      #       # => #<Capybara::Element tag="h2" path="/html/body/div">
-      #     assert_find(section, "h1")
-      def assert_find(*args, &block)
-        node = nil
-        node = args.shift if args[0].is_a?(::Capybara::Node::Base)
-        args = normalize_page_finder_arguments(args)
-        if node
-          element = node.first(*args[:finder_arguments])
-        else
-          element = first(*args[:finder_arguments])
-        end
-        assert_find_internal(element, node,
-                             args[:message], args[:kind], args[:locator])
-        if block_given?
-          within(element, &block)
-        else
-          element
-        end
-      end
-
-      # @param [...] args (see {::Capybara::Node::Finders#find})
       #
       # @see ::Capybara::Node::Finders#find
       #
@@ -517,6 +389,36 @@ EOT
         end
       end
 
+      # Fails always with {::Capybara::Node::Element} is not
+      # found message.
+      #
+      # @param [::Capybara::Node::Element] base_node The
+      #   node used as search target.
+      # @option options [String] :message The user custom
+      #   message added to failure message.
+      # @option options [String] :locator The query used to
+      #   find a node.
+      #
+      #   It should be specified for useful failure message.
+      # @option options [String] :kind The kind of query.
+      #
+      #   It should be specified for useful failure message.
+      def flunk_find(base_node, options={})
+        format = <<-EOT
+<?>(?) expected to find a element in
+<?>
+EOT
+        base_html = AssertionMessage.literal(node_source(base_node))
+        full_message = build_message(options[:message],
+                                     format,
+                                     options[:locator],
+                                     options[:kind],
+                                     base_html)
+        assert_block(full_message) do
+          false
+        end
+      end
+
       private
       def page_content_type
         page.response_headers["Content-Type"]
@@ -565,22 +467,6 @@ EOT
           end
         else
           source
-        end
-      end
-
-      def assert_find_internal(element, base_node, message, kind, locator)
-        format = <<-EOT
-<?>(?) expected to find a element in
-<?>
-EOT
-        base_html = AssertionMessage.literal(node_source(base_node))
-        full_message = build_message(message,
-                                     format,
-                                     locator,
-                                     kind,
-                                     base_html)
-        assert_block(full_message) do
-          not element.nil?
         end
       end
 

@@ -85,7 +85,7 @@ HTML
 
     def test_node
       visit("/")
-      section = assert_find("div.section")
+      section = find("div.section")
       h2s = assert_all(section, "h2")
       assert_equal(["World"], h2s.collect(&:text))
     end
@@ -99,114 +99,6 @@ EOM
       exception = Test::Unit::AssertionFailedError.new(message)
       assert_raise(exception) do
         assert_all("h3")
-      end
-    end
-  end
-
-  class FindTest < self
-    setup do
-      @html = <<-HTML
-<html>
-  <body>
-    <h1>Hello</h1>
-    <h2>Yay!</h2>
-    <div class="section">
-      <h2>World</h2>
-    </div>
-  </body>
-</html>
-HTML
-      Capybara.app = lambda do |environment|
-        [
-          200,
-          {"Content-Type" => "text/html"},
-          [@html],
-        ]
-      end
-    end
-
-    class WithoutNodeTest < self
-      def test_no_kind
-        visit("/")
-        h2 = assert_find("h2")
-        assert_equal("Yay!", h2.text)
-      end
-
-      def test_css
-        visit("/")
-        h2 = assert_find(:css, "h2")
-        assert_equal("Yay!", h2.text)
-      end
-
-      def test_xpath
-        visit("/")
-        h2 = assert_find(:xpath, "//h2")
-        assert_equal("Yay!", h2.text)
-      end
-
-      def test_block
-        visit("/")
-        assert_find("div.section") do
-          h2 = assert_find("h2")
-          assert_equal("World", h2.text)
-        end
-      end
-
-      def test_fail
-        visit("/")
-        message = <<-EOM.strip
-<"h3">(:css) expected to find a element in
-<#{@html}>
-EOM
-        exception = Test::Unit::AssertionFailedError.new(message)
-        assert_raise(exception) do
-          assert_find("h3")
-        end
-      end
-    end
-
-    class WithNodeTest < self
-      def test_no_kind
-        visit("/")
-        section = assert_find("div.section")
-        h2 = assert_find(section, "h2")
-        assert_equal("World", h2.text)
-      end
-
-      def test_css
-        visit("/")
-        section = assert_find("div.section")
-        h2 = assert_find(section, :css, "h2")
-        assert_equal("World", h2.text)
-      end
-
-      def test_xpath
-        visit("/")
-        section = assert_find("div.section")
-        h2 = assert_find(section, :xpath, "//h2")
-        assert_equal("Yay!", h2.text)
-      end
-
-      def test_block
-        visit("/")
-        section = assert_find("div.section")
-        assert_find(section, "h2") do
-          assert_equal("World", text)
-        end
-      end
-
-      def test_fail
-        visit("/")
-        section = assert_find("div.section")
-        section_html = @html.scan(/<div class="section">.*?<\/div>/m)[0]
-        message = <<-EOM.strip
-<"h3">(:css) expected to find a element in
-<#{section_html}>
-EOM
-        exception = Test::Unit::AssertionFailedError.new(message)
-        assert_raise(exception) do
-          assert_find(section, "h3")
-        end
       end
     end
   end
@@ -251,7 +143,7 @@ HTML
 
       def test_block
         visit("/")
-        assert_find("div.section") do
+        within("div.section") do
           assert_not_find("h3")
         end
       end
@@ -274,25 +166,25 @@ EOM
     class WithNodeTest < self
       def test_no_kind
         visit("/")
-        section = assert_find("div.section")
+        section = find("div.section")
         assert_not_find(section, "h1")
       end
 
       def test_css
         visit("/")
-        section = assert_find("div.section")
+        section = find("div.section")
         assert_not_find(section, :css, "h1")
       end
 
       def test_xpath
         visit("/")
-        section = assert_find("div.section")
+        section = find("div.section")
         assert_not_find(section, :xpath, ".//h1")
       end
 
       def test_fail
         visit("/")
-        section = assert_find("div.section")
+        section = find("div.section")
         section_html = @html.scan(/<div class="section">.*?<\/div>/m)[0]
         h2_html = section_html.scan(/<h2>.*?<\/h2>/m)[0]
         message = <<-EOM.strip
