@@ -17,7 +17,7 @@
 # Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301  USA
 
 gem "test-unit", ">= 2.4.4"
-gem "capybara"
+gem "capybara", ">= 1.1.3"
 gem "json"
 
 group :development, :test do
