@@ -102,7 +102,7 @@ EOM
       end
     end
 
-    def test_fail_within
+    def test_fail_in_context
       visit("/")
       section_html = @html.scan(/<div class="section">.*?<\/div>/m)[0]
       message = <<-EOM.strip
@@ -163,7 +163,7 @@ HTML
         end
       end
 
-      def test_fail
+      def test_fail_no_context
         visit("/")
         h1_html = @html.scan(/<h1>.*?<\/h1>/m)[0]
         message = <<-EOM.strip
@@ -174,6 +174,23 @@ EOM
         exception = Test::Unit::AssertionFailedError.new(message)
         assert_raise(exception) do
           assert_not_find("h1")
+        end
+      end
+
+      def test_fail_in_context
+        visit("/")
+        section_html = @html.scan(/<div class="section">.*?<\/div>/m)[0]
+        h2_in_section_html = section_html.scan(/<h2>.*?<\/h2>/m)[0]
+        message = <<-EOM.strip
+<"h2">(:css) expected to not find a element but was
+<#{h2_in_section_html}> in
+<#{section_html}>
+EOM
+        exception = Test::Unit::AssertionFailedError.new(message)
+        within("div.section") do
+          assert_raise(exception) do
+            assert_not_find("h2")
+          end
         end
       end
     end

@@ -381,12 +381,15 @@ EOT
 EOT
         element_source = nil
         element_source = node_source(element) if element
+        current_context = node || page.send(:current_node)
+        current_context_source = node_source(current_context)
+        source_in_message = AssertionMessage.literal(current_context_source)
         full_message = build_message(args[:message],
                                      format,
                                      args[:locator],
                                      args[:kind],
                                      AssertionMessage.literal(element_source),
-                                     AssertionMessage.literal(node_source(node)))
+                                     source_in_message)
         assert_block(full_message) do
           element.nil?
         end
