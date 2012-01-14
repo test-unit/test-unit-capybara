@@ -276,11 +276,14 @@ module Test::Unit
 <?>(?) expected to find one or more elements in
 <?>
 EOT
+        current_context = node || page.send(:current_node)
+        current_context_source = node_source(current_context)
+        source_in_message = AssertionMessage.literal(current_context_source)
         full_message = build_message(args[:message],
                                      format,
                                      args[:locator],
                                      args[:kind],
-                                     AssertionMessage.literal(node_source(node)))
+                                     source_in_message)
         if node
           elements = node.all(*args[:finder_arguments])
         else

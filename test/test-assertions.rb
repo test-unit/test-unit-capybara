@@ -90,7 +90,7 @@ HTML
       assert_equal(["World"], h2s.collect(&:text))
     end
 
-    def test_fail
+    def test_fail_no_context
       visit("/")
       message = <<-EOM.strip
 <"h3">(:css) expected to find one or more elements in
@@ -99,6 +99,21 @@ EOM
       exception = Test::Unit::AssertionFailedError.new(message)
       assert_raise(exception) do
         assert_all("h3")
+      end
+    end
+
+    def test_fail_within
+      visit("/")
+      section_html = @html.scan(/<div class="section">.*?<\/div>/m)[0]
+      message = <<-EOM.strip
+<"h1">(:css) expected to find one or more elements in
+<#{section_html}>
+EOM
+      exception = Test::Unit::AssertionFailedError.new(message)
+      within("div.section") do
+        assert_raise(exception) do
+          assert_all("h1")
+        end
       end
     end
   end
