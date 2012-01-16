@@ -1,0 +1,15 @@
+h1. News
+
+h2(#1-0-1). 1.0.1 - 2012-01-16
+
+A Capybara integration improvement release.
+
+h3. Improvments
+
+  * Added {Test::Unit::Capybara::Assertions#assert_all}.
+  * Added {Test::Unit::Capybara::Assertions#assert_not_find}.
+  * Supported Capybara::ElementNotFound as a failure.
+
+h2(#1-0-0). 1.0.0 - 2011-05-01
+
+The first release!!!
