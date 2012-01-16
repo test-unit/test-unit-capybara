@@ -17,6 +17,25 @@ h2. Usage
 <pre>
 require 'test/unit/capybara'
 
+class MyRackApplication
+  def call(env)
+    html = <<-HTML
+<html>
+  <head>
+    <title>Welcome! - my site</title>
+  </head>
+  <body>
+    <h1>Welcome!</h1>
+    <div class="header">
+      <p>No navigation.</p>
+    </div>
+  </body>
+</html>
+HTML
+   [200, {"Content-Type" => "text/html"}, [html]]
+  end
+end
+
 class TestMyRackApplication < Test::Unit::TestCase
   include Capybara::DSL
 
@@ -24,10 +43,34 @@ class TestMyRackApplication < Test::Unit::TestCase
     Capybara.app = MyRackApplication.new
   end
 
-  def test_top_page
+  def test_title
     visit("/")
-    within("title") do
+    within("h1") do
       assert_equal("Welcome!", text)
+    end
+  end
+
+  def test_no_sidebar
+    visit("/")
+    within("body") do
+      assert_not_find(".sidebar")
+    end
+  end
+
+  def test_header_content
+    visit("/")
+    within(".header") do
+      find("ol.navi")
+      # This fails with the following message:
+      #
+      # <"ol.navi">(:css) expected to find a element in
+      # <<div class="header">
+      #       <p>No navigation.</p>
+      #     </div>>
+      #
+      # This messages shows the current context. You don't need to
+      # entire HTML. You just see the current context moved by "within".
+      # It helps you debug a problem without save_and_open_page.
     end
   end
 end
