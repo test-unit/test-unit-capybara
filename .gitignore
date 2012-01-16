@@ -1,4 +1,6 @@
 /pkg/
+/doc/html/
 /doc/reference/
+/doc/po/*.pot
 /.yardoc/
 /Gemfile.lock
