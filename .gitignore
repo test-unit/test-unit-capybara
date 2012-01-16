@@ -4,3 +4,4 @@
 /doc/po/*.pot
 /.yardoc/
 /Gemfile.lock
+/*.gemspec
