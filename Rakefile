@@ -67,6 +67,16 @@ end
 Packnga::ReleaseTask.new(spec) do |task|
 end
 
+# XXX: Workaround. This should be fixed in packnga.
+task :htaccess do
+  htaccess = "doc/html/test-unit-capybara/.htaccess"
+  htaccess_content = File.read(htaccess)
+  File.open(htaccess, "w") do |htaccess_file|
+    htaccess_file.print(htaccess_content.gsub(/#test-unit-capybara/, ""))
+  end
+end
+task "release:reference:publish" => :htaccess
+
 desc "Tag the current revision."
 task :tag do
   message = "Released test-unit-capybara #{version}!"
