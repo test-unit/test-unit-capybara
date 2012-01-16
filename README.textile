@@ -26,8 +26,9 @@ class TestMyRackApplication < Test::Unit::TestCase
 
   def test_top_page
     visit("/")
-    title = assert_find("title")
-    assert_equal("Welcome!", title.text)
+    within("title") do
+      assert_equal("Welcome!", text)
+    end
   end
 end
 </pre>
