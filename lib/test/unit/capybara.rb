@@ -345,7 +345,7 @@ EOT
       #     #       </div>
       #     #     </body>
       #     #   </html>
-      #     section = assert_find("section")
+      #     section = find("section")
       #     p section
       #       # => #<Capybara::Element tag="h2" path="/html/body/div">
       #     assert_not_find(section, "h1")
@@ -361,7 +361,7 @@ EOT
       #     #       </div>
       #     #     </body>
       #     #   </html>
-      #     section = assert_find("section")
+      #     section = find("section")
       #     p section
       #       # => #<Capybara::Element tag="h2" path="/html/body/div">
       #     assert_not_find(section, "h2")
