@@ -83,4 +83,11 @@ task :tag do
   sh 'git', 'tag', '-a', version, '-m', message
 end
 
+desc "Run test"
+task :test do
+  ruby "test/run-test.rb"
+end
+
+task :default => :test
+
 # vim: syntax=Ruby
