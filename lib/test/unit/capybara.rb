@@ -53,11 +53,12 @@ module Test::Unit
 
     # @private
     class ElementNotFound < ::Capybara::ElementNotFound
-      attr_reader :node, :query
-      def initialize(node, query)
+      attr_reader :node, :kind, :locator
+      def initialize(node, kind, locator, message)
         @node = node
-        @query = query
-        super(@query.failure_message(:find, @node))
+        @kind = kind
+        @locator = locator
+        super(message)
       end
     end
 
@@ -73,8 +74,17 @@ module Test::Unit
       end
 
       def raise_find_error_for_test_unit(*args)
-        query = ::Capybara::Query.new(*args)
-        raise ElementNotFound.new(self, query)
+        options = extract_normalized_options(args)
+        normalized = ::Capybara::Selector.normalize(*args)
+        if normalized.failure_message
+          message = normalized.failure_message.call(self, normalized)
+        else
+          message = options[:message]
+          message ||= ("Unable to find #{normalized.name} " +
+                       "#{normalized.locator.inspect}")
+        end
+        raise ElementNotFound.new(self, normalized.selector.name,
+                                  normalized.locator, message)
       end
     end
 
@@ -95,11 +105,10 @@ module Test::Unit
       def handle_capybara_element_not_found(exception)
         return false unless exception.is_a?(ElementNotFound)
         return false unless respond_to?(:flunk_find)
-        query = exception.query
         begin
           flunk_find(exception.node,
-                     :kind => query.selector.name,
-                     :locator => query.locator)
+                     :kind => exception.kind,
+                     :locator => exception.locator)
         rescue AssertionFailedError => assertion_failed_error
           assertion_failed_error.backtrace.replace(exception.backtrace)
           handle_exception(assertion_failed_error)

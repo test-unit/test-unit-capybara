@@ -19,7 +19,7 @@
 source :rubygems
 
 gem "test-unit", ">= 2.4.4"
-gem "capybara", ">= 1.1.3"
+gem "capybara", ">= 1.1.2"
 gem "json"
 
 group :development, :test do
