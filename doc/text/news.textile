@@ -1,5 +1,13 @@
 h1. News
 
+h2(#1-0-2). 1.0.2 - 2012-03-12
+
+A Capybara integration improvement release.
+
+h3. Improvments
+
+  * Supported Capybara 1.1.2 again.
+
 h2(#1-0-1). 1.0.1 - 2012-01-16
 
 A Capybara integration improvement release.
