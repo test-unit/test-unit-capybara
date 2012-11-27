@@ -18,8 +18,8 @@
 
 source :rubygems
 
-gem "test-unit", ">= 2.4.4"
-gem "capybara", ">= 1.1.2"
+gem "test-unit", ">= 2.5.3"
+gem "capybara", ">= 2.0.1"
 gem "json"
 
 group :development, :test do

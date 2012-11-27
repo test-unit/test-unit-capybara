@@ -53,7 +53,8 @@ module Test::Unit
 
     # @private
     class ElementNotFound < ::Capybara::ElementNotFound
-      attr_reader :node, :kind, :locator
+      attr_accessor :node
+      attr_reader :kind, :locator
       def initialize(node, kind, locator, message)
         @node = node
         @kind = kind
@@ -63,34 +64,48 @@ module Test::Unit
     end
 
     # @private
-    module FindError
+    module FindErrorWrapper
       class << self
         def included(base)
           base.module_eval do
-            alias_method :raise_find_error_original, :raise_find_error
-            alias_method :raise_find_error, :raise_find_error_for_test_unit
+            alias_method :find_error_original, :find_error
+            alias_method :find_error, :find_error_for_test_unit
           end
         end
       end
 
-      def raise_find_error_for_test_unit(*args)
-        options = extract_normalized_options(args)
-        normalized = ::Capybara::Selector.normalize(*args)
-        if normalized.failure_message
-          message = normalized.failure_message.call(self, normalized)
-        else
-          message = options[:message]
-          message ||= ("Unable to find #{normalized.name} " +
-                       "#{normalized.locator.inspect}")
+      def find_error_for_test_unit(*args)
+        error = find_error_original(*args)
+        if error.is_a?(::Capybara::ElementNotFound)
+          error = ElementNotFound.new(nil,
+                                      @query.selector.name,
+                                      @query.locator,
+                                      error.message)
         end
-        raise ElementNotFound.new(self, normalized.selector.name,
-                                  normalized.locator, message)
+        error
       end
     end
 
     # @private
-    class ::Capybara::Node::Base
-      include FindError
+    module FindErrorNodeSetter
+      def find(*args)
+        begin
+          super
+        rescue ElementNotFound => error
+          error.node = self
+          raise error
+        end
+      end
+    end
+
+    # @private
+    class ::Capybara::Result
+      include FindErrorWrapper
+    end
+
+    # @private
+    class ::Capybara::Node::Element
+      include FindErrorNodeSetter
     end
 
     # @private
@@ -477,6 +492,8 @@ EOT
         if node
           if node.base.respond_to?(:source)
             node.base.source
+          elsif node.base.respond_to?(:html)
+            node.base.html
           else
             node.base.native.to_s
           end
