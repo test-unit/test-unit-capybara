@@ -73,6 +73,9 @@ HTML
 
   def test_find
     result = _run_test
+    assert_equal("1 tests, 1 assertions, 1 failures, 0 errors, 0 pendings, " \
+                 "0 omissions, 0 notifications", result.to_s)
+
     message = <<-EOM.chomp
 <"h3">(:css) expected to find a element in
 <<div class="section">
@@ -81,8 +84,6 @@ HTML
 EOM
     assert_equal([message],
                  result.failures.collect {|failure| failure.message})
-    assert_equal("1 tests, 1 assertions, 1 failures, 0 errors, 0 pendings, " \
-                 "0 omissions, 0 notifications", result.to_s)
   end
 
   private
