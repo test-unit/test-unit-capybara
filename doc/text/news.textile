@@ -1,4 +1,13 @@
 h1. News
+h2(#1-0-3). 1.0.3 - 2012-11-29
+
+A support Capybara 2.0.1 release.
+
+h3. Improvments
+
+* Supported Capybara 2.0.1.
+  It requires Capybara >= 2.0.1 and test-unit >= 2.5.3.
+  Notice: Capybara 1.X aren't supported yet from this release.
 
 h2(#1-0-2). 1.0.2 - 2012-03-12
 
