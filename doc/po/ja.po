@@ -5,9 +5,10 @@
 # Kouhei Sutou <kou@cozmixng.org>, 2012.
 msgid ""
 msgstr ""
-"Project-Id-Version: test-unit-capybara 1.0.1\n"
-"POT-Creation-Date: 2012-01-17 00:35+0900\n"
-"PO-Revision-Date: 2012-01-17 00:22+0900\n"
+"Project-Id-Version: test-unit-capybara 0.9.5\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2011-11-20 22:17+0900\n"
+"PO-Revision-Date: 2012-11-29 15:53+0900\n"
 "Last-Translator: Kouhei Sutou <kou@clear-code.com>\n"
 "Language-Team: Japanese\n"
 "Language: ja\n"
@@ -16,2274 +17,135 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
 
-#: doc/reference/en/Test/Unit/Capybara/Adapter.html:6(title)
-msgid "Module: Test::Unit::Capybara::Adapter &mdash; test-unit-capybara"
+#: README.textile:1
+msgid "h1. test-unit-capybara"
 msgstr ""
 
-#: doc/reference/en/Test/Unit/Capybara/Adapter.html:17(script)
-#: doc/reference/en/Test/Unit/Capybara/Assertions.html:17(script)
-msgid "relpath = '../../..'; if (relpath != '') relpath += '/';"
+#: README.textile:3
+msgid "\"Web site\":http://test-unit.rubyforge.org/#test-unit-capybara"
 msgstr ""
 
-#: doc/reference/en/Test/Unit/Capybara/Adapter.html:29(script)
-#: doc/reference/en/Test/Unit/Capybara/Assertions.html:29(script)
-#: doc/reference/en/Test/Unit/Capybara.html:29(script)
-#: doc/reference/en/Test/Unit/TestCase.html:29(script)
-#: doc/reference/en/Test/Unit.html:29(script)
-#: doc/reference/en/file.news.html:29(script)
-#: doc/reference/en/top-level-namespace.html:29(script)
-#: doc/reference/en/Test.html:29(script)
-#: doc/reference/en/index.html:29(script)
-#: doc/reference/en/file.README.html:29(script)
-#: doc/reference/en/_index.html:27(script)
-msgid "if (window.top.frames.main) document.body.className = 'frames';"
-msgstr ""
-
-#: doc/reference/en/Test/Unit/Capybara/Adapter.html:36(a)
-#: doc/reference/en/Test/Unit/Capybara/Assertions.html:36(a)
-msgid "Index (A)"
-msgstr ""
-
-#: doc/reference/en/Test/Unit/Capybara/Adapter.html:37(a)
-#: doc/reference/en/Test/Unit/Capybara/Assertions.html:37(a)
-#: doc/reference/en/Test/Unit/Capybara.html:37(a)
-#: doc/reference/en/Test/Unit/TestCase.html:37(a)
-#: doc/reference/en/Test/Unit.html:37(a)
-#: doc/reference/en/top-level-namespace.html:81(a)
-#: doc/reference/en/class_list.html:42(a)
-#: doc/reference/en/class_list.html:42(small)
-#: doc/reference/en/Test.html:39(span) doc/reference/en/index.html:88(span)
-#: doc/reference/en/file.README.html:88(span)
-#: doc/reference/en/_index.html:124(a)
-msgid "Test"
-msgstr ""
-
-#: doc/reference/en/Test/Unit/Capybara/Adapter.html:37(a)
-#: doc/reference/en/Test/Unit/Capybara/Assertions.html:37(a)
-#: doc/reference/en/Test/Unit/Capybara.html:37(a)
-#: doc/reference/en/Test/Unit/TestCase.html:37(a)
-#: doc/reference/en/Test/Unit.html:39(span)
-#: doc/reference/en/class_list.html:42(a) doc/reference/en/Test.html:105(a)
-#: doc/reference/en/index.html:88(span)
-#: doc/reference/en/file.README.html:88(span)
-#: doc/reference/en/_index.html:144(a)
-msgid "Unit"
-msgstr ""
-
-#: doc/reference/en/Test/Unit/Capybara/Adapter.html:37(a)
-#: doc/reference/en/Test/Unit/Capybara/Assertions.html:37(a)
-#: doc/reference/en/Test/Unit/Capybara/Assertions.html:401(span)
-#: doc/reference/en/Test/Unit/Capybara/Assertions.html:864(span)
-#: doc/reference/en/Test/Unit/Capybara.html:39(span)
-#: doc/reference/en/Test/Unit.html:86(a)
-#: doc/reference/en/class_list.html:42(a) doc/reference/en/index.html:60(a)
-#: doc/reference/en/index.html:89(span) doc/reference/en/index.html:92(span)
-#: doc/reference/en/file.README.html:60(a)
-#: doc/reference/en/file.README.html:89(span)
-#: doc/reference/en/file.README.html:92(span)
-#: doc/reference/en/_index.html:109(a)
-msgid "Capybara"
-msgstr ""
-
-#: doc/reference/en/Test/Unit/Capybara/Adapter.html:39(span)
-#: doc/reference/en/Test/Unit/Capybara.html:86(a)
-#: doc/reference/en/class_list.html:42(a) doc/reference/en/_index.html:87(a)
-msgid "Adapter"
-msgstr ""
-
-#: doc/reference/en/Test/Unit/Capybara/Adapter.html:42(span)
-#: doc/reference/en/Test/Unit/Capybara/Assertions.html:42(span)
-#: doc/reference/en/Test/Unit/Capybara/Assertions.html:238(span)
-#: doc/reference/en/Test/Unit/Capybara/Assertions.html:254(span)
-#: doc/reference/en/Test/Unit/Capybara/Assertions.html:288(span)
-#: doc/reference/en/Test/Unit/Capybara/Assertions.html:291(span)
-#: doc/reference/en/Test/Unit/Capybara/Assertions.html:399(span)
-#: doc/reference/en/Test/Unit/Capybara/Assertions.html:401(span)
-#: doc/reference/en/Test/Unit/Capybara/Assertions.html:402(span)
-#: doc/reference/en/Test/Unit/Capybara/Assertions.html:407(span)
-#: doc/reference/en/Test/Unit/Capybara/Assertions.html:408(span)
-#: doc/reference/en/Test/Unit/Capybara/Assertions.html:409(span)
-#: doc/reference/en/Test/Unit/Capybara/Assertions.html:410(span)
-#: doc/reference/en/Test/Unit/Capybara/Assertions.html:416(span)
-#: doc/reference/en/Test/Unit/Capybara/Assertions.html:418(span)
-#: doc/reference/en/Test/Unit/Capybara/Assertions.html:420(span)
-#: doc/reference/en/Test/Unit/Capybara/Assertions.html:460(span)
-#: doc/reference/en/Test/Unit/Capybara/Assertions.html:466(span)
-#: doc/reference/en/Test/Unit/Capybara/Assertions.html:633(span)
-#: doc/reference/en/Test/Unit/Capybara/Assertions.html:641(span)
-#: doc/reference/en/Test/Unit/Capybara/Assertions.html:643(span)
-#: doc/reference/en/Test/Unit/Capybara/Assertions.html:646(span)
-#: doc/reference/en/Test/Unit/Capybara/Assertions.html:649(span)
-#: doc/reference/en/Test/Unit/Capybara/Assertions.html:704(span)
-#: doc/reference/en/Test/Unit/Capybara/Assertions.html:717(span)
-#: doc/reference/en/Test/Unit/Capybara/Assertions.html:750(span)
-#: doc/reference/en/Test/Unit/Capybara/Assertions.html:753(span)
-#: doc/reference/en/Test/Unit/Capybara/Assertions.html:766(span)
-#: doc/reference/en/Test/Unit/Capybara/Assertions.html:769(span)
-#: doc/reference/en/Test/Unit/Capybara/Assertions.html:862(span)
-#: doc/reference/en/Test/Unit/Capybara/Assertions.html:864(span)
-#: doc/reference/en/Test/Unit/Capybara/Assertions.html:865(span)
-#: doc/reference/en/Test/Unit/Capybara/Assertions.html:867(span)
-#: doc/reference/en/Test/Unit/Capybara/Assertions.html:869(span)
-#: doc/reference/en/Test/Unit/Capybara/Assertions.html:877(span)
-#: doc/reference/en/Test/Unit/Capybara/Assertions.html:878(span)
-#: doc/reference/en/Test/Unit/Capybara/Assertions.html:879(span)
-#: doc/reference/en/Test/Unit/Capybara/Assertions.html:880(span)
-#: doc/reference/en/Test/Unit/Capybara/Assertions.html:881(span)
-#: doc/reference/en/Test/Unit/Capybara/Assertions.html:885(span)
-#: doc/reference/en/Test/Unit/Capybara/Assertions.html:887(span)
-#: doc/reference/en/Test/Unit/Capybara/Assertions.html:1015(span)
-#: doc/reference/en/Test/Unit/Capybara/Assertions.html:1020(span)
-#: doc/reference/en/Test/Unit/Capybara/Assertions.html:1021(span)
-#: doc/reference/en/Test/Unit/Capybara/Assertions.html:1026(span)
-#: doc/reference/en/Test/Unit/Capybara.html:42(span)
-#: doc/reference/en/Test/Unit/TestCase.html:42(span)
-#: doc/reference/en/Test/Unit.html:42(span)
-#: doc/reference/en/file.news.html:40(span)
-#: doc/reference/en/top-level-namespace.html:42(span)
-#: doc/reference/en/Test.html:42(span) doc/reference/en/index.html:40(span)
-#: doc/reference/en/index.html:70(span) doc/reference/en/index.html:96(span)
-#: doc/reference/en/index.html:97(span) doc/reference/en/index.html:98(span)
-#: doc/reference/en/index.html:103(span) doc/reference/en/index.html:104(span)
-#: doc/reference/en/index.html:105(span) doc/reference/en/index.html:110(span)
-#: doc/reference/en/index.html:111(span) doc/reference/en/index.html:112(span)
-#: doc/reference/en/file.README.html:40(span)
-#: doc/reference/en/file.README.html:70(span)
-#: doc/reference/en/file.README.html:96(span)
-#: doc/reference/en/file.README.html:97(span)
-#: doc/reference/en/file.README.html:98(span)
-#: doc/reference/en/file.README.html:103(span)
-#: doc/reference/en/file.README.html:104(span)
-#: doc/reference/en/file.README.html:105(span)
-#: doc/reference/en/file.README.html:110(span)
-#: doc/reference/en/file.README.html:111(span)
-#: doc/reference/en/file.README.html:112(span)
-#: doc/reference/en/_index.html:38(span)
-msgid "("
-msgstr ""
-
-#: doc/reference/en/Test/Unit/Capybara/Adapter.html:42(a)
-#: doc/reference/en/Test/Unit/Capybara/Assertions.html:42(a)
-#: doc/reference/en/Test/Unit/Capybara.html:42(a)
-#: doc/reference/en/Test/Unit/TestCase.html:42(a)
-#: doc/reference/en/Test/Unit.html:42(a) doc/reference/en/file.news.html:40(a)
-#: doc/reference/en/top-level-namespace.html:42(a)
-#: doc/reference/en/Test.html:42(a) doc/reference/en/index.html:40(a)
-#: doc/reference/en/file.README.html:40(a) doc/reference/en/_index.html:38(a)
-msgid "no frames"
-msgstr ""
-
-#: doc/reference/en/Test/Unit/Capybara/Adapter.html:42(span)
-#: doc/reference/en/Test/Unit/Capybara/Assertions.html:42(span)
-#: doc/reference/en/Test/Unit/Capybara/Assertions.html:238(span)
-#: doc/reference/en/Test/Unit/Capybara/Assertions.html:254(span)
-#: doc/reference/en/Test/Unit/Capybara/Assertions.html:288(span)
-#: doc/reference/en/Test/Unit/Capybara/Assertions.html:291(span)
-#: doc/reference/en/Test/Unit/Capybara/Assertions.html:399(span)
-#: doc/reference/en/Test/Unit/Capybara/Assertions.html:401(span)
-#: doc/reference/en/Test/Unit/Capybara/Assertions.html:402(span)
-#: doc/reference/en/Test/Unit/Capybara/Assertions.html:407(span)
-#: doc/reference/en/Test/Unit/Capybara/Assertions.html:408(span)
-#: doc/reference/en/Test/Unit/Capybara/Assertions.html:409(span)
-#: doc/reference/en/Test/Unit/Capybara/Assertions.html:414(span)
-#: doc/reference/en/Test/Unit/Capybara/Assertions.html:416(span)
-#: doc/reference/en/Test/Unit/Capybara/Assertions.html:418(span)
-#: doc/reference/en/Test/Unit/Capybara/Assertions.html:420(span)
-#: doc/reference/en/Test/Unit/Capybara/Assertions.html:460(span)
-#: doc/reference/en/Test/Unit/Capybara/Assertions.html:466(span)
-#: doc/reference/en/Test/Unit/Capybara/Assertions.html:633(span)
-#: doc/reference/en/Test/Unit/Capybara/Assertions.html:641(span)
-#: doc/reference/en/Test/Unit/Capybara/Assertions.html:643(span)
-#: doc/reference/en/Test/Unit/Capybara/Assertions.html:647(span)
-#: doc/reference/en/Test/Unit/Capybara/Assertions.html:649(span)
-#: doc/reference/en/Test/Unit/Capybara/Assertions.html:704(span)
-#: doc/reference/en/Test/Unit/Capybara/Assertions.html:717(span)
-#: doc/reference/en/Test/Unit/Capybara/Assertions.html:750(span)
-#: doc/reference/en/Test/Unit/Capybara/Assertions.html:753(span)
-#: doc/reference/en/Test/Unit/Capybara/Assertions.html:766(span)
-#: doc/reference/en/Test/Unit/Capybara/Assertions.html:769(span)
-#: doc/reference/en/Test/Unit/Capybara/Assertions.html:862(span)
-#: doc/reference/en/Test/Unit/Capybara/Assertions.html:864(span)
-#: doc/reference/en/Test/Unit/Capybara/Assertions.html:865(span)
-#: doc/reference/en/Test/Unit/Capybara/Assertions.html:867(span)
-#: doc/reference/en/Test/Unit/Capybara/Assertions.html:869(span)
-#: doc/reference/en/Test/Unit/Capybara/Assertions.html:877(span)
-#: doc/reference/en/Test/Unit/Capybara/Assertions.html:878(span)
-#: doc/reference/en/Test/Unit/Capybara/Assertions.html:879(span)
-#: doc/reference/en/Test/Unit/Capybara/Assertions.html:880(span)
-#: doc/reference/en/Test/Unit/Capybara/Assertions.html:885(span)
-#: doc/reference/en/Test/Unit/Capybara/Assertions.html:886(span)
-#: doc/reference/en/Test/Unit/Capybara/Assertions.html:887(span)
-#: doc/reference/en/Test/Unit/Capybara/Assertions.html:1015(span)
-#: doc/reference/en/Test/Unit/Capybara/Assertions.html:1020(span)
-#: doc/reference/en/Test/Unit/Capybara/Assertions.html:1025(span)
-#: doc/reference/en/Test/Unit/Capybara/Assertions.html:1026(span)
-#: doc/reference/en/Test/Unit/Capybara.html:42(span)
-#: doc/reference/en/Test/Unit/TestCase.html:42(span)
-#: doc/reference/en/Test/Unit.html:42(span)
-#: doc/reference/en/file.news.html:40(span)
-#: doc/reference/en/top-level-namespace.html:42(span)
-#: doc/reference/en/Test.html:42(span) doc/reference/en/index.html:40(span)
-#: doc/reference/en/index.html:70(span) doc/reference/en/index.html:96(span)
-#: doc/reference/en/index.html:97(span) doc/reference/en/index.html:98(span)
-#: doc/reference/en/index.html:103(span) doc/reference/en/index.html:104(span)
-#: doc/reference/en/index.html:105(span) doc/reference/en/index.html:110(span)
-#: doc/reference/en/index.html:111(span) doc/reference/en/index.html:112(span)
-#: doc/reference/en/file.README.html:40(span)
-#: doc/reference/en/file.README.html:70(span)
-#: doc/reference/en/file.README.html:96(span)
-#: doc/reference/en/file.README.html:97(span)
-#: doc/reference/en/file.README.html:98(span)
-#: doc/reference/en/file.README.html:103(span)
-#: doc/reference/en/file.README.html:104(span)
-#: doc/reference/en/file.README.html:105(span)
-#: doc/reference/en/file.README.html:110(span)
-#: doc/reference/en/file.README.html:111(span)
-#: doc/reference/en/file.README.html:112(span)
-#: doc/reference/en/_index.html:38(span)
-msgid ")"
-msgstr ""
-
-#: doc/reference/en/Test/Unit/Capybara/Adapter.html:47(a)
-#: doc/reference/en/Test/Unit/Capybara/Assertions.html:47(a)
-#: doc/reference/en/Test/Unit/Capybara.html:47(a)
-#: doc/reference/en/Test/Unit/TestCase.html:47(a)
-#: doc/reference/en/Test/Unit.html:47(a) doc/reference/en/file.news.html:45(a)
-#: doc/reference/en/top-level-namespace.html:47(a)
-#: doc/reference/en/class_list.html:28(h1) doc/reference/en/Test.html:47(a)
-#: doc/reference/en/index.html:45(a) doc/reference/en/file.README.html:45(a)
-#: doc/reference/en/_index.html:43(a)
-msgid "Class List"
-msgstr ""
-
-#: doc/reference/en/Test/Unit/Capybara/Adapter.html:49(a)
-#: doc/reference/en/Test/Unit/Capybara/Assertions.html:49(a)
-#: doc/reference/en/Test/Unit/Capybara.html:49(a)
-#: doc/reference/en/Test/Unit/TestCase.html:49(a)
-#: doc/reference/en/Test/Unit.html:49(a) doc/reference/en/file.news.html:47(a)
-#: doc/reference/en/top-level-namespace.html:49(a)
-#: doc/reference/en/method_list.html:28(h1) doc/reference/en/Test.html:49(a)
-#: doc/reference/en/index.html:47(a) doc/reference/en/file.README.html:47(a)
-#: doc/reference/en/_index.html:45(a)
-msgid "Method List"
-msgstr ""
-
-#: doc/reference/en/Test/Unit/Capybara/Adapter.html:51(a)
-#: doc/reference/en/Test/Unit/Capybara/Assertions.html:51(a)
-#: doc/reference/en/Test/Unit/Capybara.html:51(a)
-#: doc/reference/en/Test/Unit/TestCase.html:51(a)
-#: doc/reference/en/Test/Unit.html:51(a) doc/reference/en/file.news.html:49(a)
-#: doc/reference/en/top-level-namespace.html:51(a)
-#: doc/reference/en/Test.html:51(a) doc/reference/en/index.html:49(a)
-#: doc/reference/en/file.README.html:49(a)
-#: doc/reference/en/file_list.html:28(h1) doc/reference/en/_index.html:47(a)
-msgid "File List"
-msgstr ""
-
-#: doc/reference/en/Test/Unit/Capybara/Adapter.html:59(h1)
-msgid "Module: Test::Unit::Capybara::Adapter"
-msgstr ""
-
-#: doc/reference/en/Test/Unit/Capybara/Adapter.html:73(dt)
-msgid "Included in:"
-msgstr ""
-
-#: doc/reference/en/Test/Unit/Capybara/Adapter.html:74(a)
-#: doc/reference/en/Test/Unit/TestCase.html:39(span)
-#: doc/reference/en/Test/Unit.html:90(a)
-#: doc/reference/en/class_list.html:42(a) doc/reference/en/index.html:88(span)
-#: doc/reference/en/file.README.html:88(span)
-#: doc/reference/en/_index.html:129(a)
-msgid "TestCase"
-msgstr ""
-
-#: doc/reference/en/Test/Unit/Capybara/Adapter.html:78(dt)
-#: doc/reference/en/Test/Unit/Capybara/Assertions.html:74(dt)
-#: doc/reference/en/Test/Unit/Capybara.html:74(dt)
-#: doc/reference/en/Test/Unit/TestCase.html:93(dt)
-#: doc/reference/en/Test/Unit.html:74(dt) doc/reference/en/Test.html:74(dt)
-msgid "Defined in:"
-msgstr ""
-
-#: doc/reference/en/Test/Unit/Capybara/Adapter.html:79(dd)
-#: doc/reference/en/Test/Unit/Capybara/Assertions.html:75(dd)
-#: doc/reference/en/Test/Unit/TestCase.html:94(dd)
-msgid "lib/test/unit/capybara.rb"
-msgstr ""
-
-#: doc/reference/en/Test/Unit/Capybara/Assertions.html:6(title)
-msgid "Module: Test::Unit::Capybara::Assertions &mdash; test-unit-capybara"
-msgstr ""
-
-#: doc/reference/en/Test/Unit/Capybara/Assertions.html:39(span)
-#: doc/reference/en/Test/Unit/Capybara.html:86(a)
-#: doc/reference/en/class_list.html:42(a) doc/reference/en/_index.html:94(a)
-msgid "Assertions"
-msgstr ""
-
-#: doc/reference/en/Test/Unit/Capybara/Assertions.html:59(h1)
-msgid "Module: Test::Unit::Capybara::Assertions"
-msgstr ""
-
-#: doc/reference/en/Test/Unit/Capybara/Assertions.html:81(h2)
-#: doc/reference/en/Test/Unit/Capybara.html:93(h2)
-msgid "Constant Summary"
-msgstr ""
-
-#: doc/reference/en/Test/Unit/Capybara/Assertions.html:91(a)
-msgid "collapse"
-msgstr ""
-
-#: doc/reference/en/Test/Unit/Capybara/Assertions.html:91(small)
-#: doc/reference/en/Test/Unit/Capybara/Assertions.html:328(span)
-#: doc/reference/en/Test/Unit/Capybara/Assertions.html:345(span)
-#: doc/reference/en/Test/Unit/Capybara/Assertions.html:477(span)
-#: doc/reference/en/Test/Unit/Capybara/Assertions.html:493(span)
-#: doc/reference/en/Test/Unit/Capybara/Assertions.html:516(span)
-#: doc/reference/en/Test/Unit/Capybara/Assertions.html:561(span)
-#: doc/reference/en/Test/Unit/Capybara/Assertions.html:576(span)
-#: doc/reference/en/Test/Unit/Capybara/Assertions.html:804(span)
-#: doc/reference/en/Test/Unit/Capybara/Assertions.html:919(span)
-#: doc/reference/en/Test/Unit/Capybara/Assertions.html:934(span)
-#: doc/reference/en/Test/Unit/Capybara/Assertions.html:957(span)
-#: doc/reference/en/Test/Unit/Capybara/Assertions.html:967(span)
-#: doc/reference/en/Test/Unit/Capybara/Assertions.html:978(span)
-msgid "(<placeholder-1/>)"
-msgstr ""
-
-#: doc/reference/en/Test/Unit/Capybara/Assertions.html:89(h2)
-msgid "Instance Method Summary <placeholder-1/>"
-msgstr ""
-
-#: doc/reference/en/Test/Unit/Capybara/Assertions.html:99(strong)
-#: doc/reference/en/Test/Unit/Capybara/Assertions.html:194(strong)
-#: doc/reference/en/Test/Unit/Capybara/Assertions.html:196(strong)
-#: doc/reference/en/Test/Unit/Capybara/Assertions.html:214(strong)
-#: doc/reference/en/Test/Unit/Capybara/Assertions.html:264(strong)
-#: doc/reference/en/Test/Unit/Capybara/Assertions.html:291(span)
-#: doc/reference/en/Test/Unit/Capybara/Assertions.html:399(span)
-msgid "assert_all"
-msgstr ""
-
-#: doc/reference/en/Test/Unit/Capybara/Assertions.html:99(a)
-msgid "- (Array&lt;::Capybara::Element&gt;) <placeholder-1/>(*args)"
-msgstr ""
-
-#: doc/reference/en/Test/Unit/Capybara/Assertions.html:112(p)
-#: doc/reference/en/Test/Unit/Capybara/Assertions.html:203(p)
-#: doc/reference/en/Test/Unit/Capybara/Assertions.html:350(p)
-msgid "The found elements."
-msgstr ""
-
-#: doc/reference/en/Test/Unit/Capybara/Assertions.html:120(strong)
-#: doc/reference/en/Test/Unit/Capybara/Assertions.html:433(strong)
-#: doc/reference/en/Test/Unit/Capybara/Assertions.html:460(span)
-#: doc/reference/en/Test/Unit/Capybara/Assertions.html:466(span)
-#: doc/reference/en/Test/Unit/Capybara/Assertions.html:633(span)
-msgid "assert_body"
-msgstr ""
-
-#: doc/reference/en/Test/Unit/Capybara/Assertions.html:120(a)
-msgid ""
-"- (Object) <placeholder-1/>(expected, options = {}) {|expected_response, "
-"actual_response| ... }"
-msgstr ""
-
-#: doc/reference/en/Test/Unit/Capybara/Assertions.html:133(code)
-#: doc/reference/en/Test/Unit/Capybara/Assertions.html:439(code)
-#: doc/reference/en/Test/Unit/Capybara/Assertions.html:474(span)
-#: doc/reference/en/Test/Unit/Capybara/Assertions.html:633(span)
-#: doc/reference/en/Test/Unit/Capybara/Assertions.html:639(span)
-msgid "expected"
-msgstr ""
-
-#: doc/reference/en/Test/Unit/Capybara/Assertions.html:133(code)
-#: doc/reference/en/Test/Unit/Capybara/Assertions.html:439(code)
-#: doc/reference/en/Test/Unit/Capybara/Assertions.html:441(code)
-msgid "source"
-msgstr ""
-
-#: doc/reference/en/Test/Unit/Capybara/Assertions.html:133(p)
-msgid "Passes if <placeholder-1/> == <placeholder-2/>."
-msgstr ""
-
-#: doc/reference/en/Test/Unit/Capybara/Assertions.html:141(strong)
-#: doc/reference/en/Test/Unit/Capybara/Assertions.html:660(strong)
-#: doc/reference/en/Test/Unit/Capybara/Assertions.html:662(strong)
-#: doc/reference/en/Test/Unit/Capybara/Assertions.html:680(strong)
-#: doc/reference/en/Test/Unit/Capybara/Assertions.html:704(span)
-#: doc/reference/en/Test/Unit/Capybara/Assertions.html:717(span)
-#: doc/reference/en/Test/Unit/Capybara/Assertions.html:727(strong)
-#: doc/reference/en/Test/Unit/Capybara/Assertions.html:753(span)
-#: doc/reference/en/Test/Unit/Capybara/Assertions.html:769(span)
-#: doc/reference/en/Test/Unit/Capybara/Assertions.html:862(span)
-#: doc/reference/en/index.html:105(span)
-#: doc/reference/en/file.README.html:105(span)
-msgid "assert_not_find"
-msgstr ""
-
-#: doc/reference/en/Test/Unit/Capybara/Assertions.html:141(a)
-msgid "- (Object) <placeholder-1/>(*args, &amp;block)"
-msgstr ""
-
-#: doc/reference/en/Test/Unit/Capybara/Assertions.html:162(strong)
-#: doc/reference/en/Test/Unit/Capybara/Assertions.html:899(strong)
-#: doc/reference/en/Test/Unit/Capybara/Assertions.html:1015(span)
-msgid "flunk_find"
-msgstr ""
-
-#: doc/reference/en/Test/Unit/Capybara/Assertions.html:162(a)
-msgid "- (Object) <placeholder-1/>(base_node, options = {})"
-msgstr ""
-
-#: doc/reference/en/Test/Unit/Capybara/Assertions.html:175(p)
-#: doc/reference/en/Test/Unit/Capybara/Assertions.html:905(p)
-msgid "Fails always with Capybara::Node::Element is not found message."
-msgstr ""
-
-#: doc/reference/en/Test/Unit/Capybara/Assertions.html:187(h2)
-msgid "Instance Method Details"
-msgstr ""
-
-#: doc/reference/en/Test/Unit/Capybara/Assertions.html:194(tt)
-#: doc/reference/en/Test/Unit/Capybara/Assertions.html:196(tt)
-#: doc/reference/en/Test/Unit/Capybara/Assertions.html:214(tt)
-#: doc/reference/en/Test/Unit/Capybara/Assertions.html:264(tt)
-#: doc/reference/en/Test/Unit/Capybara/Assertions.html:345(tt)
-msgid "Array&lt;::Capybara::Element&gt;"
-msgstr ""
-
-#: doc/reference/en/Test/Unit/Capybara/Assertions.html:194(span)
-#: doc/reference/en/Test/Unit/Capybara/Assertions.html:214(span)
-msgid "- (<placeholder-1/>) <placeholder-2/>(*args)"
-msgstr ""
-
-#: doc/reference/en/Test/Unit/Capybara/Assertions.html:196(span)
-#: doc/reference/en/Test/Unit/Capybara/Assertions.html:264(span)
-msgid "- (<placeholder-1/>) <placeholder-2/>(node, *args)"
-msgstr ""
-
-#: doc/reference/en/Test/Unit/Capybara/Assertions.html:209(h3)
-#: doc/reference/en/Test/Unit/Capybara/Assertions.html:675(h3)
-msgid "Overloads:"
-msgstr ""
-
-#: doc/reference/en/Test/Unit/Capybara/Assertions.html:217(p)
-msgid ""
-"Passes if the selector finds one or more elements from the current node."
-msgstr ""
-
-#: doc/reference/en/Test/Unit/Capybara/Assertions.html:225(h3)
-#: doc/reference/en/Test/Unit/Capybara/Assertions.html:275(h3)
-#: doc/reference/en/Test/Unit/Capybara/Assertions.html:454(h3)
-#: doc/reference/en/Test/Unit/Capybara/Assertions.html:691(h3)
-#: doc/reference/en/Test/Unit/Capybara/Assertions.html:737(h3)
-msgid "Examples:"
-msgstr ""
-
-#: doc/reference/en/Test/Unit/Capybara/Assertions.html:227(p)
-#: doc/reference/en/Test/Unit/Capybara/Assertions.html:456(p)
-#: doc/reference/en/Test/Unit/Capybara/Assertions.html:693(p)
-#: doc/reference/en/Test/Unit/Capybara/Assertions.html:739(p)
-msgid "Pass case"
-msgstr ""
-
-#: doc/reference/en/Test/Unit/Capybara/Assertions.html:228(span)
-#: doc/reference/en/Test/Unit/Capybara/Assertions.html:244(span)
-#: doc/reference/en/Test/Unit/Capybara/Assertions.html:278(span)
-#: doc/reference/en/Test/Unit/Capybara/Assertions.html:457(span)
-#: doc/reference/en/Test/Unit/Capybara/Assertions.html:463(span)
-#: doc/reference/en/Test/Unit/Capybara/Assertions.html:694(span)
-#: doc/reference/en/Test/Unit/Capybara/Assertions.html:707(span)
-#: doc/reference/en/Test/Unit/Capybara/Assertions.html:740(span)
-#: doc/reference/en/Test/Unit/Capybara/Assertions.html:756(span)
-msgid "# Actual response:"
-msgstr ""
-
-#: doc/reference/en/Test/Unit/Capybara/Assertions.html:229(span)
-#: doc/reference/en/Test/Unit/Capybara/Assertions.html:245(span)
-#: doc/reference/en/Test/Unit/Capybara/Assertions.html:279(span)
-#: doc/reference/en/Test/Unit/Capybara/Assertions.html:695(span)
-#: doc/reference/en/Test/Unit/Capybara/Assertions.html:708(span)
-#: doc/reference/en/Test/Unit/Capybara/Assertions.html:741(span)
-#: doc/reference/en/Test/Unit/Capybara/Assertions.html:757(span)
-msgid "# &lt;html&gt;"
-msgstr ""
-
-#: doc/reference/en/Test/Unit/Capybara/Assertions.html:230(span)
-#: doc/reference/en/Test/Unit/Capybara/Assertions.html:246(span)
-#: doc/reference/en/Test/Unit/Capybara/Assertions.html:280(span)
-#: doc/reference/en/Test/Unit/Capybara/Assertions.html:696(span)
-#: doc/reference/en/Test/Unit/Capybara/Assertions.html:709(span)
-#: doc/reference/en/Test/Unit/Capybara/Assertions.html:742(span)
-#: doc/reference/en/Test/Unit/Capybara/Assertions.html:758(span)
-msgid "# &lt;body&gt;"
-msgstr ""
-
-#: doc/reference/en/Test/Unit/Capybara/Assertions.html:231(span)
-#: doc/reference/en/Test/Unit/Capybara/Assertions.html:247(span)
-#: doc/reference/en/Test/Unit/Capybara/Assertions.html:281(span)
-#: doc/reference/en/Test/Unit/Capybara/Assertions.html:697(span)
-#: doc/reference/en/Test/Unit/Capybara/Assertions.html:710(span)
-#: doc/reference/en/Test/Unit/Capybara/Assertions.html:743(span)
-#: doc/reference/en/Test/Unit/Capybara/Assertions.html:759(span)
-msgid "# &lt;h1&gt;Hello&lt;/h1&gt;"
-msgstr ""
-
-#: doc/reference/en/Test/Unit/Capybara/Assertions.html:232(span)
-#: doc/reference/en/Test/Unit/Capybara/Assertions.html:248(span)
-#: doc/reference/en/Test/Unit/Capybara/Assertions.html:282(span)
-#: doc/reference/en/Test/Unit/Capybara/Assertions.html:698(span)
-#: doc/reference/en/Test/Unit/Capybara/Assertions.html:711(span)
-#: doc/reference/en/Test/Unit/Capybara/Assertions.html:744(span)
-#: doc/reference/en/Test/Unit/Capybara/Assertions.html:760(span)
-msgid "# &lt;h2&gt;Yay!&lt;/h2&gt;"
-msgstr ""
-
-#: doc/reference/en/Test/Unit/Capybara/Assertions.html:233(span)
-#: doc/reference/en/Test/Unit/Capybara/Assertions.html:249(span)
-#: doc/reference/en/Test/Unit/Capybara/Assertions.html:283(span)
-#: doc/reference/en/Test/Unit/Capybara/Assertions.html:699(span)
-#: doc/reference/en/Test/Unit/Capybara/Assertions.html:712(span)
-#: doc/reference/en/Test/Unit/Capybara/Assertions.html:745(span)
-#: doc/reference/en/Test/Unit/Capybara/Assertions.html:761(span)
-msgid "# &lt;div class=\"section\"&gt;"
-msgstr ""
-
-#: doc/reference/en/Test/Unit/Capybara/Assertions.html:234(span)
-#: doc/reference/en/Test/Unit/Capybara/Assertions.html:250(span)
-#: doc/reference/en/Test/Unit/Capybara/Assertions.html:284(span)
-#: doc/reference/en/Test/Unit/Capybara/Assertions.html:700(span)
-#: doc/reference/en/Test/Unit/Capybara/Assertions.html:713(span)
-#: doc/reference/en/Test/Unit/Capybara/Assertions.html:746(span)
-#: doc/reference/en/Test/Unit/Capybara/Assertions.html:762(span)
-msgid "# &lt;h2&gt;World&lt;/h2&gt;"
-msgstr ""
-
-#: doc/reference/en/Test/Unit/Capybara/Assertions.html:235(span)
-#: doc/reference/en/Test/Unit/Capybara/Assertions.html:251(span)
-#: doc/reference/en/Test/Unit/Capybara/Assertions.html:285(span)
-#: doc/reference/en/Test/Unit/Capybara/Assertions.html:701(span)
-#: doc/reference/en/Test/Unit/Capybara/Assertions.html:714(span)
-#: doc/reference/en/Test/Unit/Capybara/Assertions.html:747(span)
-#: doc/reference/en/Test/Unit/Capybara/Assertions.html:763(span)
-msgid "# &lt;/div&gt;"
-msgstr ""
-
-#: doc/reference/en/Test/Unit/Capybara/Assertions.html:236(span)
-#: doc/reference/en/Test/Unit/Capybara/Assertions.html:252(span)
-#: doc/reference/en/Test/Unit/Capybara/Assertions.html:286(span)
-#: doc/reference/en/Test/Unit/Capybara/Assertions.html:702(span)
-#: doc/reference/en/Test/Unit/Capybara/Assertions.html:715(span)
-#: doc/reference/en/Test/Unit/Capybara/Assertions.html:748(span)
-#: doc/reference/en/Test/Unit/Capybara/Assertions.html:764(span)
-msgid "# &lt;/body&gt;"
-msgstr ""
-
-#: doc/reference/en/Test/Unit/Capybara/Assertions.html:237(span)
-#: doc/reference/en/Test/Unit/Capybara/Assertions.html:253(span)
-#: doc/reference/en/Test/Unit/Capybara/Assertions.html:287(span)
-#: doc/reference/en/Test/Unit/Capybara/Assertions.html:703(span)
-#: doc/reference/en/Test/Unit/Capybara/Assertions.html:716(span)
-#: doc/reference/en/Test/Unit/Capybara/Assertions.html:749(span)
-#: doc/reference/en/Test/Unit/Capybara/Assertions.html:765(span)
-msgid "# &lt;/html&gt;"
-msgstr ""
-
-#: doc/reference/en/Test/Unit/Capybara/Assertions.html:238(span)
-#: doc/reference/en/Test/Unit/Capybara/Assertions.html:239(span)
-#: doc/reference/en/Test/Unit/Capybara/Assertions.html:291(span)
-#: doc/reference/en/Test/Unit/Capybara/Assertions.html:292(span)
-msgid "h2_elements"
-msgstr ""
-
-#: doc/reference/en/Test/Unit/Capybara/Assertions.html:238(span)
-#: doc/reference/en/Test/Unit/Capybara/Assertions.html:288(span)
-#: doc/reference/en/Test/Unit/Capybara/Assertions.html:291(span)
-#: doc/reference/en/Test/Unit/Capybara/Assertions.html:400(span)
-#: doc/reference/en/Test/Unit/Capybara/Assertions.html:401(span)
-#: doc/reference/en/Test/Unit/Capybara/Assertions.html:402(span)
-#: doc/reference/en/Test/Unit/Capybara/Assertions.html:403(span)
-#: doc/reference/en/Test/Unit/Capybara/Assertions.html:407(span)
-#: doc/reference/en/Test/Unit/Capybara/Assertions.html:408(span)
-#: doc/reference/en/Test/Unit/Capybara/Assertions.html:409(span)
-#: doc/reference/en/Test/Unit/Capybara/Assertions.html:410(span)
-#: doc/reference/en/Test/Unit/Capybara/Assertions.html:416(span)
-#: doc/reference/en/Test/Unit/Capybara/Assertions.html:418(span)
-#: doc/reference/en/Test/Unit/Capybara/Assertions.html:633(span)
-#: doc/reference/en/Test/Unit/Capybara/Assertions.html:634(span)
-#: doc/reference/en/Test/Unit/Capybara/Assertions.html:635(span)
-#: doc/reference/en/Test/Unit/Capybara/Assertions.html:639(span)
-#: doc/reference/en/Test/Unit/Capybara/Assertions.html:641(span)
-#: doc/reference/en/Test/Unit/Capybara/Assertions.html:646(span)
-#: doc/reference/en/Test/Unit/Capybara/Assertions.html:750(span)
-#: doc/reference/en/Test/Unit/Capybara/Assertions.html:766(span)
-#: doc/reference/en/Test/Unit/Capybara/Assertions.html:863(span)
-#: doc/reference/en/Test/Unit/Capybara/Assertions.html:864(span)
-#: doc/reference/en/Test/Unit/Capybara/Assertions.html:865(span)
-#: doc/reference/en/Test/Unit/Capybara/Assertions.html:867(span)
-#: doc/reference/en/Test/Unit/Capybara/Assertions.html:869(span)
-#: doc/reference/en/Test/Unit/Capybara/Assertions.html:871(span)
-#: doc/reference/en/Test/Unit/Capybara/Assertions.html:876(span)
-#: doc/reference/en/Test/Unit/Capybara/Assertions.html:877(span)
-#: doc/reference/en/Test/Unit/Capybara/Assertions.html:878(span)
-#: doc/reference/en/Test/Unit/Capybara/Assertions.html:879(span)
-#: doc/reference/en/Test/Unit/Capybara/Assertions.html:880(span)
-#: doc/reference/en/Test/Unit/Capybara/Assertions.html:881(span)
-#: doc/reference/en/Test/Unit/Capybara/Assertions.html:1015(span)
-#: doc/reference/en/Test/Unit/Capybara/Assertions.html:1016(span)
-#: doc/reference/en/Test/Unit/Capybara/Assertions.html:1020(span)
-#: doc/reference/en/Test/Unit/Capybara/Assertions.html:1021(span)
-#: doc/reference/en/index.html:71(span) doc/reference/en/index.html:92(span)
-#: doc/reference/en/file.README.html:71(span)
-#: doc/reference/en/file.README.html:92(span)
-msgid "="
-msgstr ""
-
-#: doc/reference/en/Test/Unit/Capybara/Assertions.html:238(span)
-#: doc/reference/en/Test/Unit/Capybara/Assertions.html:254(span)
-msgid "assert_page_all"
-msgstr ""
-
-#: doc/reference/en/Test/Unit/Capybara/Assertions.html:238(span)
-#: doc/reference/en/Test/Unit/Capybara/Assertions.html:254(span)
-#: doc/reference/en/Test/Unit/Capybara/Assertions.html:288(span)
-#: doc/reference/en/Test/Unit/Capybara/Assertions.html:291(span)
-#: doc/reference/en/Test/Unit/Capybara/Assertions.html:460(span)
-#: doc/reference/en/Test/Unit/Capybara/Assertions.html:466(span)
-#: doc/reference/en/Test/Unit/Capybara/Assertions.html:704(span)
-#: doc/reference/en/Test/Unit/Capybara/Assertions.html:717(span)
-#: doc/reference/en/Test/Unit/Capybara/Assertions.html:750(span)
-#: doc/reference/en/Test/Unit/Capybara/Assertions.html:753(span)
-#: doc/reference/en/Test/Unit/Capybara/Assertions.html:766(span)
-#: doc/reference/en/Test/Unit/Capybara/Assertions.html:769(span)
-#: doc/reference/en/Test/Unit/Capybara.html:100(span)
-#: doc/reference/en/index.html:84(span) doc/reference/en/index.html:96(span)
-#: doc/reference/en/index.html:97(span) doc/reference/en/index.html:98(span)
-#: doc/reference/en/index.html:103(span) doc/reference/en/index.html:104(span)
-#: doc/reference/en/index.html:105(span) doc/reference/en/index.html:110(span)
-#: doc/reference/en/index.html:111(span) doc/reference/en/index.html:112(span)
-#: doc/reference/en/file.README.html:84(span)
-#: doc/reference/en/file.README.html:96(span)
-#: doc/reference/en/file.README.html:97(span)
-#: doc/reference/en/file.README.html:98(span)
-#: doc/reference/en/file.README.html:103(span)
-#: doc/reference/en/file.README.html:104(span)
-#: doc/reference/en/file.README.html:105(span)
-#: doc/reference/en/file.README.html:110(span)
-#: doc/reference/en/file.README.html:111(span)
-#: doc/reference/en/file.README.html:112(span)
-msgid "\""
-msgstr ""
-
-#: doc/reference/en/Test/Unit/Capybara/Assertions.html:238(span)
-#: doc/reference/en/Test/Unit/Capybara/Assertions.html:291(span)
-#: doc/reference/en/Test/Unit/Capybara/Assertions.html:769(span)
-msgid "h2"
-msgstr ""
-
-#: doc/reference/en/Test/Unit/Capybara/Assertions.html:239(span)
-#: doc/reference/en/Test/Unit/Capybara/Assertions.html:289(span)
-#: doc/reference/en/Test/Unit/Capybara/Assertions.html:292(span)
-#: doc/reference/en/Test/Unit/Capybara/Assertions.html:751(span)
-#: doc/reference/en/Test/Unit/Capybara/Assertions.html:767(span)
-msgid "p"
-msgstr ""
-
-#: doc/reference/en/Test/Unit/Capybara/Assertions.html:240(span)
-msgid "# =&gt; [#&lt;Capybara::Element tag=\"h2\" path=\"/html/body/h2\"&gt;,"
-msgstr ""
-
-#: doc/reference/en/Test/Unit/Capybara/Assertions.html:241(span)
-msgid "# #&lt;Capybara::Element tag=\"h2\" path=\"/html/body/div/h2\"&gt;]"
-msgstr ""
-
-#: doc/reference/en/Test/Unit/Capybara/Assertions.html:243(p)
-#: doc/reference/en/Test/Unit/Capybara/Assertions.html:462(p)
-#: doc/reference/en/Test/Unit/Capybara/Assertions.html:706(p)
-#: doc/reference/en/Test/Unit/Capybara/Assertions.html:755(p)
-msgid "Failure case"
-msgstr ""
-
-#: doc/reference/en/Test/Unit/Capybara/Assertions.html:254(span)
-#: doc/reference/en/Test/Unit/Capybara/Assertions.html:704(span)
-msgid "h3"
-msgstr ""
-
-#: doc/reference/en/Test/Unit/Capybara/Assertions.html:268(code)
-#: doc/reference/en/Test/Unit/Capybara/Assertions.html:301(span)
-#: doc/reference/en/Test/Unit/Capybara/Assertions.html:400(span)
-#: doc/reference/en/Test/Unit/Capybara/Assertions.html:401(span)
-#: doc/reference/en/Test/Unit/Capybara/Assertions.html:407(span)
-#: doc/reference/en/Test/Unit/Capybara/Assertions.html:415(span)
-#: doc/reference/en/Test/Unit/Capybara/Assertions.html:416(span)
-#: doc/reference/en/Test/Unit/Capybara/Assertions.html:730(code)
-#: doc/reference/en/Test/Unit/Capybara/Assertions.html:777(span)
-#: doc/reference/en/Test/Unit/Capybara/Assertions.html:863(span)
-#: doc/reference/en/Test/Unit/Capybara/Assertions.html:864(span)
-#: doc/reference/en/Test/Unit/Capybara/Assertions.html:866(span)
-#: doc/reference/en/Test/Unit/Capybara/Assertions.html:867(span)
-#: doc/reference/en/Test/Unit/Capybara/Assertions.html:878(span)
-msgid "node"
-msgstr ""
-
-#: doc/reference/en/Test/Unit/Capybara/Assertions.html:267(p)
-msgid ""
-"Passes if the selector finds one or more elements from <placeholder-1/>."
-msgstr ""
-
-#: doc/reference/en/Test/Unit/Capybara/Assertions.html:277(p)
-msgid "Pass case (simple)"
-msgstr ""
-
-#: doc/reference/en/Test/Unit/Capybara/Assertions.html:288(span)
-#: doc/reference/en/Test/Unit/Capybara/Assertions.html:289(span)
-#: doc/reference/en/Test/Unit/Capybara/Assertions.html:291(span)
-#: doc/reference/en/Test/Unit/Capybara/Assertions.html:750(span)
-#: doc/reference/en/Test/Unit/Capybara/Assertions.html:751(span)
-#: doc/reference/en/Test/Unit/Capybara/Assertions.html:753(span)
-#: doc/reference/en/Test/Unit/Capybara/Assertions.html:766(span)
-#: doc/reference/en/Test/Unit/Capybara/Assertions.html:767(span)
-#: doc/reference/en/Test/Unit/Capybara/Assertions.html:769(span)
-msgid "section"
-msgstr ""
-
-#: doc/reference/en/Test/Unit/Capybara/Assertions.html:288(span)
-#: doc/reference/en/Test/Unit/Capybara/Assertions.html:750(span)
-#: doc/reference/en/Test/Unit/Capybara/Assertions.html:766(span)
-msgid "assert_find"
-msgstr ""
-
-#: doc/reference/en/Test/Unit/Capybara/Assertions.html:288(span)
-msgid "div.section"
-msgstr ""
-
-#: doc/reference/en/Test/Unit/Capybara/Assertions.html:290(span)
-#: doc/reference/en/Test/Unit/Capybara/Assertions.html:752(span)
-#: doc/reference/en/Test/Unit/Capybara/Assertions.html:768(span)
-msgid "# =&gt; #&lt;Capybara::Element tag=\"h2\" path=\"/html/body/div\"&gt;"
-msgstr ""
-
-#: doc/reference/en/Test/Unit/Capybara/Assertions.html:291(span)
-#: doc/reference/en/Test/Unit/Capybara/Assertions.html:410(span)
-#: doc/reference/en/Test/Unit/Capybara/Assertions.html:411(span)
-#: doc/reference/en/Test/Unit/Capybara/Assertions.html:412(span)
-#: doc/reference/en/Test/Unit/Capybara/Assertions.html:413(span)
-#: doc/reference/en/Test/Unit/Capybara/Assertions.html:460(span)
-#: doc/reference/en/Test/Unit/Capybara/Assertions.html:633(span)
-#: doc/reference/en/Test/Unit/Capybara/Assertions.html:636(span)
-#: doc/reference/en/Test/Unit/Capybara/Assertions.html:637(span)
-#: doc/reference/en/Test/Unit/Capybara/Assertions.html:646(span)
-#: doc/reference/en/Test/Unit/Capybara/Assertions.html:649(span)
-#: doc/reference/en/Test/Unit/Capybara/Assertions.html:753(span)
-#: doc/reference/en/Test/Unit/Capybara/Assertions.html:769(span)
-#: doc/reference/en/Test/Unit/Capybara/Assertions.html:862(span)
-#: doc/reference/en/Test/Unit/Capybara/Assertions.html:881(span)
-#: doc/reference/en/Test/Unit/Capybara/Assertions.html:882(span)
-#: doc/reference/en/Test/Unit/Capybara/Assertions.html:883(span)
-#: doc/reference/en/Test/Unit/Capybara/Assertions.html:884(span)
-#: doc/reference/en/Test/Unit/Capybara/Assertions.html:885(span)
-#: doc/reference/en/Test/Unit/Capybara/Assertions.html:1015(span)
-#: doc/reference/en/Test/Unit/Capybara/Assertions.html:1021(span)
-#: doc/reference/en/Test/Unit/Capybara/Assertions.html:1022(span)
-#: doc/reference/en/Test/Unit/Capybara/Assertions.html:1023(span)
-#: doc/reference/en/Test/Unit/Capybara/Assertions.html:1024(span)
-#: doc/reference/en/index.html:84(span) doc/reference/en/index.html:98(span)
-#: doc/reference/en/file.README.html:84(span)
-#: doc/reference/en/file.README.html:98(span)
-msgid ","
-msgstr ""
-
-#: doc/reference/en/Test/Unit/Capybara/Assertions.html:293(span)
-msgid ""
-"# =&gt; [#&lt;Capybara::Element tag=\"h2\" path=\"/html/body/div/h2\"&gt;]"
-msgstr ""
-
-#: doc/reference/en/Test/Unit/Capybara/Assertions.html:296(h3)
-#: doc/reference/en/Test/Unit/Capybara/Assertions.html:320(h3)
-#: doc/reference/en/Test/Unit/Capybara/Assertions.html:469(h3)
-#: doc/reference/en/Test/Unit/Capybara/Assertions.html:772(h3)
-#: doc/reference/en/Test/Unit/Capybara/Assertions.html:796(h3)
-#: doc/reference/en/Test/Unit/Capybara/Assertions.html:911(h3)
-msgid "Parameters:"
-msgstr ""
-
-#: doc/reference/en/Test/Unit/Capybara/Assertions.html:304(a)
-#: doc/reference/en/Test/Unit/Capybara/Assertions.html:780(a)
-msgid "::Capybara::Node::Base"
-msgstr ""
-
-#: doc/reference/en/Test/Unit/Capybara/Assertions.html:304(span)
-#: doc/reference/en/Test/Unit/Capybara/Assertions.html:780(span)
-msgid "(<tt><span class=\"object_link\"><placeholder-1/></span></tt>)"
-msgstr ""
-
-#: doc/reference/en/Test/Unit/Capybara/Assertions.html:309(p)
-#: doc/reference/en/Test/Unit/Capybara/Assertions.html:785(p)
-msgid "The target node."
-msgstr ""
-
-#: doc/reference/en/Test/Unit/Capybara/Assertions.html:325(span)
-#: doc/reference/en/Test/Unit/Capybara/Assertions.html:399(span)
-#: doc/reference/en/Test/Unit/Capybara/Assertions.html:401(span)
-#: doc/reference/en/Test/Unit/Capybara/Assertions.html:402(span)
-#: doc/reference/en/Test/Unit/Capybara/Assertions.html:410(span)
-#: doc/reference/en/Test/Unit/Capybara/Assertions.html:412(span)
-#: doc/reference/en/Test/Unit/Capybara/Assertions.html:413(span)
-#: doc/reference/en/Test/Unit/Capybara/Assertions.html:416(span)
-#: doc/reference/en/Test/Unit/Capybara/Assertions.html:418(span)
-#: doc/reference/en/Test/Unit/Capybara/Assertions.html:801(span)
-#: doc/reference/en/Test/Unit/Capybara/Assertions.html:862(span)
-#: doc/reference/en/Test/Unit/Capybara/Assertions.html:864(span)
-#: doc/reference/en/Test/Unit/Capybara/Assertions.html:865(span)
-#: doc/reference/en/Test/Unit/Capybara/Assertions.html:867(span)
-#: doc/reference/en/Test/Unit/Capybara/Assertions.html:869(span)
-#: doc/reference/en/Test/Unit/Capybara/Assertions.html:881(span)
-#: doc/reference/en/Test/Unit/Capybara/Assertions.html:883(span)
-#: doc/reference/en/Test/Unit/Capybara/Assertions.html:884(span)
-msgid "args"
-msgstr ""
-
-#: doc/reference/en/Test/Unit/Capybara/Assertions.html:328(tt)
-#: doc/reference/en/Test/Unit/Capybara/Assertions.html:804(tt)
-msgid "..."
-msgstr ""
-
-#: doc/reference/en/Test/Unit/Capybara/Assertions.html:333(p)
-msgid "(see Capybara::Node::Finders#all)"
-msgstr ""
-
-#: doc/reference/en/Test/Unit/Capybara/Assertions.html:339(h3)
-msgid "Returns:"
-msgstr ""
-
-#: doc/reference/en/Test/Unit/Capybara/Assertions.html:356(h3)
-#: doc/reference/en/Test/Unit/Capybara/Assertions.html:816(h3)
-msgid "See Also:"
-msgstr ""
-
-#: doc/reference/en/Test/Unit/Capybara/Assertions.html:359(li)
-msgid "Capybara::Node::Finders#all"
-msgstr ""
-
-#: doc/reference/en/Test/Unit/Capybara/Assertions.html:366(pre)
-msgid ""
-"271 272 273 274 275 276 277 278 279 280 281 282 283 284 285 286 287 288 289 "
-"290 291 292 293 294 295 296"
-msgstr ""
-
-#: doc/reference/en/Test/Unit/Capybara/Assertions.html:397(span)
-msgid "# File 'lib/test/unit/capybara.rb', line 271"
-msgstr ""
-
-#: doc/reference/en/Test/Unit/Capybara/Assertions.html:399(span)
-#: doc/reference/en/Test/Unit/Capybara/Assertions.html:633(span)
-#: doc/reference/en/Test/Unit/Capybara/Assertions.html:862(span)
-#: doc/reference/en/Test/Unit/Capybara/Assertions.html:1015(span)
-#: doc/reference/en/index.html:70(span) doc/reference/en/index.html:91(span)
-#: doc/reference/en/index.html:95(span) doc/reference/en/index.html:102(span)
-#: doc/reference/en/index.html:109(span)
-#: doc/reference/en/file.README.html:70(span)
-#: doc/reference/en/file.README.html:91(span)
-#: doc/reference/en/file.README.html:95(span)
-#: doc/reference/en/file.README.html:102(span)
-#: doc/reference/en/file.README.html:109(span)
-msgid "def"
-msgstr ""
-
-#: doc/reference/en/Test/Unit/Capybara/Assertions.html:399(span)
-#: doc/reference/en/Test/Unit/Capybara/Assertions.html:416(span)
-#: doc/reference/en/Test/Unit/Capybara/Assertions.html:418(span)
-#: doc/reference/en/Test/Unit/Capybara/Assertions.html:862(span)
-#: doc/reference/en/Test/Unit/Capybara/Assertions.html:867(span)
-#: doc/reference/en/Test/Unit/Capybara/Assertions.html:869(span)
-#: doc/reference/en/Test.html:82(del)
-msgid "*"
-msgstr ""
-
-#: doc/reference/en/Test/Unit/Capybara/Assertions.html:400(span)
-#: doc/reference/en/Test/Unit/Capybara/Assertions.html:520(tt)
-#: doc/reference/en/Test/Unit/Capybara/Assertions.html:523(code)
-#: doc/reference/en/Test/Unit/Capybara/Assertions.html:863(span)
-#: doc/reference/en/Test/Unit/Capybara/Assertions.html:876(span)
-msgid "nil"
-msgstr ""
-
-#: doc/reference/en/Test/Unit/Capybara/Assertions.html:401(span)
-#: doc/reference/en/Test/Unit/Capybara/Assertions.html:407(span)
-#: doc/reference/en/Test/Unit/Capybara/Assertions.html:409(span)
-#: doc/reference/en/Test/Unit/Capybara/Assertions.html:416(span)
-#: doc/reference/en/Test/Unit/Capybara/Assertions.html:421(span)
-#: doc/reference/en/Test/Unit/Capybara/Assertions.html:643(span)
-#: doc/reference/en/Test/Unit/Capybara/Assertions.html:864(span)
-#: doc/reference/en/Test/Unit/Capybara/Assertions.html:867(span)
-#: doc/reference/en/Test/Unit/Capybara/Assertions.html:878(span)
-#: doc/reference/en/Test/Unit/Capybara/Assertions.html:880(span)
-#: doc/reference/en/Test/Unit/Capybara/Assertions.html:885(span)
-#: doc/reference/en/Test/Unit/Capybara/Assertions.html:888(span)
-#: doc/reference/en/Test/Unit/Capybara/Assertions.html:1020(span)
-#: doc/reference/en/index.html:92(span)
-#: doc/reference/en/file.README.html:92(span)
-msgid "."
-msgstr ""
-
-#: doc/reference/en/Test/Unit/Capybara/Assertions.html:401(span)
-#: doc/reference/en/Test/Unit/Capybara/Assertions.html:864(span)
-msgid "shift"
-msgstr ""
-
-#: doc/reference/en/Test/Unit/Capybara/Assertions.html:401(span)
-#: doc/reference/en/Test/Unit/Capybara/Assertions.html:415(span)
-#: doc/reference/en/Test/Unit/Capybara/Assertions.html:640(span)
-#: doc/reference/en/Test/Unit/Capybara/Assertions.html:645(span)
-#: doc/reference/en/Test/Unit/Capybara/Assertions.html:864(span)
-#: doc/reference/en/Test/Unit/Capybara/Assertions.html:866(span)
-#: doc/reference/en/Test/Unit/Capybara/Assertions.html:877(span)
-msgid "if"
-msgstr ""
-
-#: doc/reference/en/Test/Unit/Capybara/Assertions.html:401(span)
-#: doc/reference/en/Test/Unit/Capybara/Assertions.html:410(span)
-#: doc/reference/en/Test/Unit/Capybara/Assertions.html:412(span)
-#: doc/reference/en/Test/Unit/Capybara/Assertions.html:413(span)
-#: doc/reference/en/Test/Unit/Capybara/Assertions.html:416(span)
-#: doc/reference/en/Test/Unit/Capybara/Assertions.html:418(span)
-#: doc/reference/en/Test/Unit/Capybara/Assertions.html:634(span)
-#: doc/reference/en/Test/Unit/Capybara/Assertions.html:641(span)
-#: doc/reference/en/Test/Unit/Capybara/Assertions.html:864(span)
-#: doc/reference/en/Test/Unit/Capybara/Assertions.html:867(span)
-#: doc/reference/en/Test/Unit/Capybara/Assertions.html:869(span)
-#: doc/reference/en/Test/Unit/Capybara/Assertions.html:881(span)
-#: doc/reference/en/Test/Unit/Capybara/Assertions.html:883(span)
-#: doc/reference/en/Test/Unit/Capybara/Assertions.html:884(span)
-#: doc/reference/en/Test/Unit/Capybara/Assertions.html:1021(span)
-#: doc/reference/en/Test/Unit/Capybara/Assertions.html:1023(span)
-#: doc/reference/en/Test/Unit/Capybara/Assertions.html:1024(span)
-#: doc/reference/en/index.html:84(span)
-#: doc/reference/en/file.README.html:84(span)
-msgid "["
-msgstr ""
-
-#: doc/reference/en/Test/Unit/Capybara/Assertions.html:401(span)
-#: doc/reference/en/Test/Unit/Capybara/Assertions.html:864(span)
-msgid "0"
-msgstr ""
-
-#: doc/reference/en/Test/Unit/Capybara/Assertions.html:401(span)
-#: doc/reference/en/Test/Unit/Capybara/Assertions.html:410(span)
-#: doc/reference/en/Test/Unit/Capybara/Assertions.html:412(span)
-#: doc/reference/en/Test/Unit/Capybara/Assertions.html:413(span)
-#: doc/reference/en/Test/Unit/Capybara/Assertions.html:416(span)
-#: doc/reference/en/Test/Unit/Capybara/Assertions.html:418(span)
-#: doc/reference/en/Test/Unit/Capybara/Assertions.html:634(span)
-#: doc/reference/en/Test/Unit/Capybara/Assertions.html:641(span)
-#: doc/reference/en/Test/Unit/Capybara/Assertions.html:864(span)
-#: doc/reference/en/Test/Unit/Capybara/Assertions.html:867(span)
-#: doc/reference/en/Test/Unit/Capybara/Assertions.html:869(span)
-#: doc/reference/en/Test/Unit/Capybara/Assertions.html:881(span)
-#: doc/reference/en/Test/Unit/Capybara/Assertions.html:883(span)
-#: doc/reference/en/Test/Unit/Capybara/Assertions.html:884(span)
-#: doc/reference/en/Test/Unit/Capybara/Assertions.html:1021(span)
-#: doc/reference/en/Test/Unit/Capybara/Assertions.html:1023(span)
-#: doc/reference/en/Test/Unit/Capybara/Assertions.html:1024(span)
-#: doc/reference/en/index.html:84(span)
-#: doc/reference/en/file.README.html:84(span)
-msgid "]"
-msgstr ""
-
-#: doc/reference/en/Test/Unit/Capybara/Assertions.html:401(span)
-#: doc/reference/en/Test/Unit/Capybara/Assertions.html:864(span)
-msgid "is_a?"
-msgstr ""
-
-#: doc/reference/en/Test/Unit/Capybara/Assertions.html:401(span)
-#: doc/reference/en/Test/Unit/Capybara/Assertions.html:864(span)
-#: doc/reference/en/index.html:88(span) doc/reference/en/index.html:89(span)
-#: doc/reference/en/file.README.html:88(span)
-#: doc/reference/en/file.README.html:89(span)
-msgid "::"
-msgstr ""
-
-#: doc/reference/en/Test/Unit/Capybara/Assertions.html:401(span)
-#: doc/reference/en/Test/Unit/Capybara/Assertions.html:864(span)
-msgid "Node"
-msgstr ""
-
-#: doc/reference/en/Test/Unit/Capybara/Assertions.html:401(span)
-#: doc/reference/en/Test/Unit/Capybara/Assertions.html:864(span)
-msgid "Base"
-msgstr ""
-
-#: doc/reference/en/Test/Unit/Capybara/Assertions.html:402(span)
-#: doc/reference/en/Test/Unit/Capybara/Assertions.html:865(span)
-msgid "normalize_page_finder_arguments"
-msgstr ""
-
-#: doc/reference/en/Test/Unit/Capybara/Assertions.html:403(span)
-#: doc/reference/en/Test/Unit/Capybara/Assertions.html:411(span)
-#: doc/reference/en/Test/Unit/Capybara/Assertions.html:871(span)
-#: doc/reference/en/Test/Unit/Capybara/Assertions.html:882(span)
-#: doc/reference/en/Test/Unit/Capybara/Assertions.html:1016(span)
-#: doc/reference/en/Test/Unit/Capybara/Assertions.html:1022(span)
-msgid "format"
-msgstr ""
-
-#: doc/reference/en/Test/Unit/Capybara/Assertions.html:403(span)
-#: doc/reference/en/Test/Unit/Capybara/Assertions.html:871(span)
-#: doc/reference/en/Test/Unit/Capybara/Assertions.html:1016(span)
-msgid "&lt;&lt;-EOT"
-msgstr ""
-
-#: doc/reference/en/Test/Unit/Capybara/Assertions.html:404(span)
-msgid "&lt;?&gt;(?) expected to find one or more elements in &lt;?&gt;"
-msgstr ""
-
-#: doc/reference/en/Test/Unit/Capybara/Assertions.html:406(span)
-#: doc/reference/en/Test/Unit/Capybara/Assertions.html:875(span)
-#: doc/reference/en/Test/Unit/Capybara/Assertions.html:1019(span)
-msgid "EOT"
-msgstr ""
-
-#: doc/reference/en/Test/Unit/Capybara/Assertions.html:407(span)
-#: doc/reference/en/Test/Unit/Capybara/Assertions.html:408(span)
-#: doc/reference/en/Test/Unit/Capybara/Assertions.html:878(span)
-#: doc/reference/en/Test/Unit/Capybara/Assertions.html:879(span)
-msgid "current_context"
-msgstr ""
-
-#: doc/reference/en/Test/Unit/Capybara/Assertions.html:407(span)
-#: doc/reference/en/Test/Unit/Capybara/Assertions.html:878(span)
-msgid "||"
-msgstr ""
-
-#: doc/reference/en/Test/Unit/Capybara/Assertions.html:407(span)
-#: doc/reference/en/Test/Unit/Capybara/Assertions.html:878(span)
-msgid "page"
-msgstr ""
-
-#: doc/reference/en/Test/Unit/Capybara/Assertions.html:407(span)
-#: doc/reference/en/Test/Unit/Capybara/Assertions.html:878(span)
-msgid "send"
-msgstr ""
-
-#: doc/reference/en/Test/Unit/Capybara/Assertions.html:407(span)
-#: doc/reference/en/Test/Unit/Capybara/Assertions.html:878(span)
-msgid ":current_node"
-msgstr ""
-
-#: doc/reference/en/Test/Unit/Capybara/Assertions.html:408(span)
-#: doc/reference/en/Test/Unit/Capybara/Assertions.html:409(span)
-#: doc/reference/en/Test/Unit/Capybara/Assertions.html:879(span)
-#: doc/reference/en/Test/Unit/Capybara/Assertions.html:880(span)
-msgid "current_context_source"
-msgstr ""
-
-#: doc/reference/en/Test/Unit/Capybara/Assertions.html:408(span)
-#: doc/reference/en/Test/Unit/Capybara/Assertions.html:877(span)
-#: doc/reference/en/Test/Unit/Capybara/Assertions.html:879(span)
-#: doc/reference/en/Test/Unit/Capybara/Assertions.html:1020(span)
-msgid "node_source"
-msgstr ""
-
-#: doc/reference/en/Test/Unit/Capybara/Assertions.html:409(span)
-#: doc/reference/en/Test/Unit/Capybara/Assertions.html:414(span)
-#: doc/reference/en/Test/Unit/Capybara/Assertions.html:880(span)
-#: doc/reference/en/Test/Unit/Capybara/Assertions.html:886(span)
-msgid "source_in_message"
-msgstr ""
-
-#: doc/reference/en/Test/Unit/Capybara/Assertions.html:409(span)
-#: doc/reference/en/Test/Unit/Capybara/Assertions.html:880(span)
-#: doc/reference/en/Test/Unit/Capybara/Assertions.html:885(span)
-#: doc/reference/en/Test/Unit/Capybara/Assertions.html:1020(span)
-msgid "AssertionMessage"
-msgstr ""
-
-#: doc/reference/en/Test/Unit/Capybara/Assertions.html:409(span)
-#: doc/reference/en/Test/Unit/Capybara/Assertions.html:880(span)
-#: doc/reference/en/Test/Unit/Capybara/Assertions.html:885(span)
-#: doc/reference/en/Test/Unit/Capybara/Assertions.html:1020(span)
-msgid "literal"
-msgstr ""
-
-#: doc/reference/en/Test/Unit/Capybara/Assertions.html:410(span)
-#: doc/reference/en/Test/Unit/Capybara/Assertions.html:420(span)
-#: doc/reference/en/Test/Unit/Capybara/Assertions.html:881(span)
-#: doc/reference/en/Test/Unit/Capybara/Assertions.html:887(span)
-#: doc/reference/en/Test/Unit/Capybara/Assertions.html:1021(span)
-#: doc/reference/en/Test/Unit/Capybara/Assertions.html:1026(span)
-msgid "full_message"
-msgstr ""
-
-#: doc/reference/en/Test/Unit/Capybara/Assertions.html:410(span)
-#: doc/reference/en/Test/Unit/Capybara/Assertions.html:881(span)
-#: doc/reference/en/Test/Unit/Capybara/Assertions.html:1021(span)
-msgid "build_message"
-msgstr ""
-
-#: doc/reference/en/Test/Unit/Capybara/Assertions.html:410(span)
-#: doc/reference/en/Test/Unit/Capybara/Assertions.html:881(span)
-#: doc/reference/en/Test/Unit/Capybara/Assertions.html:956(span)
-#: doc/reference/en/Test/Unit/Capybara/Assertions.html:1021(span)
-msgid ":message"
-msgstr ""
-
-#: doc/reference/en/Test/Unit/Capybara/Assertions.html:412(span)
-#: doc/reference/en/Test/Unit/Capybara/Assertions.html:883(span)
-#: doc/reference/en/Test/Unit/Capybara/Assertions.html:966(span)
-#: doc/reference/en/Test/Unit/Capybara/Assertions.html:1023(span)
-msgid ":locator"
-msgstr ""
-
-#: doc/reference/en/Test/Unit/Capybara/Assertions.html:413(span)
-#: doc/reference/en/Test/Unit/Capybara/Assertions.html:884(span)
-#: doc/reference/en/Test/Unit/Capybara/Assertions.html:977(span)
-#: doc/reference/en/Test/Unit/Capybara/Assertions.html:1024(span)
-msgid ":kind"
-msgstr ""
-
-#: doc/reference/en/Test/Unit/Capybara/Assertions.html:416(span)
-#: doc/reference/en/Test/Unit/Capybara/Assertions.html:418(span)
-#: doc/reference/en/Test/Unit/Capybara/Assertions.html:421(span)
-#: doc/reference/en/Test/Unit/Capybara/Assertions.html:423(span)
-msgid "elements"
-msgstr ""
-
-#: doc/reference/en/Test/Unit/Capybara/Assertions.html:416(span)
-#: doc/reference/en/Test/Unit/Capybara/Assertions.html:418(span)
-msgid "all"
-msgstr ""
-
-#: doc/reference/en/Test/Unit/Capybara/Assertions.html:416(span)
-#: doc/reference/en/Test/Unit/Capybara/Assertions.html:418(span)
-#: doc/reference/en/Test/Unit/Capybara/Assertions.html:867(span)
-#: doc/reference/en/Test/Unit/Capybara/Assertions.html:869(span)
-msgid ":finder_arguments"
-msgstr ""
-
-#: doc/reference/en/Test/Unit/Capybara/Assertions.html:417(span)
-#: doc/reference/en/Test/Unit/Capybara/Assertions.html:642(span)
-#: doc/reference/en/Test/Unit/Capybara/Assertions.html:868(span)
-msgid "else"
-msgstr ""
-
-#: doc/reference/en/Test/Unit/Capybara/Assertions.html:419(span)
-#: doc/reference/en/Test/Unit/Capybara/Assertions.html:422(span)
-#: doc/reference/en/Test/Unit/Capybara/Assertions.html:424(span)
-#: doc/reference/en/Test/Unit/Capybara/Assertions.html:644(span)
-#: doc/reference/en/Test/Unit/Capybara/Assertions.html:648(span)
-#: doc/reference/en/Test/Unit/Capybara/Assertions.html:650(span)
-#: doc/reference/en/Test/Unit/Capybara/Assertions.html:870(span)
-#: doc/reference/en/Test/Unit/Capybara/Assertions.html:889(span)
-#: doc/reference/en/Test/Unit/Capybara/Assertions.html:890(span)
-#: doc/reference/en/Test/Unit/Capybara/Assertions.html:1028(span)
-#: doc/reference/en/Test/Unit/Capybara/Assertions.html:1029(span)
-#: doc/reference/en/index.html:85(span) doc/reference/en/index.html:86(span)
-#: doc/reference/en/index.html:93(span) doc/reference/en/index.html:99(span)
-#: doc/reference/en/index.html:100(span) doc/reference/en/index.html:106(span)
-#: doc/reference/en/index.html:107(span) doc/reference/en/index.html:123(span)
-#: doc/reference/en/index.html:124(span) doc/reference/en/index.html:125(span)
-#: doc/reference/en/file.README.html:85(span)
-#: doc/reference/en/file.README.html:86(span)
-#: doc/reference/en/file.README.html:93(span)
-#: doc/reference/en/file.README.html:99(span)
-#: doc/reference/en/file.README.html:100(span)
-#: doc/reference/en/file.README.html:106(span)
-#: doc/reference/en/file.README.html:107(span)
-#: doc/reference/en/file.README.html:123(span)
-#: doc/reference/en/file.README.html:124(span)
-#: doc/reference/en/file.README.html:125(span)
-msgid "end"
-msgstr ""
-
-#: doc/reference/en/Test/Unit/Capybara/Assertions.html:420(span)
-#: doc/reference/en/Test/Unit/Capybara/Assertions.html:887(span)
-#: doc/reference/en/Test/Unit/Capybara/Assertions.html:1026(span)
-msgid "assert_block"
-msgstr ""
-
-#: doc/reference/en/Test/Unit/Capybara/Assertions.html:420(span)
-#: doc/reference/en/Test/Unit/Capybara/Assertions.html:887(span)
-#: doc/reference/en/Test/Unit/Capybara/Assertions.html:1026(span)
-#: doc/reference/en/index.html:97(span) doc/reference/en/index.html:104(span)
-#: doc/reference/en/index.html:111(span)
-#: doc/reference/en/file.README.html:97(span)
-#: doc/reference/en/file.README.html:104(span)
-#: doc/reference/en/file.README.html:111(span)
-msgid "do"
-msgstr ""
-
-#: doc/reference/en/Test/Unit/Capybara/Assertions.html:421(span)
-msgid "not"
-msgstr ""
-
-#: doc/reference/en/Test/Unit/Capybara/Assertions.html:421(span)
-msgid "empty?"
-msgstr ""
-
-#: doc/reference/en/Test/Unit/Capybara/Assertions.html:433(tt)
-#: doc/reference/en/Test/Unit/Capybara/Assertions.html:477(tt)
-#: doc/reference/en/Test/Unit/Capybara/Assertions.html:660(tt)
-#: doc/reference/en/Test/Unit/Capybara/Assertions.html:662(tt)
-#: doc/reference/en/Test/Unit/Capybara/Assertions.html:680(tt)
-#: doc/reference/en/Test/Unit/Capybara/Assertions.html:727(tt)
-#: doc/reference/en/Test/Unit/Capybara/Assertions.html:899(tt)
-#: doc/reference/en/Test/Unit/TestCase.html:69(span)
-#: doc/reference/en/Test/Unit/TestCase.html:72(li)
-msgid "Object"
-msgstr ""
-
-#: doc/reference/en/Test/Unit/Capybara/Assertions.html:431(p)
-msgid ""
-"- (<placeholder-1/>) <placeholder-2/>(expected, options = {}) {|"
-"expected_response, actual_response| ... }"
-msgstr ""
-
-#: doc/reference/en/Test/Unit/Capybara/Assertions.html:440(span)
-#: doc/reference/en/index.html:89(span)
-#: doc/reference/en/file.README.html:89(span)
-msgid "DSL"
-msgstr ""
-
-#: doc/reference/en/Test/Unit/Capybara/Assertions.html:439(p)
-msgid ""
-"Passes if <placeholder-1/> == <placeholder-2/>. <placeholder-3/> is a method "
-"provided by Capybara::<placeholder-4/>."
-msgstr ""
-
-#: doc/reference/en/Test/Unit/Capybara/Assertions.html:441(p)
-msgid ""
-"<placeholder-1/> may be parsed depended on response Content-Type before "
-"comparing. Here are parsed Content-Types:"
-msgstr ""
-
-#: doc/reference/en/Test/Unit/Capybara/Assertions.html:445(code)
-#: doc/reference/en/Test/Unit/Capybara/Assertions.html:529(code)
-msgid "\"application/json\""
-msgstr ""
-
-#: doc/reference/en/Test/Unit/Capybara/Assertions.html:446(code)
-msgid "JSON.parse"
-msgstr ""
-
-#: doc/reference/en/Test/Unit/Capybara/Assertions.html:446(dd)
-msgid "It’s parsed by <placeholder-1/>."
-msgstr ""
-
-#: doc/reference/en/Test/Unit/Capybara/Assertions.html:458(span)
-msgid "# Content-Type: application/json"
-msgstr ""
-
-#: doc/reference/en/Test/Unit/Capybara/Assertions.html:459(span)
-msgid "# Body: {\"status\": true}"
-msgstr ""
-
-#: doc/reference/en/Test/Unit/Capybara/Assertions.html:460(span)
-#: doc/reference/en/Test/Unit/Capybara/Assertions.html:633(span)
-#: doc/reference/en/Test/Unit/Capybara/Assertions.html:635(span)
-#: doc/reference/en/Test/Unit/Capybara/Assertions.html:639(span)
-#: doc/reference/en/Test/Unit/Capybara/Assertions.html:1015(span)
-#: doc/reference/en/index.html:84(span)
-#: doc/reference/en/file.README.html:84(span)
-msgid "{"
-msgstr ""
-
-#: doc/reference/en/Test/Unit/Capybara/Assertions.html:460(span)
-msgid "status"
-msgstr ""
-
-#: doc/reference/en/Test/Unit/Capybara/Assertions.html:460(span)
-#: doc/reference/en/Test/Unit/Capybara/Assertions.html:636(span)
-#: doc/reference/en/Test/Unit/Capybara/Assertions.html:637(span)
-#: doc/reference/en/Test/Unit/Capybara/Assertions.html:639(span)
-#: doc/reference/en/index.html:84(span)
-#: doc/reference/en/file.README.html:84(span)
-msgid "=&gt;"
-msgstr ""
-
-#: doc/reference/en/Test/Unit/Capybara/Assertions.html:460(span)
-msgid "true"
-msgstr ""
-
-#: doc/reference/en/Test/Unit/Capybara/Assertions.html:460(span)
-#: doc/reference/en/Test/Unit/Capybara/Assertions.html:633(span)
-#: doc/reference/en/Test/Unit/Capybara/Assertions.html:638(span)
-#: doc/reference/en/Test/Unit/Capybara/Assertions.html:639(span)
-#: doc/reference/en/Test/Unit/Capybara/Assertions.html:1015(span)
-#: doc/reference/en/index.html:84(span)
-#: doc/reference/en/file.README.html:84(span)
-msgid "}"
-msgstr ""
-
-#: doc/reference/en/Test/Unit/Capybara/Assertions.html:460(span)
-#: doc/reference/en/Test/Unit/Capybara/Assertions.html:484(code)
-#: doc/reference/en/Test/Unit/Capybara/Assertions.html:515(span)
-#: doc/reference/en/Test/Unit/Capybara/Assertions.html:634(span)
-#: doc/reference/en/Test/Unit/Capybara/Assertions.html:636(span)
-#: doc/reference/en/Test/Unit/Capybara/Assertions.html:641(span)
-#: doc/reference/en/Test/Unit/Capybara/Assertions.html:643(span)
-msgid ":content_type"
-msgstr ""
-
-#: doc/reference/en/Test/Unit/Capybara/Assertions.html:460(span)
-#: doc/reference/en/Test/Unit/Capybara/Assertions.html:528(code)
-msgid ":json"
-msgstr ""
-
-#: doc/reference/en/Test/Unit/Capybara/Assertions.html:464(span)
-msgid "# Content-Type: text/html"
-msgstr ""
-
-#: doc/reference/en/Test/Unit/Capybara/Assertions.html:465(span)
-msgid "# Body: &lt;html&gt;&lt;body&gt;Hello&lt;/body&gt;&lt;/html&gt;"
-msgstr ""
-
-#: doc/reference/en/Test/Unit/Capybara/Assertions.html:466(span)
-msgid "&lt;html&gt;&lt;body&gt;World&lt;/body&gt;&lt;/html&gt;"
-msgstr ""
-
-#: doc/reference/en/Test/Unit/Capybara/Assertions.html:482(p)
-msgid ""
-"the expected body content. The actual body may be parsed. It depends on "
-"<placeholder-1/> option."
-msgstr ""
-
-#: doc/reference/en/Test/Unit/Capybara/Assertions.html:490(span)
-#: doc/reference/en/Test/Unit/Capybara/Assertions.html:511(tt)
-#: doc/reference/en/Test/Unit/Capybara/Assertions.html:633(span)
-#: doc/reference/en/Test/Unit/Capybara/Assertions.html:634(span)
-#: doc/reference/en/Test/Unit/Capybara/Assertions.html:931(span)
-#: doc/reference/en/Test/Unit/Capybara/Assertions.html:952(tt)
-#: doc/reference/en/Test/Unit/Capybara/Assertions.html:1015(span)
-#: doc/reference/en/Test/Unit/Capybara/Assertions.html:1021(span)
-#: doc/reference/en/Test/Unit/Capybara/Assertions.html:1023(span)
-#: doc/reference/en/Test/Unit/Capybara/Assertions.html:1024(span)
-msgid "options"
-msgstr ""
-
-#: doc/reference/en/Test/Unit/Capybara/Assertions.html:493(tt)
-#: doc/reference/en/Test/Unit/Capybara/Assertions.html:561(tt)
-#: doc/reference/en/Test/Unit/Capybara/Assertions.html:576(tt)
-#: doc/reference/en/Test/Unit/Capybara/Assertions.html:934(tt)
-msgid "Hash"
-msgstr ""
-
-#: doc/reference/en/Test/Unit/Capybara/Assertions.html:496(tt)
-#: doc/reference/en/Test/Unit/Capybara/Assertions.html:937(tt)
-msgid "{}"
-msgstr ""
-
-#: doc/reference/en/Test/Unit/Capybara/Assertions.html:496(em)
-#: doc/reference/en/Test/Unit/Capybara/Assertions.html:937(em)
-msgid "(defaults to: <placeholder-1/>)"
-msgstr ""
-
-#: doc/reference/en/Test/Unit/Capybara/Assertions.html:500(p)
-#: doc/reference/en/Test/Unit/Capybara/Assertions.html:941(p)
-msgid "a customizable set of options"
-msgstr ""
-
-#: doc/reference/en/Test/Unit/Capybara/Assertions.html:511(h3)
-#: doc/reference/en/Test/Unit/Capybara/Assertions.html:952(h3)
-msgid "Options Hash (<placeholder-1/>):"
-msgstr ""
-
-#: doc/reference/en/Test/Unit/Capybara/Assertions.html:516(tt)
-#: doc/reference/en/Test/Unit/Capybara/Assertions.html:957(tt)
-#: doc/reference/en/Test/Unit/Capybara/Assertions.html:967(tt)
-#: doc/reference/en/Test/Unit/Capybara/Assertions.html:978(tt)
-msgid "String"
-msgstr ""
-
-#: doc/reference/en/Test/Unit/Capybara/Assertions.html:517(span)
-msgid "&mdash; default: <placeholder-1/>"
-msgstr ""
-
-#: doc/reference/en/Test/Unit/Capybara/Assertions.html:523(p)
-msgid ""
-"the expected Content-Type. If this value is <placeholder-1/>, Content-Type "
-"will not be compared."
-msgstr ""
-
-#: doc/reference/en/Test/Unit/Capybara/Assertions.html:525(p)
-msgid "This value can be specified by abbreviated. Here are abbreviations:"
-msgstr ""
-
-#: doc/reference/en/Test/Unit/Capybara/Assertions.html:536(h3)
-msgid "Yields:"
-msgstr ""
-
-#: doc/reference/en/Test/Unit/Capybara/Assertions.html:542(tt)
-#: doc/reference/en/Test/Unit/Capybara/Assertions.html:558(span)
-#: doc/reference/en/Test/Unit/Capybara/Assertions.html:593(tt)
-#: doc/reference/en/Test/Unit/Capybara/Assertions.html:639(span)
-#: doc/reference/en/Test/Unit/Capybara/Assertions.html:641(span)
-#: doc/reference/en/Test/Unit/Capybara/Assertions.html:646(span)
-#: doc/reference/en/Test/Unit/Capybara/Assertions.html:649(span)
-msgid "expected_response"
-msgstr ""
-
-#: doc/reference/en/Test/Unit/Capybara/Assertions.html:542(tt)
-#: doc/reference/en/Test/Unit/Capybara/Assertions.html:573(span)
-#: doc/reference/en/Test/Unit/Capybara/Assertions.html:593(tt)
-#: doc/reference/en/Test/Unit/Capybara/Assertions.html:635(span)
-#: doc/reference/en/Test/Unit/Capybara/Assertions.html:643(span)
-#: doc/reference/en/Test/Unit/Capybara/Assertions.html:646(span)
-#: doc/reference/en/Test/Unit/Capybara/Assertions.html:647(span)
-#: doc/reference/en/Test/Unit/Capybara/Assertions.html:649(span)
-msgid "actual_response"
-msgstr ""
-
-#: doc/reference/en/Test/Unit/Capybara/Assertions.html:542(span)
-#: doc/reference/en/Test/Unit/Capybara/Assertions.html:593(span)
-msgid "(<placeholder-1/>, <placeholder-2/>)"
-msgstr ""
-
-#: doc/reference/en/Test/Unit/Capybara/Assertions.html:547(p)
-msgid "the optional compared responses normalizer."
-msgstr ""
-
-#: doc/reference/en/Test/Unit/Capybara/Assertions.html:553(h3)
-msgid "Yield Parameters:"
-msgstr ""
-
-#: doc/reference/en/Test/Unit/Capybara/Assertions.html:566(p)
-msgid "the expected response constructed in the method."
-msgstr ""
-
-#: doc/reference/en/Test/Unit/Capybara/Assertions.html:581(p)
-msgid "the actual response constructed in the method."
-msgstr ""
-
-#: doc/reference/en/Test/Unit/Capybara/Assertions.html:587(h3)
-msgid "Yield Returns:"
-msgstr ""
-
-#: doc/reference/en/Test/Unit/Capybara/Assertions.html:598(p)
-msgid "the normalized compared responses."
-msgstr ""
-
-#: doc/reference/en/Test/Unit/Capybara/Assertions.html:608(pre)
-msgid "191 192 193 194 195 196 197 198 199 200 201 202 203 204 205 206 207 208"
-msgstr ""
-
-#: doc/reference/en/Test/Unit/Capybara/Assertions.html:631(span)
-msgid "# File 'lib/test/unit/capybara.rb', line 191"
-msgstr ""
-
-#: doc/reference/en/Test/Unit/Capybara/Assertions.html:633(span)
-#: doc/reference/en/Test/Unit/Capybara/Assertions.html:862(span)
-msgid "&amp;"
-msgstr ""
-
-#: doc/reference/en/Test/Unit/Capybara/Assertions.html:633(span)
-#: doc/reference/en/Test/Unit/Capybara/Assertions.html:862(span)
-msgid "block"
-msgstr ""
-
-#: doc/reference/en/Test/Unit/Capybara/Assertions.html:634(span)
-#: doc/reference/en/Test/Unit/Capybara/Assertions.html:640(span)
-#: doc/reference/en/Test/Unit/Capybara/Assertions.html:641(span)
-msgid "content_type"
-msgstr ""
-
-#: doc/reference/en/Test/Unit/Capybara/Assertions.html:636(span)
-msgid "page_content_type"
-msgstr ""
-
-#: doc/reference/en/Test/Unit/Capybara/Assertions.html:637(span)
-#: doc/reference/en/Test/Unit/Capybara/Assertions.html:639(span)
-msgid ":body"
-msgstr ""
-
-#: doc/reference/en/Test/Unit/Capybara/Assertions.html:637(span)
-msgid "parsed_page_body"
-msgstr ""
-
-#: doc/reference/en/Test/Unit/Capybara/Assertions.html:641(span)
-msgid "normalize_content_type"
-msgstr ""
-
-#: doc/reference/en/Test/Unit/Capybara/Assertions.html:643(span)
-msgid "delete"
-msgstr ""
-
-#: doc/reference/en/Test/Unit/Capybara/Assertions.html:645(span)
-msgid "block_given?"
-msgstr ""
-
-#: doc/reference/en/Test/Unit/Capybara/Assertions.html:646(span)
-msgid "yield"
-msgstr ""
-
-#: doc/reference/en/Test/Unit/Capybara/Assertions.html:649(span)
-#: doc/reference/en/index.html:98(span)
-#: doc/reference/en/file.README.html:98(span)
-msgid "assert_equal"
-msgstr ""
-
-#: doc/reference/en/Test/Unit/Capybara/Assertions.html:660(span)
-#: doc/reference/en/Test/Unit/Capybara/Assertions.html:680(span)
-msgid "- (<placeholder-1/>) <placeholder-2/>(*args, &amp;block)"
-msgstr ""
-
-#: doc/reference/en/Test/Unit/Capybara/Assertions.html:662(span)
-#: doc/reference/en/Test/Unit/Capybara/Assertions.html:727(span)
-msgid "- (<placeholder-1/>) <placeholder-2/>(node, *args, &amp;block)"
-msgstr ""
-
-#: doc/reference/en/Test/Unit/Capybara/Assertions.html:683(p)
-msgid "Passes if the selector doesn’t find any elements from the current node."
-msgstr ""
-
-#: doc/reference/en/Test/Unit/Capybara/Assertions.html:717(span)
-#: doc/reference/en/Test/Unit/Capybara/Assertions.html:753(span)
-#: doc/reference/en/index.html:97(span)
-#: doc/reference/en/file.README.html:97(span)
-msgid "h1"
-msgstr ""
-
-#: doc/reference/en/Test/Unit/Capybara/Assertions.html:730(p)
-msgid "Passes if the selector doesn’t find any element from <placeholder-1/>."
-msgstr ""
-
-#: doc/reference/en/Test/Unit/Capybara/Assertions.html:809(p)
-msgid "(see Capybara::Node::Finders#find)"
-msgstr ""
-
-#: doc/reference/en/Test/Unit/Capybara/Assertions.html:819(li)
-msgid "Capybara::Node::Finders#find"
-msgstr ""
-
-#: doc/reference/en/Test/Unit/Capybara/Assertions.html:826(pre)
-msgid ""
-"368 369 370 371 372 373 374 375 376 377 378 379 380 381 382 383 384 385 386 "
-"387 388 389 390 391 392 393 394 395 396"
-msgstr ""
-
-#: doc/reference/en/Test/Unit/Capybara/Assertions.html:860(span)
-msgid "# File 'lib/test/unit/capybara.rb', line 368"
-msgstr ""
-
-#: doc/reference/en/Test/Unit/Capybara/Assertions.html:867(span)
-#: doc/reference/en/Test/Unit/Capybara/Assertions.html:869(span)
-#: doc/reference/en/Test/Unit/Capybara/Assertions.html:877(span)
-#: doc/reference/en/Test/Unit/Capybara/Assertions.html:888(span)
-msgid "element"
-msgstr ""
-
-#: doc/reference/en/Test/Unit/Capybara/Assertions.html:867(span)
-#: doc/reference/en/Test/Unit/Capybara/Assertions.html:869(span)
-msgid "first"
-msgstr ""
-
-#: doc/reference/en/Test/Unit/Capybara/Assertions.html:872(span)
-msgid ""
-"&lt;?&gt;(?) expected to not find a element but was &lt;?&gt; in &lt;?&gt;"
-msgstr ""
-
-#: doc/reference/en/Test/Unit/Capybara/Assertions.html:876(span)
-#: doc/reference/en/Test/Unit/Capybara/Assertions.html:877(span)
-#: doc/reference/en/Test/Unit/Capybara/Assertions.html:885(span)
-msgid "element_source"
-msgstr ""
-
-#: doc/reference/en/Test/Unit/Capybara/Assertions.html:888(span)
-msgid "nil?"
-msgstr ""
-
-#: doc/reference/en/Test/Unit/Capybara/Assertions.html:897(p)
-msgid "- (<placeholder-1/>) <placeholder-2/>(base_node, options = {})"
-msgstr ""
-
-#: doc/reference/en/Test/Unit/Capybara/Assertions.html:916(span)
-#: doc/reference/en/Test/Unit/Capybara/Assertions.html:1015(span)
-#: doc/reference/en/Test/Unit/Capybara/Assertions.html:1020(span)
-msgid "base_node"
-msgstr ""
-
-#: doc/reference/en/Test/Unit/Capybara/Assertions.html:919(tt)
-msgid "::Capybara::Node::Element"
-msgstr ""
-
-#: doc/reference/en/Test/Unit/Capybara/Assertions.html:924(p)
-msgid "The node used as search target."
-msgstr ""
-
-#: doc/reference/en/Test/Unit/Capybara/Assertions.html:961(p)
-msgid "The user custom message added to failure message."
-msgstr ""
-
-#: doc/reference/en/Test/Unit/Capybara/Assertions.html:971(p)
-msgid "The query used to find a node."
-msgstr ""
-
-#: doc/reference/en/Test/Unit/Capybara/Assertions.html:973(p)
-#: doc/reference/en/Test/Unit/Capybara/Assertions.html:983(p)
-msgid "It should be specified for useful failure message."
-msgstr ""
-
-#: doc/reference/en/Test/Unit/Capybara/Assertions.html:982(p)
-msgid "The kind of query."
-msgstr ""
-
-#: doc/reference/en/Test/Unit/Capybara/Assertions.html:993(pre)
-msgid "412 413 414 415 416 417 418 419 420 421 422 423 424 425 426"
-msgstr ""
-
-#: doc/reference/en/Test/Unit/Capybara/Assertions.html:1013(span)
-msgid "# File 'lib/test/unit/capybara.rb', line 412"
-msgstr ""
-
-#: doc/reference/en/Test/Unit/Capybara/Assertions.html:1017(span)
-msgid "&lt;?&gt;(?) expected to find a element in &lt;?&gt;"
-msgstr ""
-
-#: doc/reference/en/Test/Unit/Capybara/Assertions.html:1020(span)
-#: doc/reference/en/Test/Unit/Capybara/Assertions.html:1025(span)
-msgid "base_html"
-msgstr ""
-
-#: doc/reference/en/Test/Unit/Capybara/Assertions.html:1027(span)
-msgid "false"
-msgstr ""
-
-#: doc/reference/en/Test/Unit/Capybara.html:6(title)
-msgid "Module: Test::Unit::Capybara &mdash; test-unit-capybara"
-msgstr ""
-
-#: doc/reference/en/Test/Unit/Capybara.html:17(script)
-#: doc/reference/en/Test/Unit/TestCase.html:17(script)
-msgid "relpath = '../..'; if (relpath != '') relpath += '/';"
-msgstr ""
-
-#: doc/reference/en/Test/Unit/Capybara.html:36(a)
-msgid "Index (C)"
-msgstr ""
-
-#: doc/reference/en/Test/Unit/Capybara.html:59(h1)
-msgid "Module: Test::Unit::Capybara"
-msgstr ""
-
-#: doc/reference/en/Test/Unit/Capybara.html:75(span)
-#: doc/reference/en/Test/Unit.html:75(span)
-msgid ",<br/> lib/test/unit/capybara.rb"
-msgstr ""
-
-#: doc/reference/en/Test/Unit/Capybara.html:75(dd)
-#: doc/reference/en/Test/Unit.html:75(dd)
-msgid "lib/test/unit/capybara/version.rb<placeholder-1/>"
-msgstr ""
-
-#: doc/reference/en/Test/Unit/Capybara.html:82(h2)
-#: doc/reference/en/Test/Unit.html:82(h2)
-#: doc/reference/en/top-level-namespace.html:77(h2)
-#: doc/reference/en/Test.html:101(h2)
-msgid "Defined Under Namespace"
-msgstr ""
-
-#: doc/reference/en/Test/Unit/Capybara.html:86(strong)
-#: doc/reference/en/Test/Unit.html:86(strong)
-#: doc/reference/en/top-level-namespace.html:81(strong)
-#: doc/reference/en/Test.html:105(strong)
-msgid "Modules:"
-msgstr ""
-
-#: doc/reference/en/Test/Unit/Capybara.html:83(p)
-msgid ""
-"<placeholder-1/> <span class=\"object_link\"><placeholder-2/></span>, <span "
-"class=\"object_link\"><placeholder-3/></span>"
-msgstr ""
-
-#: doc/reference/en/Test/Unit/Capybara.html:97(dt)
-msgid "VERSION ="
-msgstr ""
-
-#: doc/reference/en/Test/Unit/Capybara.html:100(span)
-msgid "1.0.1"
-msgstr ""
-
-#: doc/reference/en/Test/Unit/TestCase.html:6(title)
-msgid "Class: Test::Unit::TestCase &mdash; test-unit-capybara"
-msgstr ""
-
-#: doc/reference/en/Test/Unit/TestCase.html:36(a)
-#: doc/reference/en/Test.html:36(a)
-msgid "Index (T)"
-msgstr ""
-
-#: doc/reference/en/Test/Unit/TestCase.html:59(h1)
-msgid "Class: Test::Unit::TestCase"
-msgstr ""
-
-#: doc/reference/en/Test/Unit/TestCase.html:67(dt)
-msgid "Inherits:"
-msgstr ""
-
-#: doc/reference/en/Test/Unit/TestCase.html:74(li)
-msgid "Test::Unit::TestCase"
-msgstr ""
-
-#: doc/reference/en/Test/Unit/TestCase.html:77(a)
-msgid "show all"
-msgstr ""
-
-#: doc/reference/en/Test/Unit/TestCase.html:86(dt)
-msgid "Includes:"
-msgstr ""
-
-#: doc/reference/en/Test/Unit/TestCase.html:87(a)
-msgid "Capybara::Adapter"
-msgstr ""
-
-#: doc/reference/en/Test/Unit/TestCase.html:87(a)
-msgid "Capybara::ElementNotFoundHandler"
-msgstr ""
-
-#: doc/reference/en/Test/Unit/TestCase.html:87(dd)
-msgid ""
-"<span class=\"object_link\"><placeholder-1/></span>, <span class="
-"\"object_link\"><placeholder-2/></span>"
-msgstr ""
-
-#: doc/reference/en/Test/Unit.html:6(title)
-msgid "Module: Test::Unit &mdash; test-unit-capybara"
-msgstr ""
-
-#: doc/reference/en/Test/Unit.html:17(script)
-msgid "relpath = '..'; if (relpath != '') relpath += '/';"
-msgstr ""
-
-#: doc/reference/en/Test/Unit.html:36(a)
-msgid "Index (U)"
-msgstr ""
-
-#: doc/reference/en/Test/Unit.html:59(h1)
-msgid "Module: Test::Unit"
-msgstr ""
-
-#: doc/reference/en/Test/Unit.html:90(strong)
-msgid "Classes:"
-msgstr ""
-
-#: doc/reference/en/file.news.html:6(title)
-msgid "File: news &mdash; test-unit-capybara"
-msgstr ""
-
-#: doc/reference/en/file.news.html:17(script)
-#: doc/reference/en/top-level-namespace.html:17(script)
-#: doc/reference/en/Test.html:17(script)
-#: doc/reference/en/index.html:17(script)
-#: doc/reference/en/file.README.html:17(script)
-#: doc/reference/en/_index.html:15(script)
-msgid "relpath = ''; if (relpath != '') relpath += '/';"
-msgstr ""
-
-#: doc/reference/en/file.news.html:36(a)
-#: doc/reference/en/top-level-namespace.html:36(a)
-#: doc/reference/en/index.html:36(a) doc/reference/en/file.README.html:36(a)
-msgid "Index"
-msgstr ""
-
-#: doc/reference/en/file.news.html:37(span)
-msgid "File: news"
-msgstr ""
-
-#: doc/reference/en/file.news.html:57(h1)
-msgid "News"
-msgstr "お知らせ"
-
-#: doc/reference/en/file.news.html:58(h2)
-msgid "1.0.1 – 2012-01-16"
-msgstr ""
-
-#: doc/reference/en/file.news.html:59(p)
-msgid "A Capybara integration improvement release."
-msgstr "Capybaraとの連携を強化したリリース。"
-
-#: doc/reference/en/file.news.html:60(h3)
-msgid "Improvments"
-msgstr "改良"
-
-#: doc/reference/en/file.news.html:62(a)
-msgid "Test::Unit::Capybara::Assertions#assert_all"
-msgstr ""
-
-#: doc/reference/en/file.news.html:62(li)
-#: doc/reference/en/file.news.html:63(li)
-msgid "Added <span class=\"object_link\"><placeholder-1/></span>."
-msgstr "<span class=\"object_link\"><placeholder-1/></span>を追加。"
-
-#: doc/reference/en/file.news.html:63(a)
-msgid "Test::Unit::Capybara::Assertions#assert_not_find"
-msgstr ""
-
-#: doc/reference/en/file.news.html:64(li)
-msgid "Supported Capybara::ElementNotFound as a failure."
-msgstr "Capybara::ElementNotFound例外を失敗と扱うようにした。"
-
-#: doc/reference/en/file.news.html:66(h2)
-msgid "1.0.0 – 2011-05-01"
-msgstr ""
-
-#: doc/reference/en/file.news.html:67(p)
-msgid "The first release!!!"
-msgstr "最初のリリース！！！"
-
-#: doc/reference/en/top-level-namespace.html:6(title)
-msgid "Top Level Namespace &mdash; test-unit-capybara"
-msgstr ""
-
-#: doc/reference/en/top-level-namespace.html:39(span)
-#: doc/reference/en/top-level-namespace.html:59(h1)
-#: doc/reference/en/class_list.html:41(a)
-#: doc/reference/en/class_list.html:42(small)
-msgid "Top Level Namespace"
-msgstr ""
-
-#: doc/reference/en/method_list.html:21(script)
-#: doc/reference/en/class_list.html:21(script)
-#: doc/reference/en/file_list.html:21(script)
-msgid ""
-"if (window.top.frames.main) { document.getElementById('base_target').target "
-"= 'main'; document.body.className = 'frames'; }"
-msgstr ""
-
-#: doc/reference/en/method_list.html:31(a)
-#: doc/reference/en/class_list.html:31(a)
-#: doc/reference/en/file_list.html:31(a)
-msgid "Classes"
-msgstr ""
-
-#: doc/reference/en/method_list.html:33(a)
-#: doc/reference/en/class_list.html:33(a)
-#: doc/reference/en/file_list.html:33(a)
-msgid "Methods"
-msgstr ""
-
-#: doc/reference/en/method_list.html:35(a)
-#: doc/reference/en/class_list.html:35(a)
-#: doc/reference/en/file_list.html:35(a)
-msgid "Files"
-msgstr ""
-
-#: doc/reference/en/method_list.html:38(div)
-#: doc/reference/en/class_list.html:38(div)
-#: doc/reference/en/file_list.html:38(div)
-msgid "Search: <input type=\"text\"/>"
-msgstr ""
-
-#: doc/reference/en/method_list.html:44(a)
-msgid "#assert_all"
-msgstr ""
-
-#: doc/reference/en/method_list.html:46(small)
-#: doc/reference/en/method_list.html:54(small)
-#: doc/reference/en/method_list.html:62(small)
-#: doc/reference/en/method_list.html:70(small)
-msgid "Test::Unit::Capybara::Assertions"
-msgstr ""
-
-#: doc/reference/en/method_list.html:52(a)
-msgid "#assert_body"
-msgstr ""
-
-#: doc/reference/en/method_list.html:60(a)
-msgid "#assert_not_find"
-msgstr ""
-
-#: doc/reference/en/method_list.html:68(a)
-msgid "#flunk_find"
-msgstr ""
-
-#: doc/reference/en/class_list.html:42(small)
-msgid "Test::Unit"
-msgstr ""
-
-#: doc/reference/en/class_list.html:42(small)
-msgid "Test::Unit::Capybara"
-msgstr ""
-
-#: doc/reference/en/class_list.html:42(li)
-msgid ""
-"<span class=\"object_link\"><placeholder-1/></span> &lt; "
-"Object<placeholder-2/>"
-msgstr ""
-
-#: doc/reference/en/Test.html:6(title)
-msgid "Module: Test &mdash; test-unit-capybara"
-msgstr ""
-
-#: doc/reference/en/Test.html:59(h1)
-msgid "Module: Test"
-msgstr ""
-
-#: doc/reference/en/Test.html:75(dd)
-msgid "lib/test/unit/capybara/version.rb"
-msgstr ""
-
-#: doc/reference/en/Test.html:80(h2)
-msgid "Overview"
-msgstr ""
-
-#: doc/reference/en/Test.html:82(p)
-msgid "<placeholder-1/> ruby <placeholder-2/>"
-msgstr ""
-
-#: doc/reference/en/Test.html:83(p)
-msgid "Copyright © 2011-2012 Kouhei Sutou &lt;kou@clear-code.com&gt;"
-msgstr ""
-
-#: doc/reference/en/Test.html:85(span) doc/reference/en/Test.html:90(span)
-#: doc/reference/en/Test.html:92(span)
-msgid "GNU"
-msgstr ""
-
-#: doc/reference/en/Test.html:84(p)
-msgid ""
-"This library is free software; you can redistribute it and/or modify it "
-"under the terms of the <placeholder-1/> Lesser General Public License as "
-"published by the Free Software Foundation; either version 2.1 of the "
-"License, or (at your option) any later version."
-msgstr ""
-
-#: doc/reference/en/Test.html:89(span)
-msgid "WITHOUT"
-msgstr ""
-
-#: doc/reference/en/Test.html:89(span)
-msgid "ANY"
-msgstr ""
-
-#: doc/reference/en/Test.html:89(span)
-msgid "WARRANTY"
-msgstr ""
-
-#: doc/reference/en/Test.html:90(span)
-msgid "MERCHANTABILITY"
-msgstr ""
-
-#: doc/reference/en/Test.html:90(span)
-msgid "FITNESS"
-msgstr ""
-
-#: doc/reference/en/Test.html:90(span)
-msgid "FOR"
-msgstr ""
-
-#: doc/reference/en/Test.html:90(span)
-msgid "PARTICULAR"
-msgstr ""
-
-#: doc/reference/en/Test.html:90(span)
-msgid "PURPOSE"
-msgstr ""
-
-#: doc/reference/en/Test.html:88(p)
-msgid ""
-"This library is distributed in the hope that it will be useful, but "
-"<placeholder-1/> <placeholder-2/> <placeholder-3/>; without even the implied "
-"warranty of <placeholder-4/> or <placeholder-5/> <placeholder-6/> A "
-"<placeholder-7/> <placeholder-8/>. See the <placeholder-9/> Lesser General "
-"Public License for more details."
-msgstr ""
-
-#: doc/reference/en/Test.html:94(span)
-msgid "USA"
-msgstr ""
-
-#: doc/reference/en/Test.html:92(p)
-msgid ""
-"You should have received a copy of the <placeholder-1/> Lesser General "
-"Public License along with this library; if not, write to the Free Software "
-"Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 "
-"<placeholder-2/>"
-msgstr ""
-
-#: doc/reference/en/index.html:6(title)
-#: doc/reference/en/file.README.html:6(title)
-msgid "File: README &mdash; test-unit-capybara"
-msgstr ""
-
-#: doc/reference/en/index.html:37(span)
-#: doc/reference/en/file.README.html:37(span)
-msgid "File: README"
-msgstr ""
-
-#: doc/reference/en/index.html:57(h1) doc/reference/en/file.README.html:57(h1)
-#: doc/reference/en/frames.html:7(title) doc/reference/en/_index.html:6(title)
-#: doc/reference/en/_index.html:55(h1)
-msgid "test-unit-capybara"
-msgstr ""
-
-#: doc/reference/en/index.html:58(a) doc/reference/en/file.README.html:58(a)
-msgid "Web site"
-msgstr "Webサイト"
-
-#: doc/reference/en/index.html:59(h2) doc/reference/en/file.README.html:59(h2)
-msgid "Description"
-msgstr "説明"
+#: README.textile:5
+msgid "h2. Description"
+msgstr "h2. 説明"
 
-#: doc/reference/en/index.html:60(p) doc/reference/en/file.README.html:60(p)
+#: README.textile:7
 msgid ""
 "test-unit-capybara is a Capybara adapter for test-unit 2. You can get "
-"<placeholder-1/> integrated Test::Unit::TestCase. It also provides useful "
-"assertions for Capybara."
+"\"Capybara\":https://rubygems.org/gems/capybara integrated Test::Unit::"
+"TestCase. It also provides useful assertions for Capybara."
 msgstr ""
 "test-unit-capybaraはtest-unit 2用のCapybaraアダプターです。<placeholder-1/>と"
 "連携したTest::Unit::TestCaseを使うことができます。また、Capybara用の便利なア"
 "サーションも提供します。"
 
-#: doc/reference/en/index.html:61(h2) doc/reference/en/file.README.html:61(h2)
-msgid "Install"
-msgstr "インストール"
+#: README.textile:9
+msgid "h2. Install"
+msgstr "h2. インストール"
 
-#: doc/reference/en/index.html:62(pre)
-#: doc/reference/en/file.README.html:62(pre)
-msgid "% sudo gem install test-unit-capybara"
-msgstr ""
-
-#: doc/reference/en/index.html:65(h2) doc/reference/en/file.README.html:65(h2)
-msgid "Usage"
-msgstr "使い方"
-
-#: doc/reference/en/index.html:67(span)
-#: doc/reference/en/file.README.html:67(span)
-msgid "require"
-msgstr ""
-
-#: doc/reference/en/index.html:67(span)
-#: doc/reference/en/file.README.html:67(span)
-msgid "'"
-msgstr ""
-
-#: doc/reference/en/index.html:67(span)
-#: doc/reference/en/file.README.html:67(span)
-msgid "test/unit/capybara"
-msgstr ""
-
-#: doc/reference/en/index.html:69(span) doc/reference/en/index.html:88(span)
-#: doc/reference/en/file.README.html:69(span)
-#: doc/reference/en/file.README.html:88(span)
-msgid "class"
-msgstr ""
-
-#: doc/reference/en/index.html:69(span) doc/reference/en/index.html:92(span)
-#: doc/reference/en/file.README.html:69(span)
-#: doc/reference/en/file.README.html:92(span)
-msgid "MyRackApplication"
-msgstr ""
-
-#: doc/reference/en/index.html:70(span)
-#: doc/reference/en/file.README.html:70(span)
-msgid "call"
-msgstr ""
-
-#: doc/reference/en/index.html:70(span)
-#: doc/reference/en/file.README.html:70(span)
-msgid "env"
-msgstr ""
-
-#: doc/reference/en/index.html:71(span) doc/reference/en/index.html:84(span)
-#: doc/reference/en/file.README.html:71(span)
-#: doc/reference/en/file.README.html:84(span)
-msgid "html"
-msgstr ""
-
-#: doc/reference/en/index.html:71(span)
-#: doc/reference/en/file.README.html:71(span)
-msgid "&lt;&lt;-HTML"
-msgstr ""
-
-#: doc/reference/en/index.html:72(span)
-#: doc/reference/en/file.README.html:72(span)
+#: README.textile:11
 msgid ""
-"&lt;html&gt; &lt;head&gt; &lt;title&gt;Welcome! - my site&lt;/title&gt; &lt;/"
-"head&gt; &lt;body&gt; &lt;h1&gt;Welcome!&lt;/h1&gt; &lt;div class=\"header"
-"\"&gt; &lt;p&gt;No navigation.&lt;/p&gt; &lt;/div&gt; &lt;/body&gt; &lt;/"
-"html&gt;"
+"<pre>\n"
+"% sudo gem install test-unit-capybara\n"
+"</pre>"
 msgstr ""
 
-#: doc/reference/en/index.html:83(span)
-#: doc/reference/en/file.README.html:83(span)
-msgid "HTML"
+#: README.textile:15
+msgid "h2. Usage"
+msgstr "h2. 使い方"
+
+#: README.textile:17
+msgid ""
+"<pre>\n"
+"require 'test/unit/capybara'"
 msgstr ""
 
-#: doc/reference/en/index.html:84(span)
-#: doc/reference/en/file.README.html:84(span)
-msgid "200"
+#: README.textile:20
+msgid ""
+"class MyRackApplication\n"
+"  def call(env)\n"
+"    html = <<-HTML\n"
+"<html>\n"
+"  <head>\n"
+"    <title>Welcome! - my site</title>\n"
+"  </head>\n"
+"  <body>\n"
+"    <h1>Welcome!</h1>\n"
+"    <div class=\"header\">\n"
+"      <p>No navigation.</p>\n"
+"    </div>\n"
+"  </body>\n"
+"</html>\n"
+"HTML\n"
+"   [200, {\"Content-Type\" => \"text/html\"}, [html]]\n"
+"  end\n"
+"end"
 msgstr ""
 
-#: doc/reference/en/index.html:84(span)
-#: doc/reference/en/file.README.html:84(span)
-msgid "Content-Type"
+#: README.textile:39
+msgid ""
+"class TestMyRackApplication < Test::Unit::TestCase\n"
+"  include Capybara::DSL"
 msgstr ""
 
-#: doc/reference/en/index.html:84(span)
-#: doc/reference/en/file.README.html:84(span)
-msgid "text/html"
+#: README.textile:42
+msgid ""
+"  def setup\n"
+"    Capybara.app = MyRackApplication.new\n"
+"  end"
 msgstr ""
 
-#: doc/reference/en/index.html:88(span)
-#: doc/reference/en/file.README.html:88(span)
-msgid "TestMyRackApplication"
+#: README.textile:46
+msgid ""
+"  def test_title\n"
+"    visit(\"/\")\n"
+"    within(\"h1\") do\n"
+"      assert_equal(\"Welcome!\", text)\n"
+"    end\n"
+"  end"
 msgstr ""
 
-#: doc/reference/en/index.html:88(span)
-#: doc/reference/en/file.README.html:88(span)
-msgid "&lt;"
+#: README.textile:53
+msgid ""
+"  def test_no_sidebar\n"
+"    visit(\"/\")\n"
+"    within(\"body\") do\n"
+"      assert_not_find(\".sidebar\")\n"
+"    end\n"
+"  end"
 msgstr ""
 
-#: doc/reference/en/index.html:89(span)
-#: doc/reference/en/file.README.html:89(span)
-msgid "include"
+#: README.textile:60
+msgid ""
+"  def test_header_content\n"
+"    visit(\"/\")\n"
+"    within(\".header\") do\n"
+"      find(\"ol.navi\")\n"
+"      # This fails with the following message:\n"
+"      #\n"
+"      # <\"ol.navi\">(:css) expected to find a element in\n"
+"      # <<div class=\"header\">\n"
+"      #       <p>No navigation.</p>\n"
+"      #     </div>>\n"
+"      #\n"
+"      # This messages shows the current context. You don't need to\n"
+"      # entire HTML. You just see the current context moved by \"within\".\n"
+"      # It helps you debug a problem without save_and_open_page.\n"
+"    end\n"
+"  end\n"
+"end\n"
+"</pre>"
 msgstr ""
 
-#: doc/reference/en/index.html:91(span)
-#: doc/reference/en/file.README.html:91(span)
-msgid "setup"
-msgstr ""
+#: README.textile:79
+msgid "h2. License"
+msgstr "h2. ライセンス"
 
-#: doc/reference/en/index.html:92(span)
-#: doc/reference/en/file.README.html:92(span)
-msgid "app"
-msgstr ""
-
-#: doc/reference/en/index.html:92(span)
-#: doc/reference/en/file.README.html:92(span)
-msgid "new"
-msgstr ""
-
-#: doc/reference/en/index.html:95(span)
-#: doc/reference/en/file.README.html:95(span)
-msgid "test_title"
-msgstr ""
-
-#: doc/reference/en/index.html:96(span) doc/reference/en/index.html:103(span)
-#: doc/reference/en/index.html:110(span)
-#: doc/reference/en/file.README.html:96(span)
-#: doc/reference/en/file.README.html:103(span)
-#: doc/reference/en/file.README.html:110(span)
-msgid "visit"
-msgstr ""
-
-#: doc/reference/en/index.html:96(span) doc/reference/en/index.html:103(span)
-#: doc/reference/en/index.html:110(span)
-#: doc/reference/en/file.README.html:96(span)
-#: doc/reference/en/file.README.html:103(span)
-#: doc/reference/en/file.README.html:110(span)
-msgid "/"
-msgstr ""
-
-#: doc/reference/en/index.html:97(span) doc/reference/en/index.html:104(span)
-#: doc/reference/en/index.html:111(span)
-#: doc/reference/en/file.README.html:97(span)
-#: doc/reference/en/file.README.html:104(span)
-#: doc/reference/en/file.README.html:111(span)
-msgid "within"
-msgstr ""
-
-#: doc/reference/en/index.html:98(span)
-#: doc/reference/en/file.README.html:98(span)
-msgid "Welcome!"
-msgstr ""
-
-#: doc/reference/en/index.html:98(span)
-#: doc/reference/en/file.README.html:98(span)
-msgid "text"
-msgstr ""
-
-#: doc/reference/en/index.html:102(span)
-#: doc/reference/en/file.README.html:102(span)
-msgid "test_no_sidebar"
-msgstr ""
-
-#: doc/reference/en/index.html:104(span)
-#: doc/reference/en/file.README.html:104(span)
-msgid "body"
-msgstr ""
-
-#: doc/reference/en/index.html:105(span)
-#: doc/reference/en/file.README.html:105(span)
-msgid ".sidebar"
-msgstr ""
-
-#: doc/reference/en/index.html:109(span)
-#: doc/reference/en/file.README.html:109(span)
-msgid "test_header_content"
-msgstr ""
-
-#: doc/reference/en/index.html:111(span)
-#: doc/reference/en/file.README.html:111(span)
-msgid ".header"
-msgstr ""
-
-#: doc/reference/en/index.html:112(span)
-#: doc/reference/en/file.README.html:112(span)
-msgid "find"
-msgstr ""
-
-#: doc/reference/en/index.html:112(span)
-#: doc/reference/en/file.README.html:112(span)
-msgid "ol.navi"
-msgstr ""
-
-#: doc/reference/en/index.html:113(span)
-#: doc/reference/en/file.README.html:113(span)
-msgid "# This fails with the following message:"
-msgstr ""
-
-#: doc/reference/en/index.html:114(span) doc/reference/en/index.html:119(span)
-#: doc/reference/en/file.README.html:114(span)
-#: doc/reference/en/file.README.html:119(span)
-msgid "#"
-msgstr ""
-
-#: doc/reference/en/index.html:115(span)
-#: doc/reference/en/file.README.html:115(span)
-msgid "# &lt;\"ol.navi\"&gt;(:css) expected to find a element in"
-msgstr ""
-
-#: doc/reference/en/index.html:116(span)
-#: doc/reference/en/file.README.html:116(span)
-msgid "# &lt;&lt;div class=\"header\"&gt;"
-msgstr ""
-
-#: doc/reference/en/index.html:117(span)
-#: doc/reference/en/file.README.html:117(span)
-msgid "# &lt;p&gt;No navigation.&lt;/p&gt;"
-msgstr ""
-
-#: doc/reference/en/index.html:118(span)
-#: doc/reference/en/file.README.html:118(span)
-msgid "# &lt;/div&gt;&gt;"
-msgstr ""
-
-#: doc/reference/en/index.html:120(span)
-#: doc/reference/en/file.README.html:120(span)
-msgid "# This messages shows the current context. You don't need to"
-msgstr ""
-
-#: doc/reference/en/index.html:121(span)
-#: doc/reference/en/file.README.html:121(span)
-msgid "# entire HTML. You just see the current context moved by \"within\"."
-msgstr ""
-
-#: doc/reference/en/index.html:122(span)
-#: doc/reference/en/file.README.html:122(span)
-msgid "# It helps you debug a problem without save_and_open_page."
-msgstr ""
-
-#: doc/reference/en/index.html:127(h2)
-#: doc/reference/en/file.README.html:127(h2)
-msgid "License"
-msgstr "ライセンス"
-
-#: doc/reference/en/index.html:128(p) doc/reference/en/file.README.html:128(p)
+#: README.textile:81
 msgid "LGPLv2.1 or later."
 msgstr "LGPLv2.1またはそれ以降のバージョン。"
 
-#: doc/reference/en/index.html:129(p) doc/reference/en/file.README.html:129(p)
+#: README.textile:83
 msgid ""
 "(Kouhei Sutou has a right to change the license including contributed "
 "patches.)"
@@ -2291,67 +153,327 @@ msgstr ""
 "（コントリビュートされたパッチなども含み、Kouhei Sutouがライセンスを変更する"
 "権利を持ちます。）"
 
-#: doc/reference/en/index.html:130(h2)
-#: doc/reference/en/file.README.html:130(h2)
-msgid "Authors"
-msgstr "作者"
+#: README.textile:85
+msgid "h2. Authors"
+msgstr "h2. 作者"
 
-#: doc/reference/en/index.html:132(li)
-#: doc/reference/en/file.README.html:132(li)
-msgid "Kouhei Sutou"
+#: README.textile:87
+msgid "* Kouhei Sutou"
 msgstr ""
 
-#: doc/reference/en/file_list.html:43(a) doc/reference/en/_index.html:63(a)
-msgid "README"
+#: doc/text/news.textile:1
+msgid "h1. News"
+msgstr "h1. お知らせ"
+
+#: doc/text/news.textile:3
+msgid "h2(#1-0-3). 1.0.3 - 2012-11-29"
 msgstr ""
 
-#: doc/reference/en/file_list.html:46(a) doc/reference/en/_index.html:66(a)
-msgid "news"
+#: doc/text/news.textile:5
+msgid "A support Capybara 2.0.1 release."
+msgstr "Capybara 2.0.1 サポートのリリースです。"
+
+#: doc/text/news.textile:7 doc/text/news.textile:17 doc/text/news.textile:25
+msgid "h3. Improvments"
+msgstr "h3. 改良"
+
+#: doc/text/news.textile:9
+msgid ""
+"* Supported Capybara 2.0.1.\n"
+"  It requires Capybara >= 2.0.1 and test-unit >= 2.5.3.\n"
+"  Notice: Capybara 1.X aren't supported yet from this release."
+msgstr ""
+"* Capybara 2.0.1をサポートしました。\n"
+"  Cpaybara 2.0.1以上、test-unit2.5.3以上が必要です。\n"
+"  注意：Capybara の1.X系はサポートから外れました。"
+
+#: doc/text/news.textile:13
+msgid "h2(#1-0-2). 1.0.2 - 2012-03-12"
 msgstr ""
 
-#: doc/reference/en/_index.html:57(h1)
-msgid "Alphabetic Index"
+#: doc/text/news.textile:15 doc/text/news.textile:23
+msgid "A Capybara integration improvement release."
+msgstr "Capybaraとの連携を強化したリリース。"
+
+#: doc/text/news.textile:19
+msgid "  * Supported Capybara 1.1.2 again."
+msgstr "  * Capybara 1.1.2 を再サポート。"
+
+#: doc/text/news.textile:21
+msgid "h2(#1-0-1). 1.0.1 - 2012-01-16"
 msgstr ""
 
-#: doc/reference/en/_index.html:59(h2)
-msgid "File Listing"
+#: doc/text/news.textile:27
+msgid ""
+"  * Added {Test::Unit::Capybara::Assertions#assert_all}.\n"
+"  * Added {Test::Unit::Capybara::Assertions#assert_not_find}.\n"
+"  * Supported Capybara::ElementNotFound as a failure."
+msgstr ""
+"  * {Test::Unit::Capybara::Assertions#assert_all} を追加。\n"
+"  * {Test::Unit::Capybara::Assertions#assert_not_find} を追加。\n"
+"  * Capybara::ElementNotFound例外を失敗として扱うようにした。"
+
+#: doc/text/news.textile:31
+msgid "h2(#1-0-0). 1.0.0 - 2011-05-01"
 msgstr ""
 
-#: doc/reference/en/_index.html:72(h2)
-msgid "Namespace Listing A-Z"
+#: doc/text/news.textile:33
+msgid "The first release!!!"
+msgstr "最初のリリース！！！"
+
+# @param
+#: lib/test/unit/capybara.rb:56
+msgid "tag|param|value"
 msgstr ""
 
-#: doc/reference/en/_index.html:83(li)
-msgid "A"
+# @param value
+#: lib/test/unit/capybara.rb:56
+msgid "the value to set the attribute node to."
 msgstr ""
 
-#: doc/reference/en/_index.html:89(small)
-#: doc/reference/en/_index.html:96(small)
-msgid "(Test::Unit::Capybara)"
+# Test::Unit::Capybara::ElementNotFound#node=
+#: lib/test/unit/capybara.rb:57
+msgid "Sets the attribute node"
 msgstr ""
 
-#: doc/reference/en/_index.html:105(li)
-msgid "C"
+# Test::Unit::Capybara::ElementNotFound#node
+#: lib/test/unit/capybara.rb:57
+msgid "Returns the value of attribute node"
 msgstr ""
 
-#: doc/reference/en/_index.html:111(small)
-#: doc/reference/en/_index.html:131(small)
-msgid "(Test::Unit)"
+# Test::Unit::Capybara::ElementNotFound#kind
+#: lib/test/unit/capybara.rb:58
+msgid "Returns the value of attribute kind"
 msgstr ""
 
-#: doc/reference/en/_index.html:120(li)
-msgid "T"
+# Test::Unit::Capybara::ElementNotFound#locator
+#: lib/test/unit/capybara.rb:58
+msgid "Returns the value of attribute locator"
 msgstr ""
 
-#: doc/reference/en/_index.html:140(li)
-msgid "U"
+# @return [ElementNotFound]
+#: lib/test/unit/capybara.rb:58
+msgid "a new instance of ElementNotFound"
 msgstr ""
 
-#: doc/reference/en/_index.html:146(small)
-msgid "(Test)"
+# @return [NodeInspector]
+#: lib/test/unit/capybara.rb:153
+msgid "a new instance of NodeInspector"
 msgstr ""
 
-#. Put one translator per line, in the form of NAME <EMAIL>, YEAR1, YEAR2
-#: doc/reference/en/_index.html:0(None)
-msgid "translator-credits"
+# Test::Unit::Capybara::Assertions#assert_body
+#: lib/test/unit/capybara.rb:174
+msgid ""
+"Passes if @expected@ == @source@. @source@ is a\n"
+"method provided by Capybara::DSL."
 msgstr ""
+
+# Test::Unit::Capybara::Assertions#assert_body
+#: lib/test/unit/capybara.rb:177
+msgid ""
+"@source@ may be parsed depended on response\n"
+"Content-Type before comparing. Here are parsed\n"
+"Content-Types:"
+msgstr ""
+
+# Test::Unit::Capybara::Assertions#assert_body
+#: lib/test/unit/capybara.rb:181
+msgid "- @\"application/json\"@ := It's parsed by @JSON.parse@."
+msgstr ""
+
+# @option
+#: lib/test/unit/capybara.rb:215 lib/test/unit/capybara.rb:436
+msgid "tag|option|options"
+msgstr ""
+
+# @param [Object]
+#: lib/test/unit/capybara.rb:215
+msgid "tag|param|expected"
+msgstr ""
+
+# @param [Object] expected
+#: lib/test/unit/capybara.rb:215
+msgid ""
+"the expected body\n"
+"content. The actual body may be parsed. It\n"
+"depends on @:content_type@ option."
+msgstr ""
+
+# @yieldparam [Hash] actual_response
+#: lib/test/unit/capybara.rb:215
+msgid ""
+"the actual\n"
+"response constructed in the method."
+msgstr ""
+
+# @yield [expected_response, actual_response]
+#: lib/test/unit/capybara.rb:215
+msgid ""
+"the\n"
+"optional compared responses normalizer."
+msgstr ""
+
+# @yieldparam [Hash]
+#: lib/test/unit/capybara.rb:215
+msgid "tag|yieldparam|expected_response"
+msgstr ""
+
+# @yieldparam [Hash] expected_response
+#: lib/test/unit/capybara.rb:215
+msgid ""
+"the expected\n"
+"response constructed in the method."
+msgstr ""
+
+# @yieldparam [Hash]
+#: lib/test/unit/capybara.rb:215
+msgid "tag|yieldparam|actual_response"
+msgstr ""
+
+# @yieldreturn [expected_response, actual_response]
+#: lib/test/unit/capybara.rb:215
+msgid ""
+"the\n"
+"normalized compared responses."
+msgstr ""
+
+#: lib/test/unit/capybara.rb:215 lib/test/unit/capybara.rb:436
+msgid "a customizable set of options"
+msgstr ""
+
+# @param [Hash]
+#: lib/test/unit/capybara.rb:215 lib/test/unit/capybara.rb:436
+msgid "tag|param|options"
+msgstr ""
+
+# @example Failure case
+#: lib/test/unit/capybara.rb:215
+msgid ""
+"# Actual response:\n"
+"#   Content-Type: text/html\n"
+"#   Body: <html><body>Hello</body></html>\n"
+"assert_body(\"<html><body>World</body></html>\")"
+msgstr ""
+
+# @example
+#: lib/test/unit/capybara.rb:215
+msgid "tag|example|Pass case"
+msgstr ""
+
+# @example Pass case
+#: lib/test/unit/capybara.rb:215
+msgid ""
+"# Actual response:\n"
+"#   Content-Type: application/json\n"
+"#   Body: {\"status\": true}\n"
+"assert_body({\"status\" => true}, :content_type => :json)"
+msgstr ""
+
+# @example
+#: lib/test/unit/capybara.rb:215
+msgid "tag|example|Failure case"
+msgstr ""
+
+# @param [...]
+#: lib/test/unit/capybara.rb:295 lib/test/unit/capybara.rb:392
+msgid "tag|param|args"
+msgstr ""
+
+# @param [...] args
+#: lib/test/unit/capybara.rb:295
+msgid "(see {::Capybara::Node::Finders#all})"
+msgstr ""
+
+#: lib/test/unit/capybara.rb:295
+msgid "The found elements."
+msgstr ""
+
+# @see
+#: lib/test/unit/capybara.rb:295
+msgid "tag|see|Capybara::Node::Finders#all"
+msgstr ""
+
+# @overload
+#: lib/test/unit/capybara.rb:295
+msgid "tag|overload|assert_all"
+msgstr ""
+
+# @param [...] args
+#: lib/test/unit/capybara.rb:392
+msgid "(see {::Capybara::Node::Finders#find})"
+msgstr ""
+
+# @see
+#: lib/test/unit/capybara.rb:392
+msgid "tag|see|::Capybara::Node::Finders#find"
+msgstr ""
+
+# @overload
+#: lib/test/unit/capybara.rb:392
+msgid "tag|overload|assert_not_find"
+msgstr ""
+
+# Test::Unit::Capybara::Assertions#flunk_find
+#: lib/test/unit/capybara.rb:423
+msgid ""
+"Fails always with {::Capybara::Node::Element} is not\n"
+"found message."
+msgstr ""
+
+# @param [::Capybara::Node::Element]
+#: lib/test/unit/capybara.rb:436
+msgid "tag|param|base_node"
+msgstr ""
+
+# @param [::Capybara::Node::Element] base_node
+#: lib/test/unit/capybara.rb:436
+msgid ""
+"The\n"
+"node used as search target."
+msgstr ""
+
+# Test
+#: lib/test/unit/capybara/version.rb:2
+msgid "-*- ruby -*-"
+msgstr ""
+
+# Test
+#: lib/test/unit/capybara/version.rb:4
+msgid "Copyright (C) 2011-2012  Kouhei Sutou <kou@clear-code.com>"
+msgstr ""
+
+# Test
+#: lib/test/unit/capybara/version.rb:6
+msgid ""
+"This library is free software; you can redistribute it and/or\n"
+"modify it under the terms of the GNU Lesser General Public\n"
+"License as published by the Free Software Foundation; either\n"
+"version 2.1 of the License, or (at your option) any later version."
+msgstr ""
+
+# Test
+#: lib/test/unit/capybara/version.rb:11
+msgid ""
+"This library is distributed in the hope that it will be useful,\n"
+"but WITHOUT ANY WARRANTY; without even the implied warranty of\n"
+"MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU\n"
+"Lesser General Public License for more details."
+msgstr ""
+
+# Test
+#: lib/test/unit/capybara/version.rb:16
+msgid ""
+"You should have received a copy of the GNU Lesser General Public\n"
+"License along with this library; if not, write to the Free Software\n"
+"Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301  "
+"USA"
+msgstr ""
+
+#~ msgid "Added <span class=\"object_link\"><placeholder-1/></span>."
+#~ msgstr "<span class=\"object_link\"><placeholder-1/></span>を追加。"
+
+#~ msgid "Supported Capybara::ElementNotFound as a failure."
+#~ msgstr "Capybara::ElementNotFound例外を失敗と扱うようにした。"
+
+#~ msgid "Web site"
+#~ msgstr "Webサイト"
