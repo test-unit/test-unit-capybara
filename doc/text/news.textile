@@ -1,4 +1,5 @@
 h1. News
+
 h2(#1-0-3). 1.0.3 - 2012-11-29
 
 A support Capybara 2.0.1 release.
