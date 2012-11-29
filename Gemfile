@@ -18,14 +18,4 @@
 
 source :rubygems
 
-gem "test-unit", ">= 2.5.3"
-gem "capybara", ">= 2.0.1"
-gem "json"
-
-group :development, :test do
-  gem "rake"
-  gem "jeweler"
-  gem "yard"
-  gem "packnga"
-  gem "test-unit-notify"
-end
+gemspec

@@ -21,41 +21,13 @@ require './lib/test/unit/capybara/version'
 require 'rubygems'
 require 'rubygems/package_task'
 require 'yard'
-require 'jeweler'
 require 'packnga'
+require "bundler/gem_helper"
 
-def cleanup_white_space(entry)
-  entry.gsub(/(\A\n+|\n+\z)/, '') + "\n"
-end
-
-ENV["VERSION"] ||= Test::Unit::Capybara::VERSION
-version = ENV["VERSION"].dup
-spec = nil
-Jeweler::Tasks.new do |_spec|
-  spec = _spec
-  spec.name = "test-unit-capybara"
-  spec.version = version
-  spec.rubyforge_project = "test-unit"
-  spec.homepage = "http://test-unit.rubyforge.org/#test-unit-capybara"
-  spec.authors = ["Kouhei Sutou"]
-  spec.email = ["kou@clear-code.com"]
-  entries = File.read("README.textile").split(/^h2\.\s(.*)$/)
-  description = cleanup_white_space(entries[entries.index("Description") + 1])
-  spec.summary, spec.description, = description.split(/\n\n+/, 3)
-  spec.license = "LGPLv2 or later"
-  spec.files = FileList["lib/**/*.rb",
-                        "bin/*",
-                        "doc/text/*",
-                        "README.textile",
-                        "COPYING",
-                        "Rakefile",
-                        "Gemfile"]
-  spec.test_files = FileList["test/**/*.rb"]
-end
-
-Rake::Task["release"].prerequisites.clear
-Jeweler::RubygemsDotOrgTasks.new do
-end
+base_dir = File.dirname(__FILE__)
+helper = Bundler::GemHelper.new(base_dir)
+helper.install
+spec = helper.gemspec
 
 Gem::PackageTask.new(spec) do |pkg|
   pkg.need_tar_gz = true
