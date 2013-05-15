@@ -1,6 +1,6 @@
 # -*- ruby -*-
 #
-# Copyright (C) 2011-2012  Kouhei Sutou <kou@clear-code.com>
+# Copyright (C) 2011-2013  Kouhei Sutou <kou@clear-code.com>
 #
 # This library is free software; you can redistribute it and/or
 # modify it under the terms of the GNU Lesser General Public
@@ -65,47 +65,23 @@ module Test::Unit
 
     # @private
     module FindErrorWrapper
-      class << self
-        def included(base)
-          base.module_eval do
-            alias_method :find_error_original, :find_error
-            alias_method :find_error, :find_error_for_test_unit
-          end
-        end
-      end
-
-      def find_error_for_test_unit(*args)
-        error = find_error_original(*args)
-        if error.is_a?(::Capybara::ElementNotFound)
-          error = ElementNotFound.new(nil,
-                                      @query.selector.name,
-                                      @query.locator,
-                                      error.message)
-        end
-        error
-      end
-    end
-
-    # @private
-    module FindErrorNodeSetter
       def find(*args)
         begin
           super
-        rescue ElementNotFound => error
-          error.node = self
-          raise error
+        rescue ::Capybara::ElementNotFound => error
+          query = ::Capybara::Query.new(*args)
+          new_error = ElementNotFound.new(self,
+                                          query.selector.name,
+                                          query.locator,
+                                          error.message)
+          raise new_error
         end
       end
     end
 
     # @private
-    class ::Capybara::Result
+    class ::Capybara::Node::Base
       include FindErrorWrapper
-    end
-
-    # @private
-    class ::Capybara::Node::Element
-      include FindErrorNodeSetter
     end
 
     # @private
@@ -227,7 +203,7 @@ module Test::Unit
         if block_given?
           expected_response, actual_response = yield(expected_response,
                                                      actual_response)
-	end
+        end
         assert_equal(expected_response, actual_response)
       end
 
@@ -300,7 +276,7 @@ module Test::Unit
 <?>(?) expected to find one or more elements in
 <?>
 EOT
-        current_context = node || page.send(:current_node)
+        current_context = node || page.send(:current_scope)
         current_context_source = node_source(current_context)
         source_in_message = AssertionMessage.literal(current_context_source)
         full_message = build_message(args[:message],
@@ -405,7 +381,7 @@ EOT
 EOT
         element_source = nil
         element_source = node_source(element) if element
-        current_context = node || page.send(:current_node)
+        current_context = node || page.send(:current_scope)
         current_context_source = node_source(current_context)
         source_in_message = AssertionMessage.literal(current_context_source)
         full_message = build_message(args[:message],

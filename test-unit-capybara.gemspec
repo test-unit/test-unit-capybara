@@ -27,7 +27,7 @@ Gem::Specification.new do |spec|
   spec.test_files = Dir.glob("test/**/*.rb")
 
   spec.add_runtime_dependency("test-unit", ">=2.5.3")
-  spec.add_runtime_dependency("capybara", ">=2.0.1")
+  spec.add_runtime_dependency("capybara", ">=2.1.0")
   spec.add_runtime_dependency("json")
 
   spec.add_development_dependency("bundler")
