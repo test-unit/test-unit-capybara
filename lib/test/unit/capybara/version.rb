@@ -19,7 +19,7 @@
 module Test
   module Unit
     module Capybara
-      VERSION = "1.0.4"
+      VERSION = "1.0.5"
     end
   end
 end
