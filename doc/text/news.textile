@@ -1,5 +1,20 @@
 h1. News
 
+h2(#1-0-4). 1.0.4 - 2013-05-15
+
+A Capybara 2.1.0 support release.
+
+h3. Improvments
+
+* Supported Capybara 2.1.0.
+  It requires Capybara >= 2.1.0.
+  Notice: Capybara < 2.1.0 aren't supported from this release.
+  [GitHub#2] [Reported by thelastinuit]
+
+h3. Thanks
+
+* thelastinuit
+
 h2(#1-0-3). 1.0.3 - 2012-11-29
 
 A support Capybara 2.0.1 release.
