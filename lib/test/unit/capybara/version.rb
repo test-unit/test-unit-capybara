@@ -1,6 +1,6 @@
 # -*- ruby -*-
 #
-# Copyright (C) 2011-2012  Kouhei Sutou <kou@clear-code.com>
+# Copyright (C) 2011-2013  Kouhei Sutou <kou@clear-code.com>
 #
 # This library is free software; you can redistribute it and/or
 # modify it under the terms of the GNU Lesser General Public
@@ -19,7 +19,7 @@
 module Test
   module Unit
     module Capybara
-      VERSION = "1.0.3"
+      VERSION = "1.0.4"
     end
   end
 end
