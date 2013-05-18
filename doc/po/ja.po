@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: test-unit-capybara 0.9.5\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2011-11-20 22:17+0900\n"
-"PO-Revision-Date: 2012-11-29 15:53+0900\n"
+"PO-Revision-Date: 2013-05-18 13:15+0900\n"
 "Last-Translator: Kouhei Sutou <kou@clear-code.com>\n"
 "Language-Team: Japanese\n"
 "Language: ja\n"
@@ -160,9 +160,8 @@ msgid "h2(#1-0-4). 1.0.4 - 2013-05-15"
 msgstr ""
 
 #: ./doc/text/news.textile:5
-#, fuzzy
 msgid "A Capybara 2.1.0 support release."
-msgstr "Capybaraとの連携を強化したリリース。"
+msgstr "Capybara 2.1.0をサポートしたリリース。"
 
 #: ./doc/text/news.textile:7 ./doc/text/news.textile:22
 #: ./doc/text/news.textile:32 ./doc/text/news.textile:40
@@ -170,20 +169,20 @@ msgid "h3. Improvments"
 msgstr "h3. 改良"
 
 #: ./doc/text/news.textile:9
-#, fuzzy
 msgid ""
 "* Supported Capybara 2.1.0.\n"
 "  It requires Capybara >= 2.1.0.\n"
 "  Notice: Capybara < 2.1.0 aren't supported from this release.\n"
 "  [GitHub#2] [Reported by thelastinuit]"
 msgstr ""
-"* Capybara 2.0.1をサポートしました。\n"
-"  Cpaybara 2.0.1以上、test-unit2.5.3以上が必要です。\n"
-"  注意：Capybara の1.X系はサポートから外れました。"
+"* Capybara 2.1.0をサポートしました。\n"
+"  Cpaybara 2.1.0以上が必要です。\n"
+"  注意：Capybara 2.1.0より前のリリースはサポートから外れました。\n"
+"  [GitHub#2] [Reported by thelastinuit]"
 
 #: ./doc/text/news.textile:14
 msgid "h3. Thanks"
-msgstr ""
+msgstr "h3. 感謝"
 
 #: ./doc/text/news.textile:16
 msgid "* thelastinuit"
