@@ -1,6 +1,6 @@
 # -*- ruby -*-
 #
-# Copyright (C) 2011-2012  Kouhei Sutou <kou@clear-code.com>
+# Copyright (C) 2011-2013  Kouhei Sutou <kou@clear-code.com>
 #
 # This library is free software; you can redistribute it and/or
 # modify it under the terms of the GNU Lesser General Public
@@ -38,7 +38,9 @@ Gem::PackageTask.new(spec) do |pkg|
   pkg.need_tar_gz = true
 end
 
-document_task = Packnga::DocumentTask.new(spec) do
+document_task = Packnga::DocumentTask.new(spec) do |task|
+  task.original_language = "en"
+  task.translate_languages = ["ja"]
 end
 
 Packnga::ReleaseTask.new(spec) do |task|
