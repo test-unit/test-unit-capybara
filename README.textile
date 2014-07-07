@@ -1,6 +1,6 @@
 h1. test-unit-capybara
 
-"Web site":http://test-unit.rubyforge.org/#test-unit-capybara
+"Web site":https://github.com/test-unit/test-unit-capybara
 
 h2. Description
 
