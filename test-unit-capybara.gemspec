@@ -12,8 +12,7 @@ version = Test::Unit::Capybara::VERSION.dup
 Gem::Specification.new do |spec|
   spec.name = "test-unit-capybara"
   spec.version = version
-  spec.rubyforge_project = "test-unit"
-  spec.homepage = "http://test-unit.rubyforge.org/#test-unit-capybara"
+  spec.homepage = "https://github.com/test-unit/test-unit-capybara"
   spec.authors = ["Kouhei Sutou"]
   spec.email = ["kou@clear-code.com"]
   entries = File.read("README.textile").split(/^h2\.\s(.*)$/)
