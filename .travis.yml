@@ -4,4 +4,4 @@ rvm:
   - jruby
 notifications:
   recipients:
-    - kou@clear-code.com
+    - test-unit-commit@googlegroups.com
