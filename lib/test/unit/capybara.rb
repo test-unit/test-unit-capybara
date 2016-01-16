@@ -21,7 +21,8 @@ require "test/unit/capybara/version"
 require "capybara"
 require "capybara/dsl"
 require "json"
-require "test/unit"
+require "test-unit"
+require "test/unit/assertions"
 
 module Test::Unit
   module Capybara
