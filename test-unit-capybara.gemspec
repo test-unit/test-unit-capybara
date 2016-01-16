@@ -6,7 +6,6 @@ end
 
 require "./lib/test/unit/capybara/version"
 
-ENV["VERSION"] ||= Test::Unit::Capybara::VERSION
 version = Test::Unit::Capybara::VERSION.dup
 
 Gem::Specification.new do |spec|
