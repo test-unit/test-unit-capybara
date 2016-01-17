@@ -1,5 +1,11 @@
 h1. News
 
+h2(#1-0-5). 1.0.5 - 2016-01-18
+
+h3. Improvements
+
+* Stopped to register auto test runner.
+
 h2(#1-0-4). 1.0.4 - 2013-05-15
 
 A Capybara 2.1.0 support release.
