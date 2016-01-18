@@ -257,14 +257,15 @@ HTML
     def test_pretty_print
       visit("/")
       section_html = @html.scan(/<div class="section">.*?<\/div>/m)[0]
+      element_class = find("html").class
       message = <<-EOM.strip
 <"XXX"> expected but was
-<\#<Capybara::Element tag="div" path="/html/body/div"
+<\#<#{element_class} tag="div" path="/html/body/div"
 #{section_html}>>.
 
 diff:
 - "XXX"
-+ \#<Capybara::Element tag="div" path="/html/body/div"
++ \#<#{element_class} tag="div" path="/html/body/div"
 + <div class="section">
 +       <h2>World</h2>
 +     </div>>
