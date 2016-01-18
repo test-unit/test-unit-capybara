@@ -7,3 +7,5 @@ rvm:
 notifications:
   recipients:
     - test-unit-commit@googlegroups.com
+before_install:
+  - gem update bundler
