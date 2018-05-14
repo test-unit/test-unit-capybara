@@ -148,7 +148,7 @@ msgid "h3. Improvements"
 msgstr "h3. 改良"
 
 msgid "* Stopped to register auto test runner."
-msgstr "* AutoRunner自動登録の停止"
+msgstr "* 自動テスト実行機能の登録をやめた。"
 
 msgid "h2(#1-0-4). 1.0.4 - 2013-05-15"
 msgstr ""
