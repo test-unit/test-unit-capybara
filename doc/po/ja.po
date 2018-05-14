@@ -144,7 +144,6 @@ msgstr "h1. お知らせ"
 msgid "h2(#1-0-5). 1.0.5 - 2016-01-18"
 msgstr ""
 
-#, fuzzy
 msgid "h3. Improvements"
 msgstr "h3. 改良"
 
@@ -156,9 +155,6 @@ msgstr ""
 
 msgid "A Capybara 2.1.0 support release."
 msgstr "Capybara 2.1.0をサポートしたリリース。"
-
-msgid "h3. Improvments"
-msgstr "h3. 改良"
 
 msgid ""
 "* Supported Capybara 2.1.0.\n"
@@ -182,6 +178,10 @@ msgstr ""
 
 msgid "A support Capybara 2.0.1 release."
 msgstr "Capybara 2.0.1 サポートのリリースです。"
+
+#, fuzzy
+msgid "h3. Improvments"
+msgstr "h3. 改良"
 
 msgid ""
 "* Supported Capybara 2.0.1.\n"

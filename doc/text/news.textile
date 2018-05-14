@@ -10,7 +10,7 @@ h2(#1-0-4). 1.0.4 - 2013-05-15
 
 A Capybara 2.1.0 support release.
 
-h3. Improvments
+h3. Improvements
 
 * Supported Capybara 2.1.0.
   It requires Capybara >= 2.1.0.
