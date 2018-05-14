@@ -7,7 +7,6 @@ msgid ""
 msgstr ""
 "Project-Id-Version: test-unit-capybara 0.9.5\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2014-07-07 15:02+0900\n"
 "PO-Revision-Date: 2014-07-07 15:04+0900\n"
 "Last-Translator: Kouhei Sutou <kou@clear-code.com>\n"
 "Language-Team: Japanese\n"
@@ -17,19 +16,15 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
 
-#: ../../README.textile:1
 msgid "h1. test-unit-capybara"
 msgstr ""
 
-#: ../../README.textile:3
 msgid "\"Web site\":https://github.com/test-unit/test-unit-capybara"
 msgstr "\"Webサイト\":https://github.com/test-unit/test-unit-capybara"
 
-#: ../../README.textile:5
 msgid "h2. Description"
 msgstr "h2. 説明"
 
-#: ../../README.textile:7
 msgid ""
 "test-unit-capybara is a Capybara adapter for test-unit 2. You can get \"Capybar"
 "a\":https://rubygems.org/gems/capybara integrated Test::Unit::TestCase. It also"
@@ -38,28 +33,23 @@ msgstr ""
 "test-unit-capybaraはtest-unit 2用のCapybaraアダプターです。<placeholder-1/>と連携したTest::Uni"
 "t::TestCaseを使うことができます。また、Capybara用の便利なアサーションも提供します。"
 
-#: ../../README.textile:9
 msgid "h2. Install"
 msgstr "h2. インストール"
 
-#: ../../README.textile:11
 msgid ""
 "<pre>\n"
 "% sudo gem install test-unit-capybara\n"
 "</pre>"
 msgstr ""
 
-#: ../../README.textile:15
 msgid "h2. Usage"
 msgstr "h2. 使い方"
 
-#: ../../README.textile:17
 msgid ""
 "<pre>\n"
 "require 'test/unit/capybara'"
 msgstr ""
 
-#: ../../README.textile:20
 msgid ""
 "class MyRackApplication\n"
 "  def call(env)\n"
@@ -81,20 +71,17 @@ msgid ""
 "end"
 msgstr ""
 
-#: ../../README.textile:39
 msgid ""
 "class TestMyRackApplication < Test::Unit::TestCase\n"
 "  include Capybara::DSL"
 msgstr ""
 
-#: ../../README.textile:42
 msgid ""
 "  def setup\n"
 "    Capybara.app = MyRackApplication.new\n"
 "  end"
 msgstr ""
 
-#: ../../README.textile:46
 msgid ""
 "  def test_title\n"
 "    visit(\"/\")\n"
@@ -104,7 +91,6 @@ msgid ""
 "  end"
 msgstr ""
 
-#: ../../README.textile:53
 msgid ""
 "  def test_no_sidebar\n"
 "    visit(\"/\")\n"
@@ -114,7 +100,6 @@ msgid ""
 "  end"
 msgstr ""
 
-#: ../../README.textile:60
 msgid ""
 "  def test_header_content\n"
 "    visit(\"/\")\n"
@@ -136,46 +121,45 @@ msgid ""
 "</pre>"
 msgstr ""
 
-#: ../../README.textile:79
 msgid "h2. License"
 msgstr "h2. ライセンス"
 
-#: ../../README.textile:81
 msgid "LGPLv2.1 or later."
 msgstr "LGPLv2.1またはそれ以降のバージョン。"
 
-#: ../../README.textile:83
 msgid ""
 "(Kouhei Sutou has a right to change the license including contributed patches."
 ")"
 msgstr "（コントリビュートされたパッチなども含み、Kouhei Sutouがライセンスを変更する権利を持ちます。）"
 
-#: ../../README.textile:85
 msgid "h2. Authors"
 msgstr "h2. 作者"
 
-#: ../../README.textile:87
 msgid "* Kouhei Sutou"
 msgstr ""
 
-#: ../../doc/text/news.textile:1
 msgid "h1. News"
 msgstr "h1. お知らせ"
 
-#: ../../doc/text/news.textile:3
+msgid "h2(#1-0-5). 1.0.5 - 2016-01-18"
+msgstr ""
+
+#, fuzzy
+msgid "h3. Improvements"
+msgstr "h3. 改良"
+
+msgid "* Stopped to register auto test runner."
+msgstr "* AutoRunner自動登録の停止"
+
 msgid "h2(#1-0-4). 1.0.4 - 2013-05-15"
 msgstr ""
 
-#: ../../doc/text/news.textile:5
 msgid "A Capybara 2.1.0 support release."
 msgstr "Capybara 2.1.0をサポートしたリリース。"
 
-#: ../../doc/text/news.textile:7 ../../doc/text/news.textile:22
-#: ../../doc/text/news.textile:32 ../../doc/text/news.textile:40
 msgid "h3. Improvments"
 msgstr "h3. 改良"
 
-#: ../../doc/text/news.textile:9
 msgid ""
 "* Supported Capybara 2.1.0.\n"
 "  It requires Capybara >= 2.1.0.\n"
@@ -187,23 +171,18 @@ msgstr ""
 "  注意：Capybara 2.1.0より前のリリースはサポートから外れました。\n"
 "  [GitHub#2] [Reported by thelastinuit]"
 
-#: ../../doc/text/news.textile:14
 msgid "h3. Thanks"
 msgstr "h3. 感謝"
 
-#: ../../doc/text/news.textile:16
 msgid "* thelastinuit"
 msgstr ""
 
-#: ../../doc/text/news.textile:18
 msgid "h2(#1-0-3). 1.0.3 - 2012-11-29"
 msgstr ""
 
-#: ../../doc/text/news.textile:20
 msgid "A support Capybara 2.0.1 release."
 msgstr "Capybara 2.0.1 サポートのリリースです。"
 
-#: ../../doc/text/news.textile:24
 msgid ""
 "* Supported Capybara 2.0.1.\n"
 "  It requires Capybara >= 2.0.1 and test-unit >= 2.5.3.\n"
@@ -213,23 +192,18 @@ msgstr ""
 "  Capybara 2.0.1以上、test-unit2.5.3以上が必要です。\n"
 "  注意：Capybara の1.X系はサポートから外れました。"
 
-#: ../../doc/text/news.textile:28
 msgid "h2(#1-0-2). 1.0.2 - 2012-03-12"
 msgstr ""
 
-#: ../../doc/text/news.textile:30 ../../doc/text/news.textile:38
 msgid "A Capybara integration improvement release."
 msgstr "Capybaraとの連携を強化したリリース。"
 
-#: ../../doc/text/news.textile:34
 msgid "  * Supported Capybara 1.1.2 again."
 msgstr "  * Capybara 1.1.2 を再サポート。"
 
-#: ../../doc/text/news.textile:36
 msgid "h2(#1-0-1). 1.0.1 - 2012-01-16"
 msgstr ""
 
-#: ../../doc/text/news.textile:42
 msgid ""
 "  * Added {Test::Unit::Capybara::Assertions#assert_all}.\n"
 "  * Added {Test::Unit::Capybara::Assertions#assert_not_find}.\n"
@@ -239,63 +213,51 @@ msgstr ""
 "  * {Test::Unit::Capybara::Assertions#assert_not_find} を追加。\n"
 "  * Capybara::ElementNotFound例外を失敗として扱うようにした。"
 
-#: ../../doc/text/news.textile:46
 msgid "h2(#1-0-0). 1.0.0 - 2011-05-01"
 msgstr ""
 
-#: ../../doc/text/news.textile:48
 msgid "The first release!!!"
 msgstr "最初のリリース！！！"
 
 # @param
-#: ../../lib/test/unit/capybara.rb:56
 msgid "tag|param|value"
 msgstr ""
 
 # @param value
-#: ../../lib/test/unit/capybara.rb:56
 msgid "the value to set the attribute node to."
 msgstr ""
 
-# Test::Unit::Capybara::ElementNotFound#node=
-#: ../../lib/test/unit/capybara.rb:57
-msgid "Sets the attribute node"
-msgstr ""
-
 # Test::Unit::Capybara::ElementNotFound#node
-#: ../../lib/test/unit/capybara.rb:57
 msgid "Returns the value of attribute node"
 msgstr ""
 
-# Test::Unit::Capybara::ElementNotFound#kind
-#: ../../lib/test/unit/capybara.rb:58
-msgid "Returns the value of attribute kind"
+# Test::Unit::Capybara::ElementNotFound#node=
+msgid "Sets the attribute node"
 msgstr ""
 
 # Test::Unit::Capybara::ElementNotFound#locator
-#: ../../lib/test/unit/capybara.rb:58
 msgid "Returns the value of attribute locator"
 msgstr ""
 
 # @return [ElementNotFound]
-#: ../../lib/test/unit/capybara.rb:58
 msgid "a new instance of ElementNotFound"
 msgstr ""
 
+# Test::Unit::Capybara::ElementNotFound#kind
+msgid "Returns the value of attribute kind"
+msgstr ""
+
 # @return [NodeInspector]
-#: ../../lib/test/unit/capybara.rb:129
 msgid "a new instance of NodeInspector"
 msgstr ""
 
 # Test::Unit::Capybara::Assertions#assert_body
-#: ../../lib/test/unit/capybara.rb:150
 msgid ""
 "Passes if @expected@ == @source@. @source@ is a\n"
 "method provided by Capybara::DSL."
 msgstr ""
 
 # Test::Unit::Capybara::Assertions#assert_body
-#: ../../lib/test/unit/capybara.rb:153
 msgid ""
 "@source@ may be parsed depended on response\n"
 "Content-Type before comparing. Here are parsed\n"
@@ -303,91 +265,65 @@ msgid ""
 msgstr ""
 
 # Test::Unit::Capybara::Assertions#assert_body
-#: ../../lib/test/unit/capybara.rb:157
 msgid "- @\"application/json\"@ := It's parsed by @JSON.parse@."
 msgstr ""
 
-# @option
-#: ../../lib/test/unit/capybara.rb:191 ../../lib/test/unit/capybara.rb:412
-msgid "tag|option|options"
+# @example
+msgid "tag|example|Failure case"
 msgstr ""
 
 # @param [Object]
-#: ../../lib/test/unit/capybara.rb:191
 msgid "tag|param|expected"
 msgstr ""
 
 # @param [Object] expected
-#: ../../lib/test/unit/capybara.rb:191
 msgid ""
 "the expected body\n"
 "content. The actual body may be parsed. It\n"
 "depends on @:content_type@ option."
 msgstr ""
 
-# @yieldreturn [expected_response, actual_response]
-#: ../../lib/test/unit/capybara.rb:191
-msgid ""
-"the\n"
-"normalized compared responses."
+# @option
+msgid "tag|option|options"
 msgstr ""
 
 # @yield [expected_response, actual_response]
-#: ../../lib/test/unit/capybara.rb:191
 msgid ""
 "the\n"
 "optional compared responses normalizer."
 msgstr ""
 
 # @yieldparam [Hash]
-#: ../../lib/test/unit/capybara.rb:191
 msgid "tag|yieldparam|expected_response"
 msgstr ""
 
 # @yieldparam [Hash] expected_response
-#: ../../lib/test/unit/capybara.rb:191
 msgid ""
 "the expected\n"
 "response constructed in the method."
 msgstr ""
 
 # @yieldparam [Hash]
-#: ../../lib/test/unit/capybara.rb:191
 msgid "tag|yieldparam|actual_response"
 msgstr ""
 
 # @yieldparam [Hash] actual_response
-#: ../../lib/test/unit/capybara.rb:191
 msgid ""
 "the actual\n"
 "response constructed in the method."
 msgstr ""
 
-#: ../../lib/test/unit/capybara.rb:191 ../../lib/test/unit/capybara.rb:412
-msgid "a customizable set of options"
-msgstr ""
-
-# @param [Hash]
-#: ../../lib/test/unit/capybara.rb:191 ../../lib/test/unit/capybara.rb:412
-msgid "tag|param|options"
-msgstr ""
-
-# @example Failure case
-#: ../../lib/test/unit/capybara.rb:191
+# @yieldreturn [expected_response, actual_response]
 msgid ""
-"# Actual response:\n"
-"#   Content-Type: text/html\n"
-"#   Body: <html><body>Hello</body></html>\n"
-"assert_body(\"<html><body>World</body></html>\")"
+"the\n"
+"normalized compared responses."
 msgstr ""
 
 # @example
-#: ../../lib/test/unit/capybara.rb:191
 msgid "tag|example|Pass case"
 msgstr ""
 
 # @example Pass case
-#: ../../lib/test/unit/capybara.rb:191
 msgid ""
 "# Actual response:\n"
 "#   Content-Type: application/json\n"
@@ -395,81 +331,226 @@ msgid ""
 "assert_body({\"status\" => true}, :content_type => :json)"
 msgstr ""
 
-# @example
-#: ../../lib/test/unit/capybara.rb:191
-msgid "tag|example|Failure case"
+# @example Failure case
+msgid ""
+"# Actual response:\n"
+"#   Content-Type: text/html\n"
+"#   Body: <html><body>Hello</body></html>\n"
+"assert_body(\"<html><body>World</body></html>\")"
 msgstr ""
 
-# @param [...]
-#: ../../lib/test/unit/capybara.rb:271 ../../lib/test/unit/capybara.rb:368
-msgid "tag|param|args"
+# @param [Hash]
+msgid "tag|param|options"
 msgstr ""
 
-# @param [...] args
-#: ../../lib/test/unit/capybara.rb:271
-msgid "(see {::Capybara::Node::Finders#all})"
+msgid "a customizable set of options"
 msgstr ""
 
-#: ../../lib/test/unit/capybara.rb:271
-msgid "The found elements."
+# @example Failure case
+msgid ""
+"# Actual response:\n"
+"#   <html>\n"
+"#     <body>\n"
+"#       <h1>Hello</h1>\n"
+"#       <h2>Yay!</h2>\n"
+"#       <div class=\"section\">\n"
+"#         <h2>World</h2>\n"
+"#       </div>\n"
+"#     </body>\n"
+"#   </html>\n"
+"assert_page_all(\"h3\")"
 msgstr ""
 
 # @see
-#: ../../lib/test/unit/capybara.rb:271
 msgid "tag|see|Capybara::Node::Finders#all"
 msgstr ""
 
 # @overload
-#: ../../lib/test/unit/capybara.rb:271
 msgid "tag|overload|assert_all"
 msgstr ""
 
+# @example Pass case (simple)
+msgid ""
+"# Actual response:\n"
+"#   <html>\n"
+"#     <body>\n"
+"#       <h1>Hello</h1>\n"
+"#       <h2>Yay!</h2>\n"
+"#       <div class=\"section\">\n"
+"#         <h2>World</h2>\n"
+"#       </div>\n"
+"#     </body>\n"
+"#   </html>\n"
+"section = assert_find(\"div.section\")\n"
+"p section\n"
+"  # => #<Capybara::Element tag=\"h2\" path=\"/html/body/div\">\n"
+"h2_elements = assert_all(section, \"h2\")\n"
+"p h2_elements\n"
+"  # => [#<Capybara::Element tag=\"h2\" path=\"/html/body/div/h2\">]"
+msgstr ""
+
+# @example
+msgid "tag|example|Pass case (simple)"
+msgstr ""
+
+# @param [::Capybara::Node::Base] node
+msgid "The target node."
+msgstr ""
+
+# @param [::Capybara::Node::Base]
+msgid "tag|param|node"
+msgstr ""
+
+# @param [...]
+msgid "tag|param|args"
+msgstr ""
+
 # @param [...] args
-#: ../../lib/test/unit/capybara.rb:368
-msgid "(see {::Capybara::Node::Finders#find})"
+msgid "(see {::Capybara::Node::Finders#all})"
+msgstr ""
+
+# @example Pass case
+msgid ""
+"# Actual response:\n"
+"#   <html>\n"
+"#     <body>\n"
+"#       <h1>Hello</h1>\n"
+"#       <h2>Yay!</h2>\n"
+"#       <div class=\"section\">\n"
+"#         <h2>World</h2>\n"
+"#       </div>\n"
+"#     </body>\n"
+"#   </html>\n"
+"h2_elements = assert_page_all(\"h2\")\n"
+"p h2_elements\n"
+"  # => [#<Capybara::Element tag=\"h2\" path=\"/html/body/h2\">,\n"
+"  #     #<Capybara::Element tag=\"h2\" path=\"/html/body/div/h2\">]"
+msgstr ""
+
+msgid "The found elements."
+msgstr ""
+
+# Test::Unit::Capybara::Assertions#assert_all
+msgid ""
+"Passes if the selector finds one or more elements\n"
+"from @node@."
+msgstr ""
+
+# Test::Unit::Capybara::Assertions#assert_all
+msgid ""
+"Passes if the selector finds one or more elements\n"
+"from the current node."
 msgstr ""
 
 # @see
-#: ../../lib/test/unit/capybara.rb:368
 msgid "tag|see|::Capybara::Node::Finders#find"
 msgstr ""
 
+# @example Failure case
+msgid ""
+"# Actual response:\n"
+"#   <html>\n"
+"#     <body>\n"
+"#       <h1>Hello</h1>\n"
+"#       <h2>Yay!</h2>\n"
+"#       <div class=\"section\">\n"
+"#         <h2>World</h2>\n"
+"#       </div>\n"
+"#     </body>\n"
+"#   </html>\n"
+"section = find(\"section\")\n"
+"p section\n"
+"  # => #<Capybara::Element tag=\"h2\" path=\"/html/body/div\">\n"
+"assert_not_find(section, \"h2\")"
+msgstr ""
+
+# @example Pass case
+msgid ""
+"# Actual response:\n"
+"#   <html>\n"
+"#     <body>\n"
+"#       <h1>Hello</h1>\n"
+"#       <h2>Yay!</h2>\n"
+"#       <div class=\"section\">\n"
+"#         <h2>World</h2>\n"
+"#       </div>\n"
+"#     </body>\n"
+"#   </html>\n"
+"section = find(\"section\")\n"
+"p section\n"
+"  # => #<Capybara::Element tag=\"h2\" path=\"/html/body/div\">\n"
+"assert_not_find(section, \"h1\")"
+msgstr ""
+
+# @example Failure case
+msgid ""
+"# Actual response:\n"
+"#   <html>\n"
+"#     <body>\n"
+"#       <h1>Hello</h1>\n"
+"#       <h2>Yay!</h2>\n"
+"#       <div class=\"section\">\n"
+"#         <h2>World</h2>\n"
+"#       </div>\n"
+"#     </body>\n"
+"#   </html>\n"
+"assert_not_find(\"h1\")"
+msgstr ""
+
+# @example Pass case
+msgid ""
+"# Actual response:\n"
+"#   <html>\n"
+"#     <body>\n"
+"#       <h1>Hello</h1>\n"
+"#       <h2>Yay!</h2>\n"
+"#       <div class=\"section\">\n"
+"#         <h2>World</h2>\n"
+"#       </div>\n"
+"#     </body>\n"
+"#   </html>\n"
+"assert_not_find(\"h3\")"
+msgstr ""
+
 # @overload
-#: ../../lib/test/unit/capybara.rb:368
 msgid "tag|overload|assert_not_find"
 msgstr ""
 
+# @param [...] args
+msgid "(see {::Capybara::Node::Finders#find})"
+msgstr ""
+
+# Test::Unit::Capybara::Assertions#assert_not_find
+msgid ""
+"Passes if the selector doesn't find any elements\n"
+"from the current node."
+msgstr ""
+
+# Test::Unit::Capybara::Assertions#assert_not_find
+msgid "Passes if the selector doesn't find any element from @node@."
+msgstr ""
+
 # Test::Unit::Capybara::Assertions#flunk_find
-#: ../../lib/test/unit/capybara.rb:399
 msgid ""
 "Fails always with {::Capybara::Node::Element} is not\n"
 "found message."
 msgstr ""
 
 # @param [::Capybara::Node::Element]
-#: ../../lib/test/unit/capybara.rb:412
 msgid "tag|param|base_node"
 msgstr ""
 
 # @param [::Capybara::Node::Element] base_node
-#: ../../lib/test/unit/capybara.rb:412
 msgid ""
 "The\n"
 "node used as search target."
 msgstr ""
 
 # Test
-#: ../../lib/test/unit/capybara/version.rb:2
-msgid "-*- ruby -*-"
+msgid "Copyright (C) 2011-2016  Kouhei Sutou <kou@clear-code.com>"
 msgstr ""
 
 # Test
-#: ../../lib/test/unit/capybara/version.rb:4
-msgid "Copyright (C) 2011-2013  Kouhei Sutou <kou@clear-code.com>"
-msgstr ""
-
-# Test
-#: ../../lib/test/unit/capybara/version.rb:6
 msgid ""
 "This library is free software; you can redistribute it and/or\n"
 "modify it under the terms of the GNU Lesser General Public\n"
@@ -478,7 +559,6 @@ msgid ""
 msgstr ""
 
 # Test
-#: ../../lib/test/unit/capybara/version.rb:11
 msgid ""
 "This library is distributed in the hope that it will be useful,\n"
 "but WITHOUT ANY WARRANTY; without even the implied warranty of\n"
@@ -487,7 +567,6 @@ msgid ""
 msgstr ""
 
 # Test
-#: ../../lib/test/unit/capybara/version.rb:16
 msgid ""
 "You should have received a copy of the GNU Lesser General Public\n"
 "License along with this library; if not, write to the Free Software\n"
