@@ -374,10 +374,14 @@ EOT
         node = nil
         node = args.shift if args[0].is_a?(::Capybara::Node::Base)
         args = normalize_page_finder_arguments(args)
-        if node
-          element = node.first(*args[:finder_arguments])
-        else
-          element = first(*args[:finder_arguments])
+        begin
+          if node
+            element = node.first(*args[:finder_arguments])
+          else
+            element = first(*args[:finder_arguments])
+          end
+        rescue ::Capybara::ExpectationNotMet
+          element = nil
         end
         format = <<-EOT
 <?>(?) expected to not find a element but was
