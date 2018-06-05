@@ -70,7 +70,11 @@ module Test::Unit
         begin
           super
         rescue ::Capybara::ElementNotFound => error
-          query = ::Capybara::Query.new(*args)
+          if ::Capybara::VERSION >= "3.0.0.rc1"
+            query = ::Capybara::Queries::SelectorQuery.new(*args, session_options: session_options)
+          else
+            query = ::Capybara::Query.new(*args)
+          end
           new_error = ElementNotFound.new(self,
                                           query.selector.name,
                                           query.locator,
