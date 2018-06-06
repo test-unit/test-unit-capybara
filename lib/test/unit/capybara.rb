@@ -70,7 +70,11 @@ module Test::Unit
         begin
           super
         rescue ::Capybara::ElementNotFound => error
-          query = ::Capybara::Query.new(*args)
+          if ::Capybara::VERSION >= "3.0.0.rc1"
+            query = ::Capybara::Queries::SelectorQuery.new(*args, session_options: session_options)
+          else
+            query = ::Capybara::Query.new(*args)
+          end
           new_error = ElementNotFound.new(self,
                                           query.selector.name,
                                           query.locator,
@@ -370,10 +374,14 @@ EOT
         node = nil
         node = args.shift if args[0].is_a?(::Capybara::Node::Base)
         args = normalize_page_finder_arguments(args)
-        if node
-          element = node.first(*args[:finder_arguments])
-        else
-          element = first(*args[:finder_arguments])
+        begin
+          if node
+            element = node.first(*args[:finder_arguments])
+          else
+            element = first(*args[:finder_arguments])
+          end
+        rescue ::Capybara::ExpectationNotMet
+          element = nil
         end
         format = <<-EOT
 <?>(?) expected to not find a element but was
