@@ -1,5 +1,26 @@
 h1. News
 
+h2(#1-0-6). 1.0.6 - 2018-06-06
+
+h3. Improvements
+
+* Improved release script.
+  [GitHub#5] [Patch by Hiroyuki Sato]
+
+* Updated documents.
+  [GitHub#6] [Patch by Hiroyuki Sato]
+
+* Added support for Capybara 3.
+  [GitHub#7] [Patch by neko maho]
+
+h3. Thanks
+
+* Hiroyuki Sato
+
+* Hiroyuki Sato
+
+* neko maho
+
 h2(#1-0-5). 1.0.5 - 2016-01-18
 
 h3. Improvements
