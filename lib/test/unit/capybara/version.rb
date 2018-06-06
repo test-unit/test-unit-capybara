@@ -1,4 +1,4 @@
-# Copyright (C) 2011-2016  Kouhei Sutou <kou@clear-code.com>
+# Copyright (C) 2011-2018  Kouhei Sutou <kou@clear-code.com>
 #
 # This library is free software; you can redistribute it and/or
 # modify it under the terms of the GNU Lesser General Public
@@ -17,7 +17,7 @@
 module Test
   module Unit
     module Capybara
-      VERSION = "1.0.6"
+      VERSION = "1.0.7"
     end
   end
 end
