@@ -1,10 +1,11 @@
 rvm:
-  - 2.0.0
-  - 2.1
   - 2.2
-  - 2.3.0
+  - 2.3
+  - 2.4.4
+  - 2.5.1
 notifications:
-  recipients:
-    - test-unit-commit@googlegroups.com
+  email:
+    recipients:
+      - test-unit@ml.commit-email.info
 before_install:
   - gem update bundler
