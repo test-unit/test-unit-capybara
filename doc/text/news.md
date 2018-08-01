@@ -1,8 +1,8 @@
-h1. News
+# News
 
-h2(#1-0-6). 1.0.6 - 2018-06-06
+## 1.0.6 - 2018-06-06
 
-h3. Improvements
+### Improvements
 
 * Improved release script.
   [GitHub#5] [Patch by Hiroyuki Sato]
@@ -13,7 +13,7 @@ h3. Improvements
 * Added support for Capybara 3.
   [GitHub#7] [Patch by neko maho]
 
-h3. Thanks
+### Thanks
 
 * Hiroyuki Sato
 
@@ -21,55 +21,55 @@ h3. Thanks
 
 * neko maho
 
-h2(#1-0-5). 1.0.5 - 2016-01-18
+## 1.0.5 - 2016-01-18
 
-h3. Improvements
+### Improvements
 
 * Stopped to register auto test runner.
 
-h2(#1-0-4). 1.0.4 - 2013-05-15
+## 1.0.4 - 2013-05-15
 
 A Capybara 2.1.0 support release.
 
-h3. Improvements
+### Improvements
 
 * Supported Capybara 2.1.0.
   It requires Capybara >= 2.1.0.
   Notice: Capybara < 2.1.0 aren't supported from this release.
   [GitHub#2] [Reported by thelastinuit]
 
-h3. Thanks
+### Thanks
 
 * thelastinuit
 
-h2(#1-0-3). 1.0.3 - 2012-11-29
+## 1.0.3 - 2012-11-29
 
 A support Capybara 2.0.1 release.
 
-h3. Improvments
+### Improvments
 
 * Supported Capybara 2.0.1.
   It requires Capybara >= 2.0.1 and test-unit >= 2.5.3.
   Notice: Capybara 1.X aren't supported yet from this release.
 
-h2(#1-0-2). 1.0.2 - 2012-03-12
+## 1.0.2 - 2012-03-12
 
 A Capybara integration improvement release.
 
-h3. Improvments
+### Improvments
 
   * Supported Capybara 1.1.2 again.
 
-h2(#1-0-1). 1.0.1 - 2012-01-16
+## 1.0.1 - 2012-01-16
 
 A Capybara integration improvement release.
 
-h3. Improvments
+### Improvments
 
   * Added {Test::Unit::Capybara::Assertions#assert_all}.
   * Added {Test::Unit::Capybara::Assertions#assert_not_find}.
   * Supported Capybara::ElementNotFound as a failure.
 
-h2(#1-0-0). 1.0.0 - 2011-05-01
+## 1.0.0 - 2011-05-01
 
 The first release!!!

@@ -14,14 +14,14 @@ Gem::Specification.new do |spec|
   spec.homepage = "https://github.com/test-unit/test-unit-capybara"
   spec.authors = ["Kouhei Sutou"]
   spec.email = ["kou@clear-code.com"]
-  entries = File.read("README.textile").split(/^h2\.\s(.*)$/)
+  entries = File.read("README.md").split(/^##\s(.*)$/)
   description = clean_white_space.call(entries[entries.index("Description") + 1])
   spec.summary, spec.description, = description.split(/\n\n+/, 3)
   spec.license = "LGPLv2 or later"
   spec.files += Dir.glob("lib/**/*.rb")
   spec.files += Dir.glob("bin/*")
   spec.files += Dir.glob("doc/text/*")
-  spec.files += ["README.textile", "COPYING", "Rakefile", "Gemfile"]
+  spec.files += ["README.md", "COPYING", "Rakefile", "Gemfile"]
   spec.test_files = Dir.glob("test/**/*.rb")
 
   spec.add_runtime_dependency("test-unit", ">=2.5.3")
@@ -33,5 +33,5 @@ Gem::Specification.new do |spec|
   spec.add_development_dependency("yard")
   spec.add_development_dependency("packnga")
   spec.add_development_dependency("test-unit-notify")
-  spec.add_development_dependency("RedCloth")
+  spec.add_development_dependency("redcarpet")
 end

@@ -1,20 +1,20 @@
-h1. test-unit-capybara
+# test-unit-capybara
 
-"Web site":https://github.com/test-unit/test-unit-capybara
+[Web site](https://github.com/test-unit/test-unit-capybara)
 
-h2. Description
+## Description
 
-test-unit-capybara is a Capybara adapter for test-unit 2. You can get "Capybara":https://rubygems.org/gems/capybara integrated Test::Unit::TestCase. It also provides useful assertions for Capybara.
+test-unit-capybara is a Capybara adapter for test-unit 2. You can get [Capybara](https://rubygems.org/gems/capybara) integrated Test::Unit::TestCase. It also provides useful assertions for Capybara.
 
-h2. Install
+## Install
 
-<pre>
+```
 % sudo gem install test-unit-capybara
-</pre>
+```
 
-h2. Usage
+## Usage
 
-<pre>
+```ruby
 require 'test/unit/capybara'
 
 class MyRackApplication
@@ -74,14 +74,14 @@ class TestMyRackApplication < Test::Unit::TestCase
     end
   end
 end
-</pre>
+```
 
-h2. License
+## License
 
 LGPLv2.1 or later.
 
 (Kouhei Sutou has a right to change the license including contributed patches.)
 
-h2. Authors
+## Authors
 
 * Kouhei Sutou
