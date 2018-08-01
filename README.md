@@ -73,6 +73,11 @@ class TestMyRackApplication < Test::Unit::TestCase
       # It helps you debug a problem without save_and_open_page.
     end
   end
+
+  attribute :js, true
+  def test_body
+    # JavaScript driver is used
+  end
 end
 ```
 
