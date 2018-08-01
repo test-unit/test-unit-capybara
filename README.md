@@ -75,8 +75,16 @@ class TestMyRackApplication < Test::Unit::TestCase
   end
 
   attribute :js, true
-  def test_body
+  def test_destroy_a_post
     # JavaScript driver is used
+    visit("/")
+    page.accept_confirm do
+      click_on("Destroy", match: :first)
+    end
+
+    within(".alert") do
+      assert_equal("Post was successfully destroyed", text)
+    end
   end
 end
 ```
