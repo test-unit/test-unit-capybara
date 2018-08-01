@@ -1,2 +1,3 @@
 --no-private
---markup textile
+--markup markdown
+--markup-provider redcarpet

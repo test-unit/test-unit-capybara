@@ -33,5 +33,5 @@ Gem::Specification.new do |spec|
   spec.add_development_dependency("yard")
   spec.add_development_dependency("packnga")
   spec.add_development_dependency("test-unit-notify")
-  spec.add_development_dependency("RedCloth")
+  spec.add_development_dependency("redcarpet")
 end
