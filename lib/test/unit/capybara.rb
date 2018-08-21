@@ -66,21 +66,28 @@ module Test::Unit
 
     # @private
     module FindErrorWrapper
-      def find(*args)
-        begin
+      if ::Capybara::VERSION >= "3.0.0.rc1"
+        def find(*args, **options, &optional_filter_block)
+          super(*args, options, &optional_filter_block)
+        rescue ::Capybara::ElementNotFound => error
+          options[:session_options] = session_options
+          query = ::Capybara::Queries::SelectorQuery.new(*args, options, &optional_filter_block)
+          raise generate_element_not_found(query, error.message)
+        end
+      else
+        def find(*args)
           super
         rescue ::Capybara::ElementNotFound => error
-          if ::Capybara::VERSION >= "3.0.0.rc1"
-            query = ::Capybara::Queries::SelectorQuery.new(*args, session_options: session_options)
-          else
-            query = ::Capybara::Query.new(*args)
-          end
-          new_error = ElementNotFound.new(self,
-                                          query.selector.name,
-                                          query.locator,
-                                          error.message)
-          raise new_error
+          query = ::Capybara::Query.new(*args)
+          raise generate_element_not_found(query, error.message)
         end
+      end
+
+      def generate_element_not_found(query, message)
+        ElementNotFound.new(self,
+                            query.selector.name,
+                            query.locator,
+                            message)
       end
     end
 
