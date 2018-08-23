@@ -68,7 +68,7 @@ module Test::Unit
     module FindErrorWrapper
       if ::Capybara::VERSION >= "3.0.0.rc1"
         def find(*args, **options, &optional_filter_block)
-          super(*args, options, &optional_filter_block)
+          super
         rescue ::Capybara::ElementNotFound => error
           options[:session_options] = session_options
           query = ::Capybara::Queries::SelectorQuery.new(*args, options, &optional_filter_block)
