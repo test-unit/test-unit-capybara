@@ -66,7 +66,9 @@ module Test::Unit
 
     # @private
     module FindErrorWrapper
-      if ::Capybara::VERSION >= "3.0.0.rc1"
+      find_method = ::Capybara::Node::Finders.instance_method(:find)
+      find_parameters = find_method.parameters
+      if find_parameters.any? {|_name, type| type == :options}
         def find(*args, **options, &optional_filter_block)
           super
         rescue ::Capybara::ElementNotFound => error
