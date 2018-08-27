@@ -1,5 +1,24 @@
 # News
 
+## 1.0.7 - 2018-08-27
+
+### Improvements
+
+* Converted document format to Markdown.
+  [GitHub#8][Patch by okkez]
+
+* Added an example for JavaScript driver.
+  [GitHub#4][GitHub#9][GitHub#10][Patch by okkez]
+
+* Improved support for Capybara 3.
+  [GitHub#11][Patch by neko maho]
+
+### Thanks
+
+  * okkez
+
+  * neko maho
+
 ## 1.0.6 - 2018-06-06
 
 ### Improvements
