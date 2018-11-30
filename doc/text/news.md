@@ -65,7 +65,7 @@ A Capybara 2.1.0 support release.
 
 A support Capybara 2.0.1 release.
 
-### Improvments
+### Improvements
 
 * Supported Capybara 2.0.1.
   It requires Capybara >= 2.0.1 and test-unit >= 2.5.3.
@@ -75,7 +75,7 @@ A support Capybara 2.0.1 release.
 
 A Capybara integration improvement release.
 
-### Improvments
+### Improvements
 
   * Supported Capybara 1.1.2 again.
 
@@ -83,7 +83,7 @@ A Capybara integration improvement release.
 
 A Capybara integration improvement release.
 
-### Improvments
+### Improvements
 
   * Added {Test::Unit::Capybara::Assertions#assert_all}.
   * Added {Test::Unit::Capybara::Assertions#assert_not_find}.
