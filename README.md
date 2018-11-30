@@ -63,7 +63,7 @@ class TestMyRackApplication < Test::Unit::TestCase
       find("ol.navi")
       # This fails with the following message:
       #
-      # <"ol.navi">(:css) expected to find a element in
+      # <"ol.navi">(:css) expected to find an element in
       # <<div class="header">
       #       <p>No navigation.</p>
       #     </div>>

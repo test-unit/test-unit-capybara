@@ -77,7 +77,7 @@ HTML
                  "0 omissions, 0 notifications", result.to_s)
 
     message = <<-EOM.chomp
-<"h3">(:css) expected to find a element in
+<"h3">(:css) expected to find an element in
 <<div class="section">
       <h2>World</h2>
     </div>>

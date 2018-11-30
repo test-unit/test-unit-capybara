@@ -167,7 +167,7 @@ HTML
         visit("/")
         h1_html = @html.scan(/<h1>.*?<\/h1>/m)[0]
         message = <<-EOM.strip
-<"h1">(:css) expected to not find a element but was
+<"h1">(:css) expected to not find an element but was
 <#{h1_html}> in
 <#{@html}>
 EOM
@@ -182,7 +182,7 @@ EOM
         section_html = @html.scan(/<div class="section">.*?<\/div>/m)[0]
         h2_in_section_html = section_html.scan(/<h2>.*?<\/h2>/m)[0]
         message = <<-EOM.strip
-<"h2">(:css) expected to not find a element but was
+<"h2">(:css) expected to not find an element but was
 <#{h2_in_section_html}> in
 <#{section_html}>
 EOM
@@ -220,7 +220,7 @@ EOM
         section_html = @html.scan(/<div class="section">.*?<\/div>/m)[0]
         h2_html = section_html.scan(/<h2>.*?<\/h2>/m)[0]
         message = <<-EOM.strip
-<"h2">(:css) expected to not find a element but was
+<"h2">(:css) expected to not find an element but was
 <#{h2_html}> in
 <#{section_html}>
 EOM
