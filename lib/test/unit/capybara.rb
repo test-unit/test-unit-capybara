@@ -393,7 +393,7 @@ EOT
           element = nil
         end
         format = <<-EOT
-<?>(?) expected to not find a element but was
+<?>(?) expected to not find an element but was
 <?> in
 <?>
 EOT
@@ -429,7 +429,7 @@ EOT
       #   It should be specified for useful failure message.
       def flunk_find(base_node, options={})
         format = <<-EOT
-<?>(?) expected to find a element in
+<?>(?) expected to find an element in
 <?>
 EOT
         base_html = AssertionMessage.literal(node_source(base_node))
