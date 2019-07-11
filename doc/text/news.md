@@ -1,5 +1,23 @@
 # News
 
+## 1.0.8 - 2019-07-11
+
+### Improvements
+
+* Added support for Selenium element.
+
+* Updated CI configurations.
+  [GitHub#14][Patch by neko maho]
+
+### Fixes
+
+* Fixed documents.
+  [GitHub#12][GitHub#13][Patch by Akira Matsuda]
+
+### Thanks
+
+* Akira Matsuda
+
 ## 1.0.7 - 2018-08-27
 
 ### Improvements
