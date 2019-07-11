@@ -486,7 +486,8 @@ EOT
             node.base.source
           elsif node.base.respond_to?(:html)
             node.base.html
-          elsif node.base.respond_to?(:driver)
+          elsif node.base.respond_to?(:driver) and
+               node.base.driver.respond_to?(:evaluate_script)
             node.base.driver.evaluate_script("arguments[0].outerHTML",
                                              node.base)
           else
