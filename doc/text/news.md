@@ -1,5 +1,11 @@
 # News
 
+## 1.0.9 - 2019-07-11
+
+### Fixes
+
+* Fixed a bug that this doesn't work with `Rack::Test`.
+
 ## 1.0.8 - 2019-07-11
 
 ### Improvements
