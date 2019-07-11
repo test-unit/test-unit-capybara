@@ -1,6 +1,4 @@
-# -*- ruby -*-
-#
-# Copyright (C) 2011-2013  Kouhei Sutou <kou@clear-code.com>
+# Copyright (C) 2011-2019  Sutou Kouhei <kou@clear-code.com>
 #
 # This library is free software; you can redistribute it and/or
 # modify it under the terms of the GNU Lesser General Public
@@ -488,6 +486,9 @@ EOT
             node.base.source
           elsif node.base.respond_to?(:html)
             node.base.html
+          elsif node.base.respond_to?(:driver)
+            node.base.driver.evaluate_script("arguments[0].outerHTML",
+                                             node.base)
           else
             node.base.native.to_s
           end
