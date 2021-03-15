@@ -1,5 +1,11 @@
 # News
 
+## 1.1.0 - 2021-03-15
+
+### Improvements
+
+* Suppressed a keyword argument warning with Ruby 2.7 or later.
+
 ## 1.0.9 - 2019-07-11
 
 ### Fixes
