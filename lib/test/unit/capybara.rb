@@ -71,7 +71,7 @@ module Test::Unit
           super
         rescue ::Capybara::ElementNotFound => error
           options[:session_options] = session_options
-          query = ::Capybara::Queries::SelectorQuery.new(*args, options, &optional_filter_block)
+          query = ::Capybara::Queries::SelectorQuery.new(*args, **options, &optional_filter_block)
           raise generate_element_not_found(query, error.message)
         end
       else
