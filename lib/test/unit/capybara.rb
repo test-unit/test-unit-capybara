@@ -383,9 +383,11 @@ EOT
         args = normalize_page_finder_arguments(args)
         begin
           if node
-            element = node.first(*args[:finder_arguments])
+            element = node.first(*args[:finder_arguments],
+                                 **args[:finder_options])
           else
-            element = first(*args[:finder_arguments])
+            element = first(*args[:finder_arguments],
+                            **args[:finder_options])
           end
         rescue ::Capybara::ExpectationNotMet
           element = nil
@@ -470,13 +472,13 @@ EOT
         else
           kind, locator, = args
         end
-        args << options
 
         {
           :kind => kind,
           :locator => locator,
           :message => options.delete(:message),
           :finder_arguments => args,
+          :finder_options => options,
         }
       end
 
